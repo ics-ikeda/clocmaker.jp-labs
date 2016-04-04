@@ -1,6 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
 import {Route, RouteConfig, RouterOutlet, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Location, LocationStrategy, HashLocationStrategy} from 'angular2/router'
-import {ItemData} from '../data/item-data';
 import {DataService} from '../service/data.service';
 import {ListPageComponent} from "./page-list.component";
 import {DetailPageComponent} from "./page-detail.component";

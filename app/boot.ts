@@ -1,13 +1,15 @@
+import "es6-shim";
+import "reflect-metadata";
+import "rxjs/Rx";
+import "zone.js/dist/zone"
+
 import {bootstrap}        from 'angular2/platform/browser'
 import {HTTP_PROVIDERS}   from "angular2/http";
-import {provide}          from 'angular2/core';
-import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2/router'
-import {AppComponent}     from './components/app.component';
-import {PathLocationStrategy} from "angular2/router";
+import {ROUTER_PROVIDERS} from 'angular2/router'
 import {APP_BASE_HREF} from "angular2/router";
-import {ROUTER_PRIMARY_COMPONENT} from "angular2/router";
 import {bind} from "angular2/core";
 import {enableProdMode} from "angular2/core";
+import {AppComponent} from './components/app.component';
 
 // -----------------------------------------------
 // 本番環境のみ適用

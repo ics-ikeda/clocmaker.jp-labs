@@ -1,15 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ES5",
-    "module": "system",
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "emitDecoratorMetadata": true,
+    "target": "es6",
+    "noImplicitAny": false,
+    "removeComments": true,
     "experimentalDecorators": true,
-    "removeComments": false,
-    "noImplicitAny": false
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "node"
   },
-  "exclude": [
-    "node_modules"
+  "files": [
+    "./app/boot.ts"
   ]
 }

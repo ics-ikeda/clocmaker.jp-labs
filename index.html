@@ -70,28 +70,10 @@
   <link rel="stylesheet" href="_labs/styles/style.css">
 
   <!-- 1. Load libraries -->
-  <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
-  <script src="node_modules/systemjs/dist/system.src.js"></script>
-  <script src="node_modules/rxjs/bundles/Rx.js"></script>
-  <script src="node_modules/angular2/bundles/angular2.js"></script>
-  <script src="node_modules/angular2/bundles/http.min.js"></script>
-  <script src="node_modules/angular2/bundles/router.dev.js"></script>
-  <script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>
+  <script src="https://code.createjs.com/soundjs-0.6.2.min.js" defer></script>
 
   <!-- 2. Configure SystemJS -->
-  <script>
-    System.config({
-      packages: {
-        app: {
-          format: 'register',
-          defaultExtension: 'js'
-        }
-      }
-    });
-    System.import('app/boot')
-            .then(null, console.error.bind(console));
-  </script>
-
+  <script src="_labs/bundle.js" defer></script>
 
 </head>
 
@@ -106,6 +88,7 @@
       </div>
     </footer>
   </my-app>
+
 </body>
 
 </html>
