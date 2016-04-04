@@ -1,0 +1,84 @@
+.detailPage {
+
+  .myNavi {
+    background: #333;
+  }
+
+  h1 {
+    margin-left: 15px;
+    line-height: 54px;
+    text-align: left;
+    font-size: 1.5rem;
+    vertical-align: middle;
+
+    span.content-type {
+      color: #ccc;
+      font-size: 0.9rem;
+      background: #555;
+      border-radius: 3px;
+      padding: 2px 5px;
+      margin-left: 10px;
+      vertical-align: middle;
+      font-family: 'Ropa Sans', sans-serif;
+    }
+
+    transition: all 0.6s cubic-bezier(0, 0, 0, 1);
+
+  }
+  h1 {
+    opacity: 0;
+    transform: translate3d(-10px, 0, 0);
+  }
+  .show {
+  }
+  .show h1 {
+    opacity: 1;
+    transform: translate3d(0px, 0, 0);
+  }
+
+  iframe {
+    visibility: hidden;
+  }
+  .show iframe {
+    visibility: visible;
+  }
+
+  .main-content:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: black;
+    opacity: 0.0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+  }
+
+  div.show .main-content:after {
+    opacity: 1.0;
+  }
+
+  iframe {
+    width: 100%;
+    height: calc(100% - 52px - 32px);
+    position: absolute;
+    top: 52px;
+    left: 0;
+    border: none;
+    background: black;
+  }
+
+
+
+  &.showing {
+    pointer-events: none;
+
+    h1 {
+      opacity: 0;
+      transform: translate3d(-10px, 0, 0);
+    }
+  }
+}
+
