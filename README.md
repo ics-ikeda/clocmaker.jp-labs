@@ -16,3 +16,7 @@ Yasunobu Ikeda
 - [ICS MEDIA](https://ics.media/entry/author/ikeda)
 - [Twitter](https://twitter.com/clockmaker)
 - [Facebook](https://www.facebook.com/clockmaker.jp)
+
+## Lisense
+
+Copyright 2008-2016 clockmaker.jp / All rights reserved.
