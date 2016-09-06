@@ -1,5 +1,19 @@
 [
   {
+    "id": "liquildfun-pixijs",
+    "blog_en": null,
+    "blog_ja": "https://ics.media/entry/12206/",
+    "date": "2016/01/22",
+    "demo": "https://ics-creative.github.io/160527_liquidfun/samples/sample_pixijs.html",
+    "img": "http://clockmaker.jp/labs/160527_liquidfun/thumb_460x200.png",
+    "title": "Liquid",
+    "type" : "Interactive",
+    "technology": [
+      "HTML5",
+      "WebGL"
+    ]
+  },
+  {
     "id": "particle-develop",
     "blog_en": null,
     "blog_ja": "https://ics.media/entry/10141",
