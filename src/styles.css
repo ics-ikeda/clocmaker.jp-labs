@@ -367,3 +367,12 @@ footer a:hover {
   color: #FFF; }
 footer a:active {
   color: #DDD; }
+
+app-page-detail {
+  display: block;
+  height:100%;
+  width:100%;
+  position: absolute;
+  top:0;
+  left: 0;
+}

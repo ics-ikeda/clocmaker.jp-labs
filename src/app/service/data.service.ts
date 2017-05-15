@@ -26,6 +26,7 @@ export class DataService {
   }
 
   public getDetail(id: string): Promise<ItemData> {
+
     return new Promise<ItemData>((resolve: Function) => {
       if (this.data != null) {
         resolve(this.searchData(id));
