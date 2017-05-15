@@ -1,6 +1,6 @@
-import Sound = createjs.Sound;
 import {Component, OnInit} from '@angular/core';
 import {DataService} from '../service/data.service';
+import {SoundService} from '../service/sound.service';
 
 
 @Component({
@@ -9,13 +9,12 @@ import {DataService} from '../service/data.service';
     <router-outlet></router-outlet>
     <!--<sns></sns>-->
   `,
-  providers: [DataService]
+  providers: [DataService, SoundService]
 })
 
 export class AppComponent implements OnInit {
   constructor(private _dataService: DataService) {
-    Sound.registerSound('assets/sounds/BtnOverSound.mp3', 'over');
-    Sound.registerSound('assets/sounds/BtnClickSound.wav', 'click');
+
   }
 
   ngOnInit() {

@@ -1,4 +1,3 @@
-import Sound = createjs.Sound;
 import {AfterViewInit, Component} from '@angular/core';
 
 @Component({

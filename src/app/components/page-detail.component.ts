@@ -4,8 +4,9 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 import {animate, state, style, transition, trigger} from '@angular/animations';
-import Sound = createjs.Sound;
 import 'rxjs/add/operator/switchMap';
+import {SoundService} from '../service/sound.service';
+
 
 @Component({
   selector: 'app-page-detail',
@@ -112,7 +113,8 @@ export class DetailPageComponent implements OnInit {
   constructor(private _dataService: DataService,
               private _router: Router,
               private _route: ActivatedRoute,
-              private _sanitizer: DomSanitizer) {
+              private _sanitizer: DomSanitizer,
+              private _sound: SoundService) {
   }
 
   ngOnInit() {
@@ -165,12 +167,12 @@ export class DetailPageComponent implements OnInit {
   }
 
   private onClick() {
-    Sound.play('click');
+    this._sound.playClickSound();
     this._router.navigate(['']);
   }
 
   private onRollOver() {
-    Sound.play('over', Sound.INTERRUPT_ANY, 0, 0, 0, 0.3);
+    this._sound.playMouseOverSound();
   }
 
   private onClickPrev() {
@@ -182,7 +184,7 @@ export class DetailPageComponent implements OnInit {
   }
 
   private _gotoPage(pageShift: number) {
-    Sound.play('click');
+    this._sound.playClickSound();
 
     const id = this._id;
     const index = this._dataService.getIndex(id);

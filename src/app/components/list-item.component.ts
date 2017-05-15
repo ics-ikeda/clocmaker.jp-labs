@@ -4,7 +4,7 @@ import {AfterViewInit, Component, Input, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import ShuffleText from 'shuffle-text';
 
-import Sound = createjs.Sound;
+import {SoundService} from '../service/sound.service';
 
 @Component({
   selector: 'app-item',
@@ -34,7 +34,10 @@ import Sound = createjs.Sound;
         MORE - EN
       </a>
     </div>
-  `
+  `,
+  // styleUrls: [
+  //   // `_top.scss`
+  // ]
 })
 
 export class ListItemComponent implements AfterViewInit {
@@ -48,7 +51,8 @@ export class ListItemComponent implements AfterViewInit {
   isRollOver = false;
   isLoadComplete = false;
 
-  constructor(private _router: Router) {
+  constructor(private _router: Router,
+              private _sound: SoundService) {
 
   }
 
@@ -98,11 +102,11 @@ export class ListItemComponent implements AfterViewInit {
   }
 
   _playSoundRollOver(): void {
-    Sound.play('over', Sound.INTERRUPT_ANY, 0, 0, 0, 0.3);
+    this._sound.playMouseOverSound();
   }
 
   _playSoundClick(): void {
-    Sound.play('click');
+    this._sound.playClickSound();
   }
 
 }

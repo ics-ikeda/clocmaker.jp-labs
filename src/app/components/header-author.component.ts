@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import Sound = createjs.Sound;
+import {SoundService} from '../service/sound.service';
 
 @Component({
   selector: 'app-header-author',
@@ -34,13 +34,16 @@ import Sound = createjs.Sound;
 })
 
 export class HeaderAuthorComponent {
+  constructor(private _sound: SoundService) {
+
+  }
 
   _onRollOver(): void {
-    Sound.play('over', Sound.INTERRUPT_ANY, 0, 0, 0, 0.3);
+    this._sound.playMouseOverSound();
   }
 
   _onClick(): void {
-    Sound.play('click');
+    this._sound.playClickSound();
   }
 
 }
