@@ -1,22 +1,28 @@
-# clocmaker.jp/labs
+# ClockmakerLabs
 
-The source code of Yasunobu Ikeda's portfolio website.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
 
-[ClockMaker Labs - Interaction Design × Web Technology](http://clockmaker.jp/labs/)
+## Development server
 
-## Libraries
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-- [CreateJS](http://createjs.com/)
-- [Angular 2](https://angular.io/)
+## Code scaffolding
 
-## Author
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
 
-Yasunobu Ikeda
+## Build
 
-- [ICS MEDIA](https://ics.media/entry/author/ikeda)
-- [Twitter](https://twitter.com/clockmaker)
-- [Facebook](https://www.facebook.com/clockmaker.jp)
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Lisense
+## Running unit tests
 
-Copyright 2008-2016 clockmaker.jp / All rights reserved.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Before running the tests make sure you are serving the app via `ng serve`.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
