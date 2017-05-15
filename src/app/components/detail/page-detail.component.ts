@@ -10,54 +10,7 @@ import {SoundService} from '../../service/sound.service';
 
 @Component({
   selector: 'app-page-detail',
-  template: `
-    <div class="detailPage" [ngClass]="{showing: _playingTransition == true}">
-      <div *ngIf="data" [ngClass]="{show : !_isLoading}">
-
-        <nav class="my-navi">
-          <div class="header-detail-ui">
-
-            <div class="btn-back"
-                 style="margin-right: 10px;"
-                 (mouseenter)="onRollOver()"
-                 (click)="onClick()">
-              <i class="fa fa-th"></i><span class="btn-label-prev">TOP</span>
-            </div>
-
-            <div class="btn-back"
-                 style="margin-right: 1px;"
-                 (mouseenter)="onRollOver()"
-                 (click)="onClickPrev()">
-              <i class="fa fa-chevron-left"></i><span class="btn-label-prev">PREV</span>
-            </div>
-            <div class="btn-back"
-                 (mouseenter)="onRollOver()"
-                 (click)="onClickNext()">
-              <span class="btn-label-next">NEXT</span><i class="fa fa-chevron-right"></i>
-            </div>
-          </div>
-          <div *ngIf="_isLoading" class="loading">
-            <i class="fa fa-refresh"></i> Now Loading...
-          </div>
-
-          <h1 class="header-detail-h1"
-              [@animateStateH1]="_transitionState">
-            {{data.title}}
-            <span class="content-type">{{data.type}}</span>
-          </h1>
-
-          <app-header-author></app-header-author>
-        </nav>
-
-        <div class="main-content" [@transitionState]="_transitionState">
-          <iframe [src]="_iframeUrl" (load)="onLoad()"></iframe>
-        </div>
-
-        <app-site-footer
-          meta="{{data.date}} - This work is build with {{data.technology.join(', ')}}.">
-        </app-site-footer>
-      </div>
-    </div>`,
+  templateUrl: './page-detail.html',
   host: {'[@routerTransition]': ''},
   animations: [
     trigger('routerTransition', [
@@ -95,9 +48,9 @@ import {SoundService} from '../../service/sound.service';
       transition('show => hide', animate('0.5s cubic-bezier(0, 0, 0, 1)')),
     ])
   ],
-  styleUrls:[
-    "../common/header.scss",
-    "./page-detail.scss",
+  styleUrls: [
+    '../common/header.scss',
+    './page-detail.scss',
   ]
 })
 

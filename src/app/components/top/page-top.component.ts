@@ -6,36 +6,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-page-list',
-  template: `
-    <div class="topPage" [ngClass]="{showing: _playingTransition == true}">
-      <nav class="my-navi">
-        <div class="header-h1-top">
-          <h1 [@animateStateH1]="_viewInited">ClockMaker Labs</h1>
-        </div>
-        <!--<app-header-author></app-header-author>-->
-      </nav>
-
-      <div class="main-content">
-        <h2 class="subTitle">
-          <img src="assets/images/title.png" width="358" height="34" alt="Interaction Design &times; Web Technology"/>
-        </h2>
-
-        <div class="my-hero">
-          <div class="container-fluid my-main-area">
-            <div id="contentListHTML5" class="row">
-              <div data-component="item"
-                   *ngFor="let dataItem of _data"
-                   [data]="dataItem"
-                   class="list-item col-xs-6 col-sm-4 col-md-3 col-lg-2 col-xl-2"
-              ></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <app-site-footer meta="This website is build with Angular 4. "></app-site-footer>
-    </div>
-  `,
+  templateUrl: './page-top.html',
   styleUrls: [
     `./page-top.scss`,
     `../common/header.scss`,

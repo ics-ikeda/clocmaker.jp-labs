@@ -8,33 +8,7 @@ import {SoundService} from '../../service/sound.service';
 
 @Component({
   selector: 'div[data-component="item"]',
-  template: `
-    <div class="item thumb" (mouseenter)="_onMouseOver()" (mouseleave)="_onMouseOut()" (click)="_onClick()" [ngClass]="{show : isRollOver}">
-      <div class="imgContainer">
-        <img src="{{data.img}}" width="460" height="200" (load)="_onLoadComplete()" [ngClass]="{show : !isLoadComplete}">
-        <div class="imgRollOver"></div>
-      </div>
-
-      <div class="meta">
-        <div #textTitle class="title">{{data.title}}</div>
-        <div #textDate class="date">{{data.date}}</div>
-      </div>
-    </div>
-    <div>
-      <a class="btnLink" *ngIf="data.blog_ja != null"
-         (mouseenter)="_playSoundRollOver()"
-         (click)="_playSoundClick()"
-         href="{{data.blog_ja}}" target="_blank">
-        MORE - JP
-      </a>
-      <a class="btnLink" *ngIf="data.blog_en != null"
-         (mouseenter)="_playSoundRollOver()"
-         (click)="_playSoundClick()"
-         href="{{data.blog_en}}" target="_blank">
-        MORE - EN
-      </a>
-    </div>
-  `,
+  templateUrl: './list-item.html',
   styleUrls: [
     `./list-item.scss`
   ]

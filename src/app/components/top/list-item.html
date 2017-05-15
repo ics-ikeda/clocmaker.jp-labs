@@ -1,0 +1,25 @@
+<div class="item thumb" (mouseenter)="_onMouseOver()" (mouseleave)="_onMouseOut()" (click)="_onClick()" [ngClass]="{show : isRollOver}">
+  <div class="imgContainer">
+    <img src="{{data.img}}" width="460" height="200" (load)="_onLoadComplete()" [ngClass]="{show : !isLoadComplete}">
+    <div class="imgRollOver"></div>
+  </div>
+
+  <div class="meta">
+    <div #textTitle class="title">{{data.title}}</div>
+    <div #textDate class="date">{{data.date}}</div>
+  </div>
+</div>
+<div>
+  <a class="btnLink" *ngIf="data.blog_ja != null"
+     (mouseenter)="_playSoundRollOver()"
+     (click)="_playSoundClick()"
+     href="{{data.blog_ja}}" target="_blank">
+    MORE - JP
+  </a>
+  <a class="btnLink" *ngIf="data.blog_en != null"
+     (mouseenter)="_playSoundRollOver()"
+     (click)="_playSoundClick()"
+     href="{{data.blog_en}}" target="_blank">
+    MORE - EN
+  </a>
+</div>
