@@ -1,22 +1,10 @@
-/// <reference path="../libs/soundjs/soundjs.d.ts" />
-
 import {ItemData} from '../data/item-data';
 import {DataService} from '../service/data.service';
-import {
-  Component,
-  HostBinding,
-  OnInit,
-  AfterViewInit,
-  ViewChild,
-  EventEmitter,
-  Input,
-  Output
-} from '@angular/core';
-import {Router, ActivatedRoute, Params} from '@angular/router';
+import {AfterViewInit, Component, EventEmitter, HostBinding, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
-import Sound = createjs.Sound;
 import {animate, state, style, transition, trigger} from '@angular/animations';
-import ShuffleText from 'shuffle-text';
+import Sound = createjs.Sound;
 
 @Component({
   selector: 'app-page-detail',
@@ -53,14 +41,16 @@ import ShuffleText from 'shuffle-text';
           <h1 #textTitle class="header-detail-h1" [@animateStateH1]="_heroState">{{data.title}}
             <span class="content-type">{{data.type}}</span></h1>
 
-          <!-- <header-author></header-author> -->
+           <!--<app-header-author></app-header-author> -->
         </nav>
 
         <div class="main-content">
           <iframe [src]="_iframeUrl" (load)="onLoad()"></iframe>
         </div>
 
-        <app-site-footer meta="{{data.date}} - This work is build with {{data.technology.join(', ')}}."></app-site-footer>
+        <app-site-footer 
+          meta="{{data.date}} - This work is build with {{data.technology.join(', ')}}.">
+        </app-site-footer>
       </div>
     </div>`,
   animations: [
@@ -122,7 +112,6 @@ export class DetailPageComponent implements OnInit, AfterViewInit {
 
   _isLoading = false;
   _heroState = 'init';
-  _textShuffleTitle: ShuffleText;
   _playingTransition = false;
   _iframeUrl: SafeResourceUrl;
   _id: string;
@@ -170,9 +159,6 @@ export class DetailPageComponent implements OnInit, AfterViewInit {
 
 
   ngAfterViewInit() {
-    // this._textShuffleTitle = new ShuffleText(this.textTitle.nativeElement);
-    // this._textShuffleTitle.setText(this.data.title);
-    // this._textShuffleTitle.start();
   }
 
   private onClick() {
@@ -221,11 +207,11 @@ export class DetailPageComponent implements OnInit, AfterViewInit {
     this._playingTransition = true;
 
     return new Promise((res, rej) => {
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         this._playingTransition = false;
 
         res('Now ready.');
-      }, 16);
+      });
     }).then();
   }
 
