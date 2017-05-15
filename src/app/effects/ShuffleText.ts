@@ -35,37 +35,37 @@
 export class ShuffleText {
 
   /** ランダムテキストに用いる文字列 */
-  public sourceRandomCharacter:string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+  public sourceRandomCharacter: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
   /** 空白に用いる文字列 */
-  public emptyCharacter:string = "-";
+  public emptyCharacter: string = '-';
   /** 再生中かどうかを示すブール値 */
-  public isRunning:boolean = false;
+  public isRunning: boolean = false;
   /** エフェクトの実行時間 */
-  public duration:number = 600;
-  private _originalStr:string = "";
-  private _originalLength:number = 0;
-  private _timeCurrent:number = 0;
-  private _timeStart:number = 0;
-  private _randomIndex:number[] = [];
-  private _element:HTMLElement;
+  public duration: number = 600;
+  private _originalStr: string = '';
+  private _originalLength: number = 0;
+  private _timeCurrent: number = 0;
+  private _timeStart: number = 0;
+  private _randomIndex: number[] = [];
+  private _element: HTMLElement;
 
-  constructor(element:HTMLElement) {
+  constructor(element: HTMLElement) {
     this._element = element;
     this.setText(element.innerHTML);
   }
 
   /** テキストを設定します。 */
-  public setText(text:string):void {
+  public setText(text: string): void {
     this._originalStr = text;
     this._originalLength = text.length;
   }
 
   /** 再生を開始します。 */
-  public start():void {
+  public start(): void {
     this.stop();
 
     this._randomIndex = [];
-    let str = "";
+    let str = '';
     for (var i = 0; i < this._originalLength; i++) {
       let rate = i / this._originalLength;
       this._randomIndex[i] = Math.random() * (1 - rate) + rate;
@@ -75,7 +75,7 @@ export class ShuffleText {
     this._timeStart = new Date().getTime();
     this.isRunning = true;
 
-    requestAnimationFrame(()=> {
+    requestAnimationFrame(() => {
       this._onInterval();
     });
 
@@ -83,15 +83,15 @@ export class ShuffleText {
   }
 
   /** 停止します。 */
-  public stop():void {
+  public stop(): void {
     this.isRunning = false;
   }
 
-  private _onInterval():void {
+  private _onInterval(): void {
     this._timeCurrent = new Date().getTime() - this._timeStart;
     const percent = this._timeCurrent / this.duration;
 
-    let str = "";
+    let str = '';
     for (var i = 0; i < this._originalLength; i++) {
       if (percent >= this._randomIndex[i]) {
         str += this._originalStr.charAt(i);
@@ -109,7 +109,7 @@ export class ShuffleText {
     this._element.innerHTML = str;
 
     if (this.isRunning == true) {
-      requestAnimationFrame(()=> {
+      requestAnimationFrame(() => {
         this._onInterval();
       });
     }

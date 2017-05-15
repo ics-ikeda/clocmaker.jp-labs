@@ -1,8 +1,8 @@
 import Sound = createjs.Sound;
-import {AfterViewInit, Component} from "@angular/core";
+import {AfterViewInit, Component} from '@angular/core';
 
 @Component({
-  selector: "sns",
+  selector: 'sns',
   template: `
     <div class="header-sns hidden-xs-down">
       <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
@@ -11,7 +11,7 @@ import {AfterViewInit, Component} from "@angular/core";
       <span style="margin-left : 5px "></span>
       <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="simple-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"/></a>
     </div>
-    `
+  `
 })
 
 export class SnsComponent implements AfterViewInit {
@@ -20,19 +20,19 @@ export class SnsComponent implements AfterViewInit {
 
   ngAfterViewInit() {
 
-    let langLong = "ja_JP";
+    let langLong = 'ja_JP';
 
     (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
+      let js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s);
       js.id = id;
-      js.src = "https://b.st-hatena.com/js/bookmark_button.js";
+      js.src = 'https://b.st-hatena.com/js/bookmark_button.js';
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'hatena'));
 
-    !function (d:Document, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location.toString()) ? 'http' : 'https';
+    !function (d: Document, s, id) {
+      let js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location.toString()) ? 'http' : 'https';
       if (!d.getElementById(id)) {
         js = d.createElement(s);
         js.id = id;
@@ -42,7 +42,7 @@ export class SnsComponent implements AfterViewInit {
     }(document, 'script', 'twitter-wjs');
 
     (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
+      let js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s);
       js.id = id;
