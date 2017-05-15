@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {SoundService} from '../service/sound.service';
+import {SoundService} from '../../service/sound.service';
 
 @Component({
   selector: 'app-header-author',

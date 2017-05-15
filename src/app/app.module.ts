@@ -4,12 +4,12 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
 import {RouterModule} from '@angular/router';
-import {ListPageComponent} from './components/page-list.component';
-import {DetailPageComponent} from './components/page-detail.component';
-import {SnsComponent} from './components/sns.component';
-import {ListItemComponent} from './components/list-item.component';
-import {FooterComponent} from './components/footer.component';
-import {HeaderAuthorComponent} from './components/header-author.component';
+import {ListPageComponent} from './components/top/page-top.component';
+import {DetailPageComponent} from './components/detail/page-detail.component';
+import {SnsComponent} from './components/common/sns.component';
+import {ListItemComponent} from './components/top/list-item.component';
+import {FooterComponent} from './components/common/footer.component';
+import {HeaderAuthorComponent} from './components/common/header-author.component';
 import {AppComponent} from './components/app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 

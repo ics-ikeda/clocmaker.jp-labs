@@ -15,7 +15,7 @@ import ShuffleText from 'shuffle-text';
       </div>
     </footer>`,
   styleUrls: [
-    "./_footer.scss"
+    "./footer.scss"
   ]
 })
 

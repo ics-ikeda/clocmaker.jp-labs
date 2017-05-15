@@ -7,7 +7,7 @@ import {SoundService} from '../service/sound.service';
   selector: 'app-root',
   template: `
     <router-outlet></router-outlet>
-    <!--<sns></sns>-->
+    <app-sns></app-sns>
   `,
   providers: [DataService, SoundService]
 })

@@ -1,7 +1,7 @@
 .detailPage {
 
-  height:100%;
-  .myNavi {
+  height: 100%;
+  .my-navi {
     background: #333;
   }
 
@@ -70,8 +70,6 @@
     border: none;
     background: black;
   }
-
-
 
   &.showing {
     pointer-events: none;

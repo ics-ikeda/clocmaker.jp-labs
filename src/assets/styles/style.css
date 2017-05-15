@@ -10,7 +10,7 @@ h1, h2 {
 li {
   list-style: none; }
 
-.myNavi {
+.my-navi {
   height: 52px;
   position: fixed;
   width: 100%;
@@ -18,16 +18,16 @@ li {
   overflow: hidden;
   z-index: 10;
   display: flex; }
-  .myNavi h1 {
+  .my-navi h1 {
     display: inline-block;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     -webkit-font-smoothing: antialiased; }
-  .myNavi .header-h1-top {
+  .my-navi .header-h1-top {
     flex: 1; }
-  .myNavi .header-detail-h1 {
+  .my-navi .header-detail-h1 {
     flex: 1; }
-  .myNavi .header-author {
+  .my-navi .header-author {
     flex: 1; }
 
 .btnLink {

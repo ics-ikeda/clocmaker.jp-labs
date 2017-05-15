@@ -36,7 +36,7 @@ h1.show {
 }
 
 .my-hero {
-  background: url('../../assets/images/bg-photo.jpg') no-repeat;
+  background: url('../../../assets/images/bg-photo.jpg') no-repeat;
   background-position: 0 52px;
   padding-top: 172px;
   padding-bottom: 32px;
@@ -48,7 +48,7 @@ h1.show {
     height: 200px;
     top: 168px;
     left: 0;
-    background: url('../../assets/images/bg-area.png') repeat-x;
+    background: url('../../../assets/images/bg-area.png') repeat-x;
   }
 }
 
@@ -72,7 +72,7 @@ h1.show {
   pointer-events: none;
 }
 
-.myNavi {
+.my-navi {
   background: #000;
   transition: opacity 0.3s;
 }
@@ -88,7 +88,7 @@ h1.show {
     opacity: 0;
     transform: translate3d(+10px, 0, 0);
   }
-  .myNavi {
+  .my-navi {
     background: #333;
   }
 }

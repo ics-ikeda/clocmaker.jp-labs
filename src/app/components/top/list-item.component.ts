@@ -1,10 +1,10 @@
-import {ItemData} from '../data/item-data';
+import {ItemData} from '../../data/item-data';
 
 import {AfterViewInit, Component, Input, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import ShuffleText from 'shuffle-text';
 
-import {SoundService} from '../service/sound.service';
+import {SoundService} from '../../service/sound.service';
 
 @Component({
   selector: 'div[data-component="item"]',
@@ -36,7 +36,7 @@ import {SoundService} from '../service/sound.service';
     </div>
   `,
   styleUrls: [
-    `./_top_item.scss`
+    `./list-item.scss`
   ]
 })
 

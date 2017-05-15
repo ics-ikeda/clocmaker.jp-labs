@@ -1,11 +1,11 @@
-import {ItemData} from '../data/item-data';
-import {DataService} from '../service/data.service';
+import {ItemData} from '../../data/item-data';
+import {DataService} from '../../service/data.service';
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import 'rxjs/add/operator/switchMap';
-import {SoundService} from '../service/sound.service';
+import {SoundService} from '../../service/sound.service';
 
 
 @Component({
@@ -14,7 +14,7 @@ import {SoundService} from '../service/sound.service';
     <div class="detailPage" [ngClass]="{showing: _playingTransition == true}">
       <div *ngIf="data" [ngClass]="{show : !_isLoading}">
 
-        <nav class="myNavi">
+        <nav class="my-navi">
           <div class="header-detail-ui">
 
             <div class="btn-back"
@@ -96,8 +96,8 @@ import {SoundService} from '../service/sound.service';
     ])
   ],
   styleUrls:[
-    "_header.scss",
-    "_detail.scss",
+    "../common/header.scss",
+    "./page-detail.scss",
   ]
 })
 
