@@ -55,9 +55,9 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 })
 export class ListPageComponent implements OnInit, AfterViewInit {
 
-  private _viewInited: string = null;
-  private _playingTransition = false;
-  private _data: ItemData[];
+  _viewInited: string = null;
+  _playingTransition = false;
+  _data: ItemData[];
 
   constructor(private _dataService: DataService,
               private _router: Router) {

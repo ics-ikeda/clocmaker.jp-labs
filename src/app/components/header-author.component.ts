@@ -8,8 +8,8 @@ import Sound = createjs.Sound;
       <a href="https://twitter.com/clockmaker"
          target="_blank" class="btn-back"
          title="Twitter"
-         (mouseenter)="onRoll0ver()"
-         (click)="onClick()">
+         (mouseenter)="_onRollOver()"
+         (click)="_onClick()">
         <i class="fa fa-twitter"></i>
       </a>
       <span class="m-l-1">&nbsp;</span>
@@ -17,8 +17,8 @@ import Sound = createjs.Sound;
          target="_blank"
          class="btn-back"
          title="Facebook"
-         (mouseenter)="onRoll0ver()"
-         (click)="onClick()">
+         (mouseenter)="_onRollOver()"
+         (click)="_onClick()">
         <i class="fa fa-facebook"></i>
       </a>
       <span class="m-l-1">&nbsp;</span>
@@ -26,8 +26,8 @@ import Sound = createjs.Sound;
          target="_blank"
          class="btn-back"
          title="Flickr"
-         (mouseenter)="onRoll0ver()"
-         (click)="onClick()">
+         (mouseenter)="_onRollOver()"
+         (click)="_onClick()">
         <i class="fa fa-flickr"></i>
       </a>
     </div>`
@@ -35,11 +35,11 @@ import Sound = createjs.Sound;
 
 export class HeaderAuthorComponent {
 
-  private onRoll0ver(): void {
+  _onRollOver(): void {
     Sound.play('over', Sound.INTERRUPT_ANY, 0, 0, 0, 0.3);
   }
 
-  private onClick(): void {
+  _onClick(): void {
     Sound.play('click');
   }
 

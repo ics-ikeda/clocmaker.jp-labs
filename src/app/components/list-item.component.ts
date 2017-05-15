@@ -9,9 +9,9 @@ import Sound = createjs.Sound;
 @Component({
   selector: 'app-item',
   template: `
-    <div class="thumb" (mouseenter)="onMouseOver()" (mouseleave)="onMouseOut()" (click)="onClick()" [ngClass]="{show : isRollOver}">
+    <div class="thumb" (mouseenter)="_onMouseOver()" (mouseleave)="_onMouseOut()" (click)="_onClick()" [ngClass]="{show : isRollOver}">
       <div class="imgContainer">
-        <img src="{{data.img}}" width="460" height="200" (load)="onLoadComplete()" [ngClass]="{show : !isLoadComplete}">
+        <img src="{{data.img}}" width="460" height="200" (load)="_onLoadComplete()" [ngClass]="{show : !isLoadComplete}">
         <div class="imgRollOver"></div>
       </div>
 
@@ -22,14 +22,14 @@ import Sound = createjs.Sound;
     </div>
     <div>
       <a class="btnLink" *ngIf="data.blog_ja != null"
-         (mouseenter)="playSoundRollOver()"
-         (click)="playSoundClick()"
+         (mouseenter)="_playSoundRollOver()"
+         (click)="_playSoundClick()"
          href="{{data.blog_ja}}" target="_blank">
         MORE - JP
       </a>
       <a class="btnLink" *ngIf="data.blog_en != null"
-         (mouseenter)="playSoundRollOver()"
-         (click)="playSoundClick()"
+         (mouseenter)="_playSoundRollOver()"
+         (click)="_playSoundClick()"
          href="{{data.blog_en}}" target="_blank">
         MORE - EN
       </a>
@@ -38,15 +38,15 @@ import Sound = createjs.Sound;
 })
 
 export class ListItemComponent implements AfterViewInit {
-  @Input() public data: ItemData;
+  @Input() data: ItemData;
 
   @ViewChild('textTitle') textTitle;
   @ViewChild('textDate') textDate;
 
-  private _shuffleTextTitle: ShuffleText;
-  private _shuffleTextDate: ShuffleText;
-  private isRollOver = false;
-  private isLoadComplete = false;
+  _shuffleTextTitle: ShuffleText;
+  _shuffleTextDate: ShuffleText;
+  isRollOver = false;
+  isLoadComplete = false;
 
   constructor(private _router: Router) {
 
@@ -60,25 +60,25 @@ export class ListItemComponent implements AfterViewInit {
     this._shuffleTextDate.emptyCharacter = '---';
   }
 
-  private onMouseOver(): void {
+  _onMouseOver(): void {
     this._shuffleTextTitle.start();
     this._shuffleTextDate.start();
 
-    this.playSoundRollOver();
+    this._playSoundRollOver();
 
     this.isRollOver = true;
   }
 
-  private onMouseOut(): void {
+  _onMouseOut(): void {
     this._shuffleTextTitle.start();
     this._shuffleTextDate.start();
 
     this.isRollOver = false;
   }
 
-  private onClick(): void {
+  _onClick(): void {
 
-    this.playSoundClick();
+    this._playSoundClick();
     // ページ幅を見て挙動をかえる
     if (window.innerWidth < 768) { // タブレット未満のサイズであれば
       const win = window.open(this.data.demo);
@@ -93,15 +93,15 @@ export class ListItemComponent implements AfterViewInit {
     }
   }
 
-  private onLoadComplete(): void {
+  _onLoadComplete(): void {
     this.isLoadComplete = true;
   }
 
-  private playSoundRollOver(): void {
+  _playSoundRollOver(): void {
     Sound.play('over', Sound.INTERRUPT_ANY, 0, 0, 0, 0.3);
   }
 
-  private playSoundClick(): void {
+  _playSoundClick(): void {
     Sound.play('click');
   }
 
