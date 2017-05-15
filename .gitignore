@@ -8,5 +8,5 @@ _labs/styles/style.css
 app/*/*.map
 app/*/*.js
 /npm-debug.log
-/.DS_Store
 /dist
+.DS_Store
