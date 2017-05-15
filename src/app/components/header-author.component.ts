@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import Sound = createjs.Sound;
 
 @Component({
-  selector: 'header-author',
+  selector: 'app-header-author',
   template: `
     <div class="header-author hidden-xs-down">
       <a href="https://twitter.com/clockmaker"

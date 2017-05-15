@@ -5,34 +5,34 @@ import {ItemData} from '../data/item-data';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
-  selector: 'page-list',
+  selector: 'app-page-list',
   template: `
-    <div class="topPage" [ngClass]="{showing: playingTransition == true}">
+    <div class="topPage" [ngClass]="{showing: _playingTransition == true}">
       <nav class="myNavi">
         <div class="header-h1-top">
-          <h1 [@animateStateH1]="viewInited">ClockMaker Labs</h1>
+          <h1 [@animateStateH1]="_viewInited">ClockMaker Labs</h1>
         </div>
-        <header-author></header-author>
+        <app-header-author></app-header-author>
       </nav>
 
       <div class="main-content">
         <h2 class="subTitle">
-          <img src="_labs/images/title.png" width="358" height="34" alt="Interaction Design &times; Web Technology"/>
+          <img src="assets/images/title.png" width="358" height="34" alt="Interaction Design &times; Web Technology"/>
         </h2>
 
         <div class="my-hero">
           <div class="container-fluid my-main-area">
             <div id="contentListHTML5" class="row">
-              <item *ngFor="let dataItem of data"
+              <app-item *ngFor="let dataItem of _data"
                     [data]="dataItem"
                     class="item col-xs-6 col-sm-4 col-md-3 col-lg-2 col-xl-2"
-              ></item>
+              ></app-item>
             </div>
           </div>
         </div>
       </div>
 
-      <site-footer meta="This website is build with Angular 2. "></site-footer>
+      <app-site-footer meta="This website is build with Angular 4. "></app-site-footer>
     </div>
   `,
   styles: [`
@@ -54,15 +54,14 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
   providers: []
 })
 export class ListPageComponent implements OnInit, AfterViewInit {
+
+  private _viewInited: string = null;
+  private _playingTransition = false;
+  private _data: ItemData[];
+
   constructor(private _dataService: DataService,
               private _router: Router) {
   }
-
-  private viewInited: string = null;
-  private playingTransition: boolean = false;
-
-  private data: ItemData[];
-
 
   ngOnInit() {
     if (window['ga']) {
@@ -71,34 +70,34 @@ export class ListPageComponent implements OnInit, AfterViewInit {
 
 
     this._dataService.getJson().then((items) => {
-      this.data = items;
+      this._data = items;
     });
   }
 
   ngAfterViewInit() {
     requestAnimationFrame(() => {
-      this.viewInited = 'show';
+      this._viewInited = 'show';
     });
   }
 
   routerOnActivate(nextInstruction, prevInstruction) {
 
-    this.playingTransition = true;
+    this._playingTransition = true;
 
     return new Promise((res, rej) => {
       setTimeout(() => {
-        this.playingTransition = false;
+        this._playingTransition = false;
         res('Now ready.');
       }, 16);
     }).then();
   }
 
   routerOnDeactivate(nextInstruction, prevInstruction) {
-    this.playingTransition = true;
+    this._playingTransition = true;
 
     return new Promise((res, rej) => {
       setTimeout(() => {
-        this.playingTransition = false;
+        this._playingTransition = false;
         res('Now ready.');
       }, 300);
     }).then();

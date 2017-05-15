@@ -6,6 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build -prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -23,6 +24,7 @@
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
     "rxjs": "^5.1.0",
+    "shuffle-text": "^0.2.1",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {

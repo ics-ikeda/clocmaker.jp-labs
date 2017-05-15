@@ -1,9 +1,10 @@
-import {Component, AfterViewInit, ViewChild} from '@angular/core';
-import {ShuffleText} from '../effects/ShuffleText';
+import {Component, AfterViewInit, ViewChild, Input} from '@angular/core';
+import ShuffleText from 'shuffle-text';
+
 
 
 @Component({
-  selector: 'site-footer',
+  selector: 'app-site-footer',
   template: `
     <footer>
       <div class="pull-md-left hidden-sm-down" style="margin-left:10px;">
@@ -15,12 +16,11 @@ import {ShuffleText} from '../effects/ShuffleText';
       </div>
     </footer>`,
   styles: [`
-  `],
-  inputs: ['meta']
+  `]
 })
 
 export class FooterComponent implements AfterViewInit {
-  private meta: string;
+  @Input() private meta: string;
   private year: number;
   private _textShuffleMeta: ShuffleText;
 
@@ -31,11 +31,11 @@ export class FooterComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    //this._textShuffleMeta = new ShuffleText(this.metaElement.nativeElement);
-    //this._textShuffleMeta.duration = 500;
-    //this._textShuffleMeta.sourceRandomCharacter = "";
-    //this._textShuffleMeta.emptyCharacter = ".";
-    //this._textShuffleMeta.setText(this.meta);
-    //this._textShuffleMeta.start();
+// this._textShuffleMeta = new ShuffleText(this.metaElement.nativeElement);
+// this._textShuffleMeta.duration = 500;
+// this._textShuffleMeta.sourceRandomCharacter = "";
+//  this._textShuffleMeta.emptyCharacter = ".";
+//  this._textShuffleMeta.setText(this.meta);
+// this._textShuffleMeta.start();
   }
 }

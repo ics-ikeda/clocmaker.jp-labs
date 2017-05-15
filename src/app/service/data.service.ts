@@ -40,7 +40,7 @@ export class DataService {
 
   private searchData(id: string): ItemData {
     for (let i = 0; i < this.data.length; i++) {
-      if (this.data[i].id == id) {
+      if (this.data[i].id === id) {
         return this.data[i];
       }
     }
@@ -49,7 +49,7 @@ export class DataService {
 
   public getIndex(id: String): number {
     for (let i = 0; i < this.data.length; i++) {
-      if (this.data[i].id == id) {
+      if (this.data[i].id === id) {
         return i;
       }
     }

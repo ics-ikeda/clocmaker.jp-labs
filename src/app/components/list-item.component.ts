@@ -1,11 +1,13 @@
 import {ItemData} from '../data/item-data';
-import {ShuffleText} from '../effects/ShuffleText';
-import {Component, ViewChild, AfterViewInit} from '@angular/core';
+
+import {AfterViewInit, Component, Input, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
+import ShuffleText from 'shuffle-text';
+
 import Sound = createjs.Sound;
 
 @Component({
-  selector: 'item',
+  selector: 'app-item',
   template: `
     <div class="thumb" (mouseenter)="onMouseOver()" (mouseleave)="onMouseOut()" (click)="onClick()" [ngClass]="{show : isRollOver}">
       <div class="imgContainer">
@@ -32,20 +34,19 @@ import Sound = createjs.Sound;
         MORE - EN
       </a>
     </div>
-  `,
-  inputs: ['data']
+  `
 })
 
 export class ListItemComponent implements AfterViewInit {
-  public data: ItemData;
+  @Input() public data: ItemData;
 
   @ViewChild('textTitle') textTitle;
   @ViewChild('textDate') textDate;
 
   private _shuffleTextTitle: ShuffleText;
   private _shuffleTextDate: ShuffleText;
-  private isRollOver: boolean = false;
-  private isLoadComplete: boolean = false;
+  private isRollOver = false;
+  private isLoadComplete = false;
 
   constructor(private _router: Router) {
 
@@ -80,7 +81,7 @@ export class ListItemComponent implements AfterViewInit {
     this.playSoundClick();
     // ページ幅を見て挙動をかえる
     if (window.innerWidth < 768) { // タブレット未満のサイズであれば
-      let win = window.open(this.data.demo);
+      const win = window.open(this.data.demo);
       win.focus();
     } else {
       this._router.navigate(

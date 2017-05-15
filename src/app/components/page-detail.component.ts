@@ -1,6 +1,5 @@
 /// <reference path="../libs/soundjs/soundjs.d.ts" />
 
-import {ShuffleText} from '../effects/ShuffleText';
 import {ItemData} from '../data/item-data';
 import {DataService} from '../service/data.service';
 import {
@@ -17,9 +16,10 @@ import {Router, ActivatedRoute, Params} from '@angular/router';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 import Sound = createjs.Sound;
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import ShuffleText from 'shuffle-text';
 
 @Component({
-  selector: 'page-detail',
+  selector: 'app-page-detail',
   template: `
     <div class="detailPage" [ngClass]="{showing: playingTransition == true}">
       <div *ngIf="data" [ngClass]="{show : !isLoading}" [@heroState]="heroState">
@@ -60,7 +60,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
           <iframe [src]="iframeUrl" (load)="onLoad()"></iframe>
         </div>
 
-        <site-footer meta="{{data.date}} - This work is build with {{data.technology.join(', ')}}."></site-footer>
+        <app-site-footer meta="{{data.date}} - This work is build with {{data.technology.join(', ')}}."></app-site-footer>
       </div>
     </div>`,
   animations: [
@@ -120,10 +120,10 @@ export class DetailPageComponent implements OnInit, AfterViewInit {
   }
 
 
-  private isLoading: boolean = false;
-  private heroState: string = 'init';
+  private isLoading = false;
+  private heroState = 'init';
   private _textShuffleTitle: ShuffleText;
-  private playingTransition: boolean = false;
+  private playingTransition = false;
   private iframeUrl: SafeResourceUrl;
   private id: string;
 
@@ -170,9 +170,9 @@ export class DetailPageComponent implements OnInit, AfterViewInit {
 
 
   ngAfterViewInit() {
-    //this._textShuffleTitle = new ShuffleText(this.textTitle.nativeElement);
-    //this._textShuffleTitle.setText(this.data.title);
-    //this._textShuffleTitle.start();
+    // this._textShuffleTitle = new ShuffleText(this.textTitle.nativeElement);
+    // this._textShuffleTitle.setText(this.data.title);
+    // this._textShuffleTitle.start();
   }
 
   private onClick() {
@@ -202,10 +202,10 @@ export class DetailPageComponent implements OnInit, AfterViewInit {
   private gotoPage(pageShift: number) {
     Sound.play('click');
 
-    let id = this.id;
-    let index = this._dataService.getIndex(id);
+    const id = this.id;
+    const index = this._dataService.getIndex(id);
 
-    let dataItem = this._dataService.getItemAt(index + pageShift);
+    const dataItem = this._dataService.getItemAt(index + pageShift);
 
     this._router.navigate(
       [

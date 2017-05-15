@@ -7,3 +7,5 @@ _labs/styles/.sass-cache
 _labs/styles/style.css
 app/*/*.map
 app/*/*.js
+/npm-debug.log
+/.DS_Store
