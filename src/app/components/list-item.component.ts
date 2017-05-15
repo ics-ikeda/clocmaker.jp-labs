@@ -7,9 +7,9 @@ import ShuffleText from 'shuffle-text';
 import {SoundService} from '../service/sound.service';
 
 @Component({
-  selector: 'app-item',
+  selector: 'div[data-component="item"]',
   template: `
-    <div class="thumb" (mouseenter)="_onMouseOver()" (mouseleave)="_onMouseOut()" (click)="_onClick()" [ngClass]="{show : isRollOver}">
+    <div class="item thumb" (mouseenter)="_onMouseOver()" (mouseleave)="_onMouseOut()" (click)="_onClick()" [ngClass]="{show : isRollOver}">
       <div class="imgContainer">
         <img src="{{data.img}}" width="460" height="200" (load)="_onLoadComplete()" [ngClass]="{show : !isLoadComplete}">
         <div class="imgRollOver"></div>
@@ -35,9 +35,9 @@ import {SoundService} from '../service/sound.service';
       </a>
     </div>
   `,
-  // styleUrls: [
-  //   // `_top.scss`
-  // ]
+  styleUrls: [
+    `./_top_item.scss`
+  ]
 })
 
 export class ListItemComponent implements AfterViewInit {

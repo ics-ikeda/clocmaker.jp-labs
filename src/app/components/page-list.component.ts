@@ -12,7 +12,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
         <div class="header-h1-top">
           <h1 [@animateStateH1]="_viewInited">ClockMaker Labs</h1>
         </div>
-        <app-header-author></app-header-author>
+        <!--<app-header-author></app-header-author>-->
       </nav>
 
       <div class="main-content">
@@ -23,10 +23,11 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
         <div class="my-hero">
           <div class="container-fluid my-main-area">
             <div id="contentListHTML5" class="row">
-              <app-item *ngFor="let dataItem of _data"
-                    [data]="dataItem"
-                    class="item col-xs-6 col-sm-4 col-md-3 col-lg-2 col-xl-2"
-              ></app-item>
+              <div data-component="item" 
+                   *ngFor="let dataItem of _data"
+                   [data]="dataItem"
+                   class="list-item col-xs-6 col-sm-4 col-md-3 col-lg-2 col-xl-2"
+              ></div>
             </div>
           </div>
         </div>
@@ -35,9 +36,10 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
       <app-site-footer meta="This website is build with Angular 4. "></app-site-footer>
     </div>
   `,
-  styles: [`
-
-  `],
+  styleUrls: [
+    `./_top.scss`,
+    `./_header.scss`,
+  ],
   animations: [
     trigger('animateStateH1', [
       state('init', style({
@@ -80,26 +82,4 @@ export class ListPageComponent implements OnInit, AfterViewInit {
     });
   }
 
-  routerOnActivate(nextInstruction, prevInstruction) {
-
-    this._playingTransition = true;
-
-    return new Promise((res, rej) => {
-      setTimeout(() => {
-        this._playingTransition = false;
-        res('Now ready.');
-      }, 16);
-    }).then();
-  }
-
-  routerOnDeactivate(nextInstruction, prevInstruction) {
-    this._playingTransition = true;
-
-    return new Promise((res, rej) => {
-      setTimeout(() => {
-        this._playingTransition = false;
-        res('Now ready.');
-      }, 300);
-    }).then();
-  }
 }

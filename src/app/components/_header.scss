@@ -1,0 +1,152 @@
+.myNavi {
+  height: 52px;
+  position: fixed;
+  width: 100%;
+  padding: 0 10px;
+  overflow: hidden;
+  z-index: 10;
+
+  h1 {
+    display: inline-block;
+
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased; //なめらか
+  }
+
+  display: flex;
+
+  .header-h1-top {
+    flex: 1;
+  }
+  .header-detail-ui {
+  }
+
+  .header-detail-h1 {
+    flex: 1;
+  }
+  .header-author {
+    flex: 1;
+  }
+
+}
+
+.btnLink {
+  margin-right: 0.25rem;
+}
+
+.btn-back {
+  display: inline-flex;
+  -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+  align-items: center; /* 縦方向中央揃え */
+  -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
+  justify-content: center; /* 横方向中央揃え */
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  color: #fff;
+
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased; //なめらか
+
+  font-weight: 400;
+  height: 36px;
+  min-width: 36px;
+  padding: 0 10px;
+  border: 1px solid #444;
+  border-radius: 0;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 8px;
+
+  span.btn-label-prev {
+    margin-left: 5px;
+  }
+  span.btn-label-next {
+    margin-right: 5px;
+  }
+
+  &, &:visited {
+    color: white;
+    text-decoration: none;
+  }
+
+  transition: all 1.0s;
+
+  &:hover {
+    background: white;
+    color: black;
+    border: 1px solid white;
+    text-decoration: none;
+    transition: all 0.05s;
+  }
+
+  &:active {
+    background: #CCC;
+    border: 1px solid #CCC;
+    text-decoration: none;
+  }
+}
+
+.header-sns {
+  position: fixed;
+  top: 0;
+  right: 10px;
+  height: 52px;
+
+  z-index: 30;
+
+  display: inline-flex;
+  -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+  align-items: center; /* 縦方向中央揃え */
+  -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
+  justify-content: center; /* 横方向中央揃え */
+
+  //transition: all 0.2s;
+  //
+  //-webkit-filter: grayscale(100%);
+  //filter: grayscale(100%);
+  //
+  //&:hover {
+  //  -webkit-filter: grayscale(0%);
+  //  filter: grayscale(0%);
+  //}
+}
+
+.loading {
+  margin-left: 20px;
+  line-height: 52px;
+  color: #999;
+  animation: anime1 0.1s infinite;
+
+  i {
+    animation: anime-rotate 0.5s infinite;
+  }
+}
+
+@keyframes anime1 {
+  0% {
+    opacity: 1.0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1.0;
+  }
+}
+
+@keyframes anime-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

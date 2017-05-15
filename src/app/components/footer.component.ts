@@ -14,27 +14,18 @@ import ShuffleText from 'shuffle-text';
         <span class="copyright"> &copy; {{_year}} <a href="http://clockmaker.jp/blog">clockmaker.jp</a></span>
       </div>
     </footer>`,
-  styles: [`
-  `]
+  styleUrls: [
+    "./_footer.scss"
+  ]
 })
 
-export class FooterComponent implements AfterViewInit {
+export class FooterComponent {
   @Input() meta: string;
   _year: number;
-  _textShuffleMeta: ShuffleText;
 
   @ViewChild('metaElement') metaElement;
 
   constructor() {
     this._year = new Date().getFullYear();
-  }
-
-  ngAfterViewInit() {
-// this._textShuffleMeta = new ShuffleText(this.metaElement.nativeElement);
-// this._textShuffleMeta.duration = 500;
-// this._textShuffleMeta.sourceRandomCharacter = "";
-//  this._textShuffleMeta.emptyCharacter = ".";
-//  this._textShuffleMeta.setText(this.meta);
-// this._textShuffleMeta.start();
   }
 }

@@ -94,6 +94,10 @@ import {SoundService} from '../service/sound.service';
       transition('hide => show', animate('0.5s cubic-bezier(0, 0, 0, 1)')),
       transition('show => hide', animate('0.5s cubic-bezier(0, 0, 0, 1)')),
     ])
+  ],
+  styleUrls:[
+    "_header.scss",
+    "_detail.scss",
   ]
 })
 
