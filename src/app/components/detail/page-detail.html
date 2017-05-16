@@ -36,7 +36,10 @@
       <!--<app-header-author></app-header-author>-->
     </nav>
 
-    <div class="main-content" [@transitionState]="_transitionState">
+    <div class="main-content"
+         [@transitionState]="_transitionState"
+         [@routerTransition]="_transitionState"
+    >
       <iframe [src]="_iframeUrl" (load)="onLoad()"></iframe>
     </div>
 

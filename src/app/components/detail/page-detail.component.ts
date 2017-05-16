@@ -14,14 +14,14 @@ import {SoundService} from '../../service/sound.service';
   host: {'[@routerTransition]': ''},
   animations: [
     trigger('routerTransition', [
-      state('void', style({})),
-      state('*', style({})),
+      state('void', style({position: 'fixed', width: '100%', height: '100%', top: 0})),
+      state('*', style({position: 'fixed', width: '100%', height: '100%', top: 0})),
       transition(':enter', [
         style({opacity: 0.0}),
         animate('0.5s ease-in-out', style({opacity: 1.0}))
       ]),
       transition(':leave', [
-        style({opacity: 1.0}),
+        style({}),
         animate('0.5s ease-in-out', style({opacity: 0.0}))
       ])
     ]),
@@ -111,7 +111,7 @@ export class DetailPageComponent implements OnInit {
     }
   }
 
-  _updateVideoUrl(): void {
+  private _updateVideoUrl(): void {
     this._iframeUrl =
       this._sanitizer.bypassSecurityTrustResourceUrl(this.data.demo);
   }
@@ -153,33 +153,5 @@ export class DetailPageComponent implements OnInit {
         dataItem.id
       ]
     );
-  }
-
-  routerOnActivate(nextInstruction, prevInstruction) {
-
-    console.log('routerOnActivate', 'start');
-    this._playingTransition = true;
-
-    return new Promise((res, rej) => {
-      requestAnimationFrame(() => {
-        this._playingTransition = false;
-
-        console.log('routerOnActivate', 'end');
-        res('Now ready.');
-      });
-    }).then();
-  }
-
-  routerOnDeactivate(nextInstruction, prevInstruction) {
-    this._playingTransition = true;
-    console.log('routerOnDeactivate', 'start');
-
-    return new Promise((res, rej) => {
-      setTimeout(() => {
-        this._playingTransition = false;
-        console.log('routerOnDeactivate', 'end');
-        res('Now ready.');
-      }, 5000);
-    }).then();
   }
 }
