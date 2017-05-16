@@ -28,7 +28,6 @@
   .header-author {
     flex: 1;
   }
-
 }
 
 .btnLink {
@@ -37,9 +36,7 @@
 
 .btn-back {
   display: inline-flex;
-  -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
   align-items: center; /* 縦方向中央揃え */
-  -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
   justify-content: center; /* 横方向中央揃え */
 
   user-select: none;
@@ -89,31 +86,6 @@
     border: 1px solid #CCC;
     text-decoration: none;
   }
-}
-
-.header-sns {
-  position: fixed;
-  top: 0;
-  right: 10px;
-  height: 52px;
-
-  z-index: 30;
-
-  display: inline-flex;
-  -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
-  align-items: center; /* 縦方向中央揃え */
-  -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
-  justify-content: center; /* 横方向中央揃え */
-
-  //transition: all 0.2s;
-  //
-  //-webkit-filter: grayscale(100%);
-  //filter: grayscale(100%);
-  //
-  //&:hover {
-  //  -webkit-filter: grayscale(0%);
-  //  filter: grayscale(0%);
-  //}
 }
 
 .loading {

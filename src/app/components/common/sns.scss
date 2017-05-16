@@ -1,0 +1,30 @@
+:host {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  height:52px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.header-sns {
+  position: fixed;
+  top: 0;
+  right: 10px;
+  height: 52px;
+
+  z-index: 30;
+
+  display: inline-flex;
+  align-items: center; /* 縦方向中央揃え */
+  justify-content: center; /* 横方向中央揃え */
+
+  transition: all 0.2s;
+
+  filter: grayscale(100%);
+
+  &:hover {
+    filter: grayscale(0%);
+  }
+}

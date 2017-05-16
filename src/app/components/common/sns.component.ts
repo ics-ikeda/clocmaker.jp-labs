@@ -2,7 +2,10 @@ import {AfterViewInit, Component} from '@angular/core';
 
 @Component({
   selector: 'app-sns',
-  templateUrl: 'sns.html'
+  templateUrl: 'sns.html',
+  styleUrls: [
+    `./sns.scss`
+  ]
 })
 
 export class SnsComponent implements AfterViewInit {

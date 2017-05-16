@@ -5,9 +5,6 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  a, a:hover, a:visited, a:active {
-    text-decoration: none;
-  }
 
   .title {
     overflow: hidden;
@@ -25,7 +22,7 @@
     }
   }
 
-  .imgContainer {
+  div.imgContainer {
 
     width: 100%;
     height: 0;
@@ -34,7 +31,6 @@
     position: relative;
 
     border: 1px solid rgba(255, 255, 255, 0.0);
-    -webkit-transition: border-color 0.5s ease-out;
     transition: border-color 0.5s ease-out;
 
     img {
@@ -43,16 +39,18 @@
       max-width: 100%;
       height: auto;
 
+      opacity: 0.0;
+      transition: all 0.3s ease;
+
       &.show {
-        //visibility: hidden;
+        opacity: 1.0;
       }
     }
   }
 
-  .show {
+  &.show {
     .imgContainer {
       border: 1px solid rgba(255, 255, 255, 1.0);
-      -webkit-transition: border-color 0.15s ease-out;
       transition: border-color 0.15s ease-out;
     }
   }
@@ -80,7 +78,7 @@
     }
   }
 
-  .imgRollOver {
+  .img-rollover {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -92,15 +90,15 @@
     opacity: 0.0;
 
     animation-duration: 1.0s;
-    animation-name: slowout;
+    animation-name: anim-img-rollover;
   }
-  .show .imgRollOver {
+  &.show .img-rollover {
     opacity: 0.1;
     animation-duration: 0.5s;
-    animation-name: slidein;
+    animation-name: anim-img-rollover-show;
   }
 
-  @keyframes slidein {
+  @keyframes anim-img-rollover-show {
     0% {
       opacity: 0.0;
     }
@@ -113,7 +111,7 @@
       opacity: 0.1;
     }
   }
-  @keyframes slowout {
+  @keyframes anim-img-rollover {
     0% {
       opacity: 0.1;
     }
@@ -128,7 +126,7 @@
     position: relative;
     transition: left 0.2s;
   }
-  .show .title {
+  &.show .title {
     left: 2px;
     color: #FFF;
   }
@@ -138,27 +136,31 @@
     position: relative;
     transition: left 0.2s;
   }
-  .show .date {
+  &.show .date {
     left: 2px;
     color: #FFF;
   }
+}
 
-  a.btnLink {
+a, a:hover, a:visited, a:active {
+  text-decoration: none;
+}
 
-    display: inline-block;
-    cursor: pointer;
-    color: #666;
-    border: 1px solid #333;
-    padding: 0 3px;
-    font-size: 0.7rem;
+a.btn-custom-link {
 
-    transition: all 1.0s;
+  display: inline-block;
+  cursor: pointer;
+  color: #666;
+  border: 1px solid #333;
+  padding: 0 3px;
+  font-size: 0.7rem;
 
-    &:hover {
-      color: #000;
-      background: #fff;
-      border: 1px solid #fff;
-      transition: all 0.05s;
-    }
+  transition: all 1.0s;
+
+  &:hover {
+    color: #000;
+    background: #fff;
+    border: 1px solid #fff;
+    transition: all 0.05s;
   }
 }
