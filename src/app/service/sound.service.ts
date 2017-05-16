@@ -1,20 +1,23 @@
-import { Injectable } from '@angular/core';
-// import Sound = createjs.Sound;
+import {Injectable} from '@angular/core';
+
+/// <reference path="../../../node_modules/@types/soundjs/index.d.ts" />
+// 効かないので仕方なくdeclareで…
+declare const createjs: any;
 
 @Injectable()
 export class SoundService {
-
   constructor() {
-    // Sound.registerSound('assets/sounds/BtnOverSound.mp3', 'over');
-    // Sound.registerSound('assets/sounds/BtnClickSound.wav', 'click');
+
+    createjs.Sound.registerSound('assets/sounds/BtnOverSound.mp3', 'over');
+    createjs.Sound.registerSound('assets/sounds/BtnClickSound.wav', 'click');
   }
 
-  playClickSound(){
-    // Sound.play('click');
+  public playClickSound(): void {
+    createjs.Sound.play('click');
   }
 
-  playMouseOverSound(){
-    // Sound.play('over', Sound.INTERRUPT_ANY, 0, 0, 0, 0.3);
+  public playMouseOverSound(): void {
+    createjs.Sound.play('over', createjs.Sound.INTERRUPT_ANY, 0, 0, 0, 0.3);
   }
 
 }

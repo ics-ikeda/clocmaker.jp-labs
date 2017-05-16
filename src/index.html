@@ -1,20 +1,87 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>ClockmakerLabs</title>
+
+  <!--
+
+  😁Thank you for seeing my source code :)
+
+  Feel free to follow me. 🍺
+
+  Twitter (ja_JP) https://twitter.com/clockmaker
+  Twitter (en_US) https://twitter.com/clockmaker_en
+
+  -->
+  <meta name="description" content="Portfolio website of Yasunobu Ikeda a.k.a ClockMaker / Web Designer and Developer from Tokyo, Japan.">
+  <meta http-equiv="X-UA-Compatible" content="requiresActiveX=true">
+  <meta name="google" content="notranslate" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0"/>
+  <meta property="article:author" content="https://www.facebook.com/clockmaker.jp" />
+  <meta property="og:locale" content="ja_JP"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="ClockMaker Labs - Interaction Design &times; Web Technology"/>
+  <meta property="og:description" content="Portfolio website of Yasunobu Ikeda a.k.a ClockMaker / Web Designer and Developer from Tokyo, Japan."/>
+  <meta property="og:url" content="http://clockmaker.jp/labs/"/>
+  <meta property="og:site_name" content="clockmaker.jp"/>
+  <meta property="og:image" content="http://clockmaker.jp/labs/_labs/images/preview_160208.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:description" content="Portfolio website of Yasunobu Ikeda a.k.a ClockMaker / Web Designer and Developer from Tokyo, Japan."/>
+  <meta name="twitter:title" content="ClockMaker Labs - Interaction Design &times; Web Technology"/>
+  <meta name="twitter:site" content="@clockmaker"/>
+  <meta name="twitter:image" content="http://clockmaker.jp/labs/_labs/images/preview_160208.jpg"/>
+
+  <script>
+    // -----------------------------------------------
+    // Google Analytics のコード
+    // -----------------------------------------------
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+
+    // -----------------------------------------------
+    // 本番環境のみ適用
+    // -----------------------------------------------
+    if (location.href.indexOf("http://clockmaker.jp") > -1) {
+      ga('create', 'UA-569074-5', 'auto');
+
+      var element = document.createElement("base");
+      element.href = "/labs/";
+      document.head.appendChild(element);
+    }
+  </script>
+
   <base href="/">
-  <link rel="icon" href="/imgs/favicon.ico" type="image/x-icon"/>
-  <link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
+  <link rel="icon" type="image/x-icon" href="/imgs/favicon.ico"/>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ropa+Sans'/>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:100,300,400'/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+  <script defer src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
 </head>
 <body>
-<app-root>Loading...</app-root>
+<app-root>
+
+  <div class="loading"> <i class="fa fa-refresh"></i>Now Loading...</div>
+  <footer>
+    <div class="pull-md-right">
+      <span class="created">All works are created by <a href="https://twitter.com/clockmaker" target="_blank">Yasunobu Ikeda</a>.</span>
+      <span class="copyright"> &copy; 2017 <a href="http://clockmaker.jp/blog">clockmaker.jp</a></span>
+    </div>
+  </footer>
+
+</app-root>
 </body>
 </html>

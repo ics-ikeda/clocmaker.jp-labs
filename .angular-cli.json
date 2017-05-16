@@ -20,7 +20,9 @@
       "styles": [
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "./node_modules/createjs-soundjs/lib/soundjs-0.6.2.combined.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
