@@ -37,7 +37,7 @@
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:100,300,400'/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-  <link rel="stylesheet" href="assets/styles/initialize.css"/>
+
 
 
   <script>
@@ -66,14 +66,19 @@
       var element = document.createElement('base');
       element.href = '/labs/';
       document.head.appendChild(element);
+    }else{
+      var element = document.createElement('base');
+      element.href = '/';
+      document.head.appendChild(element);
     }
+
+    // -----------------------------------------------
+    // CreateJSの初期化 エラーになるのでやむなく…
+    // -----------------------------------------------
+    var createjs = {};
   </script>
 
-
-  <base href="/">
-
-
-  <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+  <link rel="stylesheet" href="assets/styles/initialize.css"/>
 </head>
 <body>
 <app-root>

@@ -1,5 +1,5 @@
 import {Component, AfterViewInit, OnInit, OnDestroy} from '@angular/core';
-import {Router} from '@angular/router';
+import {NavigationStart, Router} from '@angular/router';
 import {DataService} from '../../service/data.service';
 import {ItemData} from '../../data/item-data';
 import {animate, state, style, transition, trigger} from '@angular/animations';
@@ -63,12 +63,14 @@ export class ListPageComponent implements OnInit, AfterViewInit, OnDestroy {
       console.log(event);
 
       this._viewInited = null;
+      this._playingTransition = true;
 
-      if (event.constructor.name === 'NavigationStart') {
+      if (event instanceof NavigationStart) {
         console.log((<any>event).url.indexOf('/works'));
         if ((<any>event).url.indexOf('/works') === 0) {
           console.log('⭐');
           this._viewInited = null;
+          this._playingTransition = null;
         }
       }
     });
@@ -78,8 +80,6 @@ export class ListPageComponent implements OnInit, AfterViewInit, OnDestroy {
     requestAnimationFrame(() => {
       this._viewInited = 'show';
     });
-
-
   }
 
   ngOnDestroy() {

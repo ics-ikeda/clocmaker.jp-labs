@@ -6,6 +6,22 @@
   top: 0;
   left: 0;
   z-index: 5;
+
+  &.ng-animating {
+      pointer-events: none;
+
+      .main-content:after {
+        opacity: 1.0;
+      }
+
+      h1 {
+        opacity: 0;
+        transform: translate3d(+10px, 0, 0);
+      }
+      .my-navi {
+        background: #333;
+      }
+    }
 }
 
 h1 {
