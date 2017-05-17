@@ -16,11 +16,11 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
     trigger('routerTransition', [
       transition(':enter', [
         style({}),
-        animate('1.5s ease-in-out', style({}))
+        animate('0.5s ease-in-out', style({}))
       ]),
       transition(':leave', [
         style({}),
-        animate('1.5s ease-in-out', style({}))
+        animate('0.5s ease-in-out', style({}))
       ])
     ]),
     trigger('animateStateH1', [
@@ -41,9 +41,8 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 export class ListPageComponent implements OnInit, AfterViewInit, OnDestroy {
 
   _viewInited: string = null;
-  _playingTransition = false;
+
   _data: ItemData[];
-  private _event;
 
   constructor(private _dataService: DataService,
               private _router: Router) {
@@ -57,23 +56,6 @@ export class ListPageComponent implements OnInit, AfterViewInit, OnDestroy {
     this._dataService.getJson().then((items) => {
       this._data = items;
     });
-
-
-    this._event = this._router.events.subscribe(event => {
-      console.log(event);
-
-      this._viewInited = null;
-      this._playingTransition = true;
-
-      if (event instanceof NavigationStart) {
-        console.log((<any>event).url.indexOf('/works'));
-        if ((<any>event).url.indexOf('/works') === 0) {
-          console.log('⭐');
-          this._viewInited = null;
-          this._playingTransition = null;
-        }
-      }
-    });
   }
 
   ngAfterViewInit() {
@@ -83,7 +65,5 @@ export class ListPageComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this._event.unsubscribe();
   }
-
 }

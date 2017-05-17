@@ -61,7 +61,8 @@ h1.show {
 }
 
 .my-hero {
-  background: url('../../../assets/images/bg-photo.jpg') no-repeat;
+  background-image: url('../../../assets/images/bg-photo.jpg');
+  background-repeat: no-repeat;
   background-position: 0 52px;
   padding-top: 172px;
   padding-bottom: 32px;
@@ -73,7 +74,8 @@ h1.show {
     height: 200px;
     top: 168px;
     left: 0;
-    background: url('../../../assets/images/bg-area.png') repeat-x;
+    background-image: url('../../../assets/images/bg-area.png');
+    background-repeat: repeat-x;
   }
 }
 
