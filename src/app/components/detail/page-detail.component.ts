@@ -1,12 +1,11 @@
+import {switchMap} from 'rxjs/internal/operators';
 import {ItemData} from '../../data/item-data';
 import {DataService} from '../../service/data.service';
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 import {animate, state, style, transition, trigger} from '@angular/animations';
-import 'rxjs/add/operator/switchMap';
 import {SoundService} from '../../service/sound.service';
-
 
 @Component({
   selector: 'app-page-detail',
@@ -75,7 +74,9 @@ export class DetailPageComponent implements OnInit {
   ngOnInit() {
 
     this._route.params
-      .switchMap((params: Params) => this._dataService.getDetail(params['id']))
+      .pipe(
+        switchMap((params: Params) => this._dataService.getDetail(params['id']))
+      )
       .subscribe((data: ItemData) => {
         if (data != null) {
 
