@@ -7,9 +7,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:prod": "ng build --prod --aot --base-href=/labs/ --deploy-url=/labs/assets-js/",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -32,23 +30,13 @@
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~0.5.0",
     "@angular/cli": "^6.0.0-rc.2",
     "@angular/compiler-cli": "^5.2.10",
-    "@types/jasmine": "2.8.6",
     "@types/node": "~9.6.6",
-    "codelyzer": "~4.3.0",
-    "jasmine-core": "~3.1.0",
-    "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~2.0.2",
-    "karma-chrome-launcher": "~2.2.0",
-    "karma-cli": "~1.0.1",
-    "karma-coverage-istanbul-reporter": "^1.4.2",
-    "karma-jasmine": "~1.1.0",
-    "karma-jasmine-html-reporter": "^1.0.0",
-    "protractor": "~5.3.1",
+    "codelyzer": "^4.3.0",
     "ts-node": "~6.0.0",
     "tslint": "~5.9.1",
-    "typescript": "~2.8.3",
-    "@angular-devkit/build-angular": "~0.5.0"
+    "typescript": "~2.8.3"
   }
 }
