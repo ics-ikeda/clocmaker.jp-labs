@@ -10,3 +10,4 @@ app/*/*.js
 /npm-debug.log
 /dist
 .DS_Store
+/yarn.lock
