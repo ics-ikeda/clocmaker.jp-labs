@@ -1,6 +1,4 @@
-import {Component, AfterViewInit, ViewChild, Input} from '@angular/core';
-import ShuffleText from 'shuffle-text';
-
+import {Component, Input, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-site-footer',
