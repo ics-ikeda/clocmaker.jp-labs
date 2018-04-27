@@ -6,6 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod --aot --base-href=/labs/ --deploy-url=/labs/assets-js/",
+    "move": "cd dist && mkdir -p ./assets-js/ && mv ./*.{txt,jpg,js,css} ./assets-js/" ,
     "lint": "ng lint"
   },
   "private": true,
