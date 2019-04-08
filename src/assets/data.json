@@ -1,5 +1,19 @@
 [
   {
+    "id": "three-waves",
+    "blog_en": null,
+    "blog_ja": "https://github.com/ics-creative/180725_three_waves",
+    "date": "2018/07/25",
+    "demo": "https://ics-creative.github.io/180725_three_waves/",
+    "img": "http://clockmaker.jp/labs/180725_three_waves/thumb_460x200.jpg",
+    "title": "Three Waves",
+    "type" : "Interactive",
+    "technology": [
+      "HTML5",
+      "WebGL"
+    ]
+  },
+  {
     "id": "liquildfun-pixijs",
     "blog_en": null,
     "blog_ja": "https://ics.media/entry/12206/",

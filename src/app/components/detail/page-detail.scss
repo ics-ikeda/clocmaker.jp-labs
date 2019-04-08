@@ -54,18 +54,23 @@
     visibility: visible;
   }
 
-  .main-content:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: black;
-    opacity: 0.0;
-    transition: opacity 0.5s;
-    pointer-events: none;
+  .main-content {
+    height: 100vh;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: black;
+      opacity: 0.0;
+      transition: opacity 0.5s;
+      pointer-events: none;
+    }
   }
+
+
 
   div.show .main-content:after {
     //opacity: 1.0;
