@@ -13,12 +13,12 @@ import {SoundService} from '../service/sound.service';
 })
 
 export class AppComponent implements OnInit {
-  constructor(private _dataService: DataService) {
+  constructor(private dataService: DataService) {
 
   }
 
-  ngOnInit() {
-    this._dataService.getJson().then(items => {
+  ngOnInit(): void {
+    this.dataService.getJson().then(items => {
     });
   }
 }

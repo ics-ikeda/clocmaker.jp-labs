@@ -12,11 +12,11 @@ export class SnsComponent implements AfterViewInit {
   constructor() {
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
 
     const langLong = 'ja_JP';
 
-    (function (d, s, id) {
+    (((d, s, id) => {
       let js;
       const fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) {
@@ -26,9 +26,9 @@ export class SnsComponent implements AfterViewInit {
       js.id = id;
       js.src = 'https://b.st-hatena.com/js/bookmark_button.js';
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'hatena'));
+    })(document, 'script', 'hatena'));
 
-    (function (d: Document, s, id) {
+    (((d: Document, s, id) => {
       let js;
       const fjs = d.getElementsByTagName(s)[0];
       const p = /^http:/.test(d.location.toString()) ? 'http' : 'https';
@@ -38,9 +38,9 @@ export class SnsComponent implements AfterViewInit {
         js.src = p + '://platform.twitter.com/widgets.js';
         fjs.parentNode.insertBefore(js, fjs);
       }
-    }(document, 'script', 'twitter-wjs'));
+    })(document, 'script', 'twitter-wjs'));
 
-    (function (d, s, id) {
+    (((d, s, id) => {
       let js;
       const fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) {
@@ -50,6 +50,6 @@ export class SnsComponent implements AfterViewInit {
       js.id = id;
       js.src = `//connect.facebook.net/${langLong}/sdk.js#xfbml=1&version=v2.5&appId=566926136738876`;
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+    })(document, 'script', 'facebook-jssdk'));
   }
 }

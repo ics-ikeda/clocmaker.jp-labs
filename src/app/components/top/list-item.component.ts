@@ -7,7 +7,7 @@ import ShuffleText from 'shuffle-text';
 import {SoundService} from '../../service/sound.service';
 
 @Component({
-  selector: 'div[data-component="item"]',
+  selector: 'app-list-item',
   templateUrl: './list-item.html',
   styleUrls: [
     `./list-item.scss`
@@ -17,30 +17,30 @@ import {SoundService} from '../../service/sound.service';
 export class ListItemComponent implements AfterViewInit {
   @Input() data: ItemData;
 
-  @ViewChild('textTitle') textTitle;
-  @ViewChild('textDate') textDate;
+  @ViewChild('textTitle', {static: true}) textTitle;
+  @ViewChild('textDate', {static: true}) textDate;
 
-  _shuffleTextTitle: ShuffleText;
-  _shuffleTextDate: ShuffleText;
+  shuffleTextTitle: ShuffleText;
+  shuffleTextDate: ShuffleText;
   isRollOver = false;
   isLoadComplete = false;
 
-  constructor(private _router: Router,
-              private _sound: SoundService) {
+  constructor(private router: Router,
+              private soundService: SoundService) {
 
   }
 
-  ngAfterViewInit() {
-    this._shuffleTextTitle = new ShuffleText(this.textTitle.nativeElement);
-    this._shuffleTextDate = new ShuffleText(this.textDate.nativeElement);
+  ngAfterViewInit(): void {
+    this.shuffleTextTitle = new ShuffleText(this.textTitle.nativeElement);
+    this.shuffleTextDate = new ShuffleText(this.textDate.nativeElement);
 
-    this._shuffleTextTitle.emptyCharacter = '---';
-    this._shuffleTextDate.emptyCharacter = '---';
+    this.shuffleTextTitle.emptyCharacter = '---';
+    this.shuffleTextDate.emptyCharacter = '---';
   }
 
   _onMouseOver(): void {
-    this._shuffleTextTitle.start();
-    this._shuffleTextDate.start();
+    this.shuffleTextTitle.start();
+    this.shuffleTextDate.start();
 
     this._playSoundRollOver();
 
@@ -48,8 +48,8 @@ export class ListItemComponent implements AfterViewInit {
   }
 
   _onMouseOut(): void {
-    this._shuffleTextTitle.start();
-    this._shuffleTextDate.start();
+    this.shuffleTextTitle.start();
+    this.shuffleTextDate.start();
 
     this.isRollOver = false;
   }
@@ -62,7 +62,7 @@ export class ListItemComponent implements AfterViewInit {
       const win = window.open(this.data.demo);
       win.focus();
     } else {
-      this._router.navigate(
+      this.router.navigate(
         [
           '/works',
           this.data.id
@@ -76,11 +76,11 @@ export class ListItemComponent implements AfterViewInit {
   }
 
   _playSoundRollOver(): void {
-    this._sound.playMouseOverSound();
+    this.soundService.playMouseOverSound();
   }
 
   _playSoundClick(): void {
-    this._sound.playClickSound();
+    this.soundService.playClickSound();
   }
 
 }

@@ -1,7 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
 
 import {RouterModule} from '@angular/router';
 import {ListPageComponent} from './components/top/page-top.component';
@@ -26,7 +26,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
       {

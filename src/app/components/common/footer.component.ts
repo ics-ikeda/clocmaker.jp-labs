@@ -10,11 +10,11 @@ import {Component, Input, ViewChild} from '@angular/core';
 
 export class FooterComponent {
   @Input() meta: string;
-  _year: number;
+  year: number;
 
-  @ViewChild('metaElement') metaElement;
+  @ViewChild('metaElement', {static: true}) metaElement;
 
   constructor() {
-    this._year = new Date().getFullYear();
+    this.year = new Date().getFullYear();
   }
 }

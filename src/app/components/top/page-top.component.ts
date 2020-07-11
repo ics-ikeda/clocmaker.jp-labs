@@ -1,4 +1,4 @@
-import {Component, AfterViewInit, OnInit, OnDestroy} from '@angular/core';
+import { Component, AfterViewInit, OnInit, OnDestroy, HostBinding } from '@angular/core';
 import {NavigationStart, Router} from '@angular/router';
 import {DataService} from '../../service/data.service';
 import {ItemData} from '../../data/item-data';
@@ -11,7 +11,6 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
     `./page-top.scss`,
     `../common/header.scss`,
   ],
-  host: {'[@routerTransition]': ''},
   animations: [
     trigger('routerTransition', [
       transition(':enter', [
@@ -38,32 +37,31 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
   ],
   providers: []
 })
-export class ListPageComponent implements OnInit, AfterViewInit, OnDestroy {
+export class ListPageComponent implements OnInit, AfterViewInit {
 
-  _viewInited: string = null;
+  viewInited: string = null;
 
-  _data: ItemData[];
+  itemDataList: ItemData[];
 
-  constructor(private _dataService: DataService,
-              private _router: Router) {
+  @HostBinding('@routerTransition') routerTransition = true;
+
+  constructor(private dataService: DataService,
+              private router: Router) {
   }
 
-  ngOnInit() {
-    if (window['ga']) {
-      window['ga']('send', 'pageview', location.pathname);
+  ngOnInit(): void{
+    if (globalThis.ga) {
+      globalThis.ga('send', 'pageview', location.pathname);
     }
 
-    this._dataService.getJson().then((items) => {
-      this._data = items;
+    this.dataService.getJson().then((items) => {
+      this.itemDataList = items;
     });
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void{
     requestAnimationFrame(() => {
-      this._viewInited = 'show';
+      this.viewInited = 'show';
     });
-  }
-
-  ngOnDestroy() {
   }
 }

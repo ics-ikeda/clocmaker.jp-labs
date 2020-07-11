@@ -34,16 +34,16 @@ import {SoundService} from '../../service/sound.service';
 })
 
 export class HeaderAuthorComponent {
-  constructor(private _sound: SoundService) {
+  constructor(private sound: SoundService) {
 
   }
 
   _onRollOver(): void {
-    this._sound.playMouseOverSound();
+    this.sound.playMouseOverSound();
   }
 
   _onClick(): void {
-    this._sound.playClickSound();
+    this.sound.playClickSound();
   }
 
 }
