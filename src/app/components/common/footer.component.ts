@@ -9,10 +9,8 @@ import {Component, Input, ViewChild} from '@angular/core';
 })
 
 export class FooterComponent {
-  @Input() meta: string;
+  @Input() meta!: string;
   year: number;
-
-  @ViewChild('metaElement', {static: true}) metaElement;
 
   constructor() {
     this.year = new Date().getFullYear();

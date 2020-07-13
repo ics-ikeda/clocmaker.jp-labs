@@ -39,19 +39,18 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 })
 export class ListPageComponent implements OnInit, AfterViewInit {
 
-  viewInited: string = null;
+  viewInited: string | null = null;
 
-  itemDataList: ItemData[];
+  itemDataList?: ItemData[];
 
   @HostBinding('@routerTransition') routerTransition = true;
 
-  constructor(private dataService: DataService,
-              private router: Router) {
+  constructor(private dataService: DataService) {
   }
 
   ngOnInit(): void{
-    if (globalThis.ga) {
-      globalThis.ga('send', 'pageview', location.pathname);
+    if ((globalThis as any).ga) {
+      (globalThis as any).ga('send', 'pageview', location.pathname);
     }
 
     this.dataService.getJson().then((items) => {

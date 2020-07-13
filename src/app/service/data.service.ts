@@ -5,7 +5,7 @@ import {ItemData} from '../data/item-data';
 @Injectable()
 export class DataService {
 
-  public data: ItemData[];
+  public data: ItemData[] | null;
 
   constructor(private http: HttpClient) {
 
@@ -27,11 +27,11 @@ export class DataService {
 
   public getDetail(id: string): Promise<ItemData> {
 
-    return new Promise<ItemData>((resolve: (item: ItemData | null) => void) => {
+    return new Promise<ItemData>((resolve: (item: ItemData | undefined) => void) => {
       if (this.data != null) {
         resolve(this.searchData(id));
       } else {
-        this.getJson().then(itemDataList => {
+        this.getJson().then(() => {
           resolve(this.searchData(id));
         });
       }
@@ -39,7 +39,11 @@ export class DataService {
 
   }
 
-  private searchData(id: string): ItemData | null {
+  private searchData(id: string): ItemData | undefined {
+
+    if (!this.data){
+      return undefined;
+    }
 
     const item = this.data.find(obj => obj.id === id);
 
@@ -47,6 +51,10 @@ export class DataService {
   }
 
   public getIndex(id: string): number {
+    if (!this.data){
+      return -1;
+    }
+
     for (let i = 0; i < this.data.length; i++) {
       if (this.data[i].id === id) {
         return i;
@@ -55,7 +63,10 @@ export class DataService {
     return -1;
   }
 
-  public getItemAt(index: number): ItemData {
+  public getItemAt(index: number): ItemData | null {
+    if (!this.data){
+      return null;
+    }
 
     if (index < 0) {
       return this.data[this.data.length - 1];

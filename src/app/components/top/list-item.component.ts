@@ -15,13 +15,13 @@ import {SoundService} from '../../service/sound.service';
 })
 
 export class ListItemComponent implements AfterViewInit {
-  @Input() data: ItemData;
+  @Input() data!: ItemData;
 
-  @ViewChild('textTitle', {static: true}) textTitle;
-  @ViewChild('textDate', {static: true}) textDate;
+  @ViewChild('textTitle', {static: true}) textTitle: any;
+  @ViewChild('textDate', {static: true}) textDate: any;
 
-  shuffleTextTitle: ShuffleText;
-  shuffleTextDate: ShuffleText;
+  shuffleTextTitle!: ShuffleText;
+  shuffleTextDate!: ShuffleText;
   isRollOver = false;
   isLoadComplete = false;
 
@@ -60,7 +60,9 @@ export class ListItemComponent implements AfterViewInit {
     // ページ幅を見て挙動をかえる
     if (window.innerWidth < 768) { // タブレット未満のサイズであれば
       const win = window.open(this.data.demo);
-      win.focus();
+      if (win){
+        win.focus();
+      }
     } else {
       this.router.navigate(
         [

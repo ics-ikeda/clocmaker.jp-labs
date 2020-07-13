@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod --base-href=/labs/ --deploy-url=/labs/assets-js/",
     "move": "cd dist && mkdir -p ./assets-js/ && mv ./*.{txt,jpg,js,css} ./assets-js/",

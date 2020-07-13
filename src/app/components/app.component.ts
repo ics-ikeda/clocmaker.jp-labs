@@ -18,7 +18,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.dataService.getJson().then(items => {
-    });
+    this.dataService.getJson();
   }
 }

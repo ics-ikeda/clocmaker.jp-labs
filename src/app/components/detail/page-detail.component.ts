@@ -52,7 +52,7 @@ import {SoundService} from '../../service/sound.service';
 
 export class DetailPageComponent implements OnInit {
 
-  @Input() data: ItemData;
+  @Input() data!: ItemData;
 
   @Output() private closeEvent = new EventEmitter();
 
@@ -61,8 +61,8 @@ export class DetailPageComponent implements OnInit {
   isLoading = false;
   transitionState = 'hide';
   playingTransition = false;
-  iframeUrl: SafeResourceUrl;
-  id: string = null;
+  iframeUrl?: SafeResourceUrl;
+  id: string | null = null;
 
   constructor(private dataService: DataService,
               private router: Router,
@@ -105,8 +105,8 @@ export class DetailPageComponent implements OnInit {
 
     this.isLoading = true;
 
-    if (globalThis.ga) {
-      globalThis.ga('send', 'pageview', location.pathname);
+    if ((globalThis as any).ga) {
+      (globalThis as any).ga('send', 'pageview', location.pathname);
     }
   }
 
@@ -143,8 +143,17 @@ export class DetailPageComponent implements OnInit {
     this.soundService.playClickSound();
 
     const id = this.id;
+
+    if (!id){
+      return;
+    }
+
     const index = this.dataService.getIndex(id);
     const dataItem = this.dataService.getItemAt(index + pageShift);
+
+    if (!dataItem){
+      return;
+    }
 
     this.router.navigate(
       [
