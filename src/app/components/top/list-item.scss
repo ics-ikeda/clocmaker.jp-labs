@@ -1,36 +1,38 @@
 .item {
   font-family: 'Ropa Sans', sans-serif;
-
-  user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  user-select: none;
 
   .title {
+    position: relative;
     overflow: hidden;
-    white-space: nowrap;
+    font-size: 0.8rem;
+    color: #999;
     text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: left 0.2s;
   }
 
   .meta {
-    a, a:visited {
+    a,
+    a:visited {
       color: #888;
     }
 
     a:hover .title {
-      color: #FFF;
+      color: #fff;
     }
   }
 
   div.imgContainer {
-
+    position: relative;
     width: 100%;
     height: 0;
     padding-top: calc(100% * 200 / 460);
     overflow: hidden;
-    position: relative;
-
-    border: 1px solid rgba(255, 255, 255, 0.0);
+    border: 1px solid rgba(255, 255, 255, 0);
     transition: border-color 0.5s ease-out;
 
     img {
@@ -38,21 +40,20 @@
       top: 0;
       max-width: 100%;
       height: auto;
-
-      filter: brightness(400%);
       visibility: hidden;
+      filter: brightness(400%);
       transition: all 0.3s ease;
 
       &.show {
-        filter: brightness(100%);
         visibility: visible;
+        filter: brightness(100%);
       }
     }
   }
 
   &.show {
     .imgContainer {
-      border: 1px solid rgba(255, 255, 255, 1.0);
+      border: 1px solid rgba(255, 255, 255, 1);
       transition: border-color 0.15s ease-out;
     }
   }
@@ -61,19 +62,21 @@
     position: relative;
     display: block;
     cursor: pointer;
+
     .meta {
       margin-top: 1px;
 
-      &:before {
-        content: "";
-        width: 0;
-        height: 1.0rem;
+      &::before {
         position: absolute;
-        background: rgba(255, 255, 255, 0.0);
+        width: 0;
+        height: 1rem;
+        content: '';
+        background: rgba(255, 255, 255, 0);
         transition: all 1.2s cubic-bezier(1, 0, 1, 0.5);
       }
     }
-    &:hover .meta:before {
+
+    &:hover .meta::before {
       width: 100%;
       background: rgba(255, 255, 255, 0.2);
       transition: all 0.3s cubic-bezier(0, 0, 0, 1);
@@ -84,25 +87,25 @@
     position: absolute;
     top: 0;
     left: 0;
+    box-sizing: border-box;
     width: 100%;
     height: 100%;
-    box-sizing: border-box;
     background: #fff;
     mix-blend-mode: hard-light;
-    opacity: 0.0;
-
-    animation-duration: 1.0s;
+    opacity: 0;
     animation-name: anim-img-rollover;
+    animation-duration: 1s;
   }
+
   &.show .img-rollover {
     opacity: 0.1;
-    animation-duration: 0.5s;
     animation-name: anim-img-rollover-show;
+    animation-duration: 0.5s;
   }
 
   @keyframes anim-img-rollover-show {
     0% {
-      opacity: 0.0;
+      opacity: 0;
     }
 
     5% {
@@ -113,51 +116,50 @@
       opacity: 0.1;
     }
   }
+
   @keyframes anim-img-rollover {
     0% {
       opacity: 0.1;
     }
+
     100% {
-      opacity: 0.0;
+      opacity: 0;
     }
   }
 
-  .title {
-    color: #999;
-    font-size: 0.8rem;
-    position: relative;
-    transition: left 0.2s;
-  }
   &.show .title {
     left: 2px;
-    color: #FFF;
+    color: #fff;
   }
+
   .date {
-    color: #999;
-    font-size: 0.7rem;
     position: relative;
+    font-size: 0.7rem;
+    color: #999;
     transition: left 0.2s;
   }
+
   &.show .date {
     left: 2px;
-    color: #FFF;
+    color: #fff;
   }
 }
 
-a, a:hover, a:visited, a:active {
+a,
+a:hover,
+a:visited,
+a:active {
   text-decoration: none;
 }
 
 a.btn-custom-link {
-
   display: inline-block;
-  cursor: pointer;
-  color: #666;
-  border: 1px solid #333;
   padding: 0 3px;
   font-size: 0.7rem;
-
-  transition: all 1.0s;
+  color: #666;
+  cursor: pointer;
+  border: 1px solid #333;
+  transition: all 1s;
 
   &:hover {
     color: #000;
