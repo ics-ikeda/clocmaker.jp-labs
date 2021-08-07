@@ -77,7 +77,7 @@ export class DetailPageComponent implements OnInit {
       .pipe(
         switchMap((params: Params) => this.dataService.getDetail(params.id))
       )
-      .subscribe((data: ItemData) => {
+      .subscribe((data: ItemData | undefined) => {
         if (data != null) {
 
           requestAnimationFrame(() => {

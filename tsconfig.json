@@ -2,8 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    // いつか true に設定したい
-    "strict": false,
+    "strict": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

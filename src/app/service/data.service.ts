@@ -5,7 +5,7 @@ import {ItemData} from '../data/item-data';
 @Injectable()
 export class DataService {
 
-  public data: ItemData[] | null;
+  public data: ItemData[] | null = null;
 
   constructor(private http: HttpClient) {
 
@@ -14,8 +14,8 @@ export class DataService {
   public getJson(): Promise<ItemData[]> {
     return new Promise<ItemData[]>((resolve: (items: ItemData[]) => void) => {
       if (this.data == null) {
-        this.http.get('assets/data.json')
-          .subscribe((res: ItemData[]) => {
+        this.http.get<ItemData[]>('assets/data.json')
+          .subscribe((res) => {
             this.data = res;
             resolve(this.data);
           });
@@ -25,9 +25,8 @@ export class DataService {
     });
   }
 
-  public getDetail(id: string): Promise<ItemData> {
-
-    return new Promise<ItemData>((resolve: (item: ItemData | undefined) => void) => {
+  public getDetail(id: string): Promise<ItemData | undefined> {
+    return new Promise<ItemData | undefined>((resolve) => {
       if (this.data != null) {
         resolve(this.searchData(id));
       } else {
@@ -36,7 +35,6 @@ export class DataService {
         });
       }
     });
-
   }
 
   private searchData(id: string): ItemData | undefined {
