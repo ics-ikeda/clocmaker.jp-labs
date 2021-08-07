@@ -29,15 +29,15 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     HttpClientModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
-      {
+    {
         path: '',
         component: ListPageComponent
-      },
-      {
+    },
+    {
         path: 'works/:id',
         component: DetailPageComponent
-      }
-    ])
+    }
+], { relativeLinkResolution: 'legacy' })
   ],
   providers: [],
   bootstrap: [AppComponent]
