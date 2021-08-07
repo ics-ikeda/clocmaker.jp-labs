@@ -1,7 +1,7 @@
-import { switchMap } from 'rxjs/operators';
+import {switchMap} from 'rxjs/operators';
 import {ItemData} from '../../data/item-data';
 import {DataService} from '../../service/data.service';
-import { Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
+import {Component, EventEmitter, HostBinding, Input, OnInit, Output} from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 import {animate, state, style, transition, trigger} from '@angular/animations';

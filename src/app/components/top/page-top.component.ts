@@ -1,5 +1,4 @@
-import { Component, AfterViewInit, OnInit, OnDestroy, HostBinding } from '@angular/core';
-import {NavigationStart, Router} from '@angular/router';
+import {AfterViewInit, Component, HostBinding, OnInit} from '@angular/core';
 import {DataService} from '../../service/data.service';
 import {ItemData} from '../../data/item-data';
 import {animate, state, style, transition, trigger} from '@angular/animations';
