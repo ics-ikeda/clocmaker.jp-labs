@@ -1,7 +1,7 @@
 export interface ItemData {
   id: string;
-  blog_en: string;
-  blog_ja: string;
+  blog_en: string | null;
+  blog_ja: string | null;
   date: string;
   demo: string;
   img: string;

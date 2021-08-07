@@ -1,24 +1,20 @@
-import {HttpClient} from '@angular/common/http';
-import {Injectable} from '@angular/core';
-import {ItemData} from '../data/item-data';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { ItemData } from '../data/item-data';
 
 @Injectable()
 export class DataService {
-
   public data: ItemData[] | null = null;
 
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private http: HttpClient) {}
 
   public getJson(): Promise<ItemData[]> {
     return new Promise<ItemData[]>((resolve: (items: ItemData[]) => void) => {
       if (this.data == null) {
-        this.http.get<ItemData[]>('assets/data.json')
-          .subscribe((res) => {
-            this.data = res;
-            resolve(this.data);
-          });
+        this.http.get<ItemData[]>('assets/data.json').subscribe((res) => {
+          this.data = res;
+          resolve(this.data);
+        });
       } else {
         resolve(this.data);
       }
@@ -38,18 +34,17 @@ export class DataService {
   }
 
   private searchData(id: string): ItemData | undefined {
-
-    if (!this.data){
+    if (!this.data) {
       return undefined;
     }
 
-    const item = this.data.find(obj => obj.id === id);
+    const item = this.data.find((obj) => obj.id === id);
 
     return item;
   }
 
   public getIndex(id: string): number {
-    if (!this.data){
+    if (!this.data) {
       return -1;
     }
 
@@ -62,7 +57,7 @@ export class DataService {
   }
 
   public getItemAt(index: number): ItemData | null {
-    if (!this.data){
+    if (!this.data) {
       return null;
     }
 

@@ -1,34 +1,28 @@
-import {ItemData} from '../../data/item-data';
+import { ItemData } from '../../data/item-data';
 
-import {AfterViewInit, Component, Input, ViewChild} from '@angular/core';
-import {Router} from '@angular/router';
+import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import ShuffleText from 'shuffle-text';
 
-import {SoundService} from '../../service/sound.service';
+import { SoundService } from '../../service/sound.service';
 
 @Component({
   selector: 'app-list-item',
   templateUrl: './list-item.html',
-  styleUrls: [
-    `./list-item.scss`
-  ]
+  styleUrls: [`./list-item.scss`],
 })
-
 export class ListItemComponent implements AfterViewInit {
   @Input() data!: ItemData;
 
-  @ViewChild('textTitle', {static: true}) textTitle: any;
-  @ViewChild('textDate', {static: true}) textDate: any;
+  @ViewChild('textTitle', { static: true }) textTitle: any;
+  @ViewChild('textDate', { static: true }) textDate: any;
 
   shuffleTextTitle!: ShuffleText;
   shuffleTextDate!: ShuffleText;
   isRollOver = false;
   isLoadComplete = false;
 
-  constructor(private router: Router,
-              private soundService: SoundService) {
-
-  }
+  constructor(private router: Router, private soundService: SoundService) {}
 
   ngAfterViewInit(): void {
     this.shuffleTextTitle = new ShuffleText(this.textTitle.nativeElement);
@@ -55,21 +49,16 @@ export class ListItemComponent implements AfterViewInit {
   }
 
   _onClick(): void {
-
     this._playSoundClick();
     // ページ幅を見て挙動をかえる
-    if (window.innerWidth < 768) { // タブレット未満のサイズであれば
+    if (window.innerWidth < 768) {
+      // タブレット未満のサイズであれば
       const win = window.open(this.data.demo);
-      if (win){
+      if (win) {
         win.focus();
       }
     } else {
-      this.router.navigate(
-        [
-          '/works',
-          this.data.id
-        ]
-      );
+      this.router.navigate(['/works', this.data.id]);
     }
   }
 
@@ -84,5 +73,4 @@ export class ListItemComponent implements AfterViewInit {
   _playSoundClick(): void {
     this.soundService.playClickSound();
   }
-
 }

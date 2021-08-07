@@ -20,14 +20,14 @@
   </div>
 
   <div>
-    <a class="btn-custom-link" *ngIf="data.blog_ja != null"
+    <a class="btn-custom-link" *ngIf="data.blog_ja !== null"
        (mouseenter)="_playSoundRollOver()"
        (click)="_playSoundClick()"
        href="{{data.blog_ja}}"
        target="_blank">
       MORE - JP
     </a>
-    <a class="btn-custom-link" *ngIf="data.blog_en != null"
+    <a class="btn-custom-link" *ngIf="data.blog_en !== null"
        (mouseenter)="_playSoundRollOver()"
        (click)="_playSoundClick()"
        href="{{data.blog_en}}"

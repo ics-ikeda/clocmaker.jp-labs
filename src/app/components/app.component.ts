@@ -1,7 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {DataService} from '../service/data.service';
-import {SoundService} from '../service/sound.service';
-
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../service/data.service';
+import { SoundService } from '../service/sound.service';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +8,10 @@ import {SoundService} from '../service/sound.service';
     <router-outlet></router-outlet>
     <app-sns></app-sns>
   `,
-  providers: [DataService, SoundService]
+  providers: [DataService, SoundService],
 })
-
 export class AppComponent implements OnInit {
-  constructor(private dataService: DataService) {
-
-  }
+  constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
     this.dataService.getJson();

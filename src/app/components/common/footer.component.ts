@@ -1,13 +1,10 @@
-import {Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-site-footer',
   templateUrl: './footer.html',
-  styleUrls: [
-    './footer.scss'
-  ]
+  styleUrls: ['./footer.scss'],
 })
-
 export class FooterComponent {
   @Input() meta!: string;
   year: number;
