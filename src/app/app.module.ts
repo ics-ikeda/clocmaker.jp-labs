@@ -39,7 +39,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
           component: DetailPageComponent,
         },
       ],
-      { relativeLinkResolution: 'legacy' }
+      {}
     ),
   ],
   providers: [],
