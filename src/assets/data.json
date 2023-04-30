@@ -1,5 +1,33 @@
 [
   {
+    "id": "sound-visualizer-3d",
+    "blog_en": null,
+    "blog_ja": "https://ics.media/entry/230421/",
+    "date": "2023/04/21",
+    "demo": "https://ics-creative.github.io/230411_sound_visualizer/index.html",
+    "img": "https://clockmaker.jp/labs/230421_sound_visualizer/thumb.png",
+    "title": "Sound Visualizer 3D",
+    "type" : "Interactive",
+    "technology": [
+      "WebGL",
+      "Three.js"
+    ]
+  },
+  {
+    "id": "text-spread",
+    "blog_en": null,
+    "blog_ja": "https://ics.media/entry/221216/",
+    "date": "2022/12/16",
+    "demo": "https://ics-creative.github.io/220822_gsap_examples/pixi_particle.html",
+    "img": "https://clockmaker.jp/labs/221216_spread_text/thumb.png",
+    "title": "Text Spread",
+    "type" : "Real Time Motion Graphics",
+    "technology": [
+      "WebGL",
+      "gsap"
+    ]
+  },
+  {
     "id": "three-waves",
     "blog_en": null,
     "blog_ja": "https://github.com/ics-creative/180725_three_waves",
@@ -9,7 +37,7 @@
     "title": "Three Waves",
     "type" : "Interactive",
     "technology": [
-      "HTML5",
+      "HTML",
       "WebGL"
     ]
   },
@@ -23,21 +51,21 @@
     "title": "Liquid",
     "type" : "Interactive",
     "technology": [
-      "HTML5",
+      "HTML",
       "WebGL"
     ]
   },
   {
     "id": "particle-develop",
     "blog_en": null,
-    "blog_ja": "https://ics.media/entry/10141",
+    "blog_ja": "https://ics.media/entry/10748/",
     "date": "2016/01/22",
     "demo": "https://ics-web.jp/projects/particle-develop/",
     "img": "https://clockmaker.jp/labs/160122_particle_develop/thumb_460x200.png",
     "title": "Particle Develop",
     "type" : "Web Application",
     "technology": [
-      "HTML5",
+      "HTML",
       "Angular2",
       "CreateJS"
     ]
@@ -52,7 +80,7 @@
     "title": "Particle and Waves",
     "type" : "Real Time Motion Graphics",
     "technology": [
-      "HTML5 Canvas",
+      "HTML Canvas",
       "CSS3",
       "CreateJS"
     ]
@@ -83,7 +111,7 @@
     "title": "Apple Watch UI Modoki",
     "type" : "Interactive",
     "technology": [
-      "HTML5 Canvas",
+      "HTML Canvas",
       "CreateJS"
     ]
   },
@@ -125,7 +153,7 @@
     "title": "Lens Flare Animation",
     "type" : "Real Time Motion Graphics",
     "technology": [
-      "HTML5 Canvas",
+      "HTML Canvas",
       "CreateJS",
       "Adobe Animate CC"
     ]
@@ -133,7 +161,7 @@
   {
     "id": "particle-emitter-3d",
     "blog_en": null,
-    "blog_ja": "https://ics-web.jp/lab/archives/2328",
+    "blog_ja": "https://ics.media/entry/2328/",
     "date": "2014/09/19",
     "demo": "https://clockmaker.jp/labs/140904_threejs_particles/",
     "img": "https://clockmaker.jp/labs/140904_threejs_particles/thumb_460x200.jpg",
@@ -224,7 +252,7 @@
     "title": "Rainbow Snow",
     "type" : "Real Time Motion Graphics",
     "technology": [
-      "HTML5 Canvas",
+      "HTML Canvas",
       "CreateJS"
     ]
   },
@@ -238,7 +266,7 @@
     "title": "Pollen Map in Japan",
     "type" : "Web Application",
     "technology": [
-      "HTML5 Canvas",
+      "HTML Canvas",
       "CreateJS",
       "Adobe Animate CC"
     ]
@@ -253,7 +281,7 @@
     "title": "Box2D Drop",
     "type" : "Interactive",
     "technology": [
-      "HTML5 Canvas",
+      "HTML Canvas",
       "CreateJS",
       "Box2D"
     ]
@@ -318,6 +346,20 @@
       "Flash",
       "Stage3D",
       "Away3D"
+    ]
+  },
+  {
+    "id": "ginnyeffect",
+    "blog_en": null,
+    "blog_ja": "https://clockmaker.jp/blog/2012/02/html5-webgl-ginny_effect/",
+    "date": "2013/02/16",
+    "demo": "https://clockmaker.jp/labs/230430_threejs_ginnyeffect/index.html",
+    "img": "https://clockmaker.jp/blog/wp-content/uploads/2012/02/120215_webgl.jpg",
+    "title": "Ginny Effect",
+    "type" : "Interactive",
+    "technology": [
+      "WebGL",
+      "Three.js"
     ]
   },
   {
@@ -386,14 +428,13 @@
     "blog_en": "https://clockmaker.jp/blog-en/2011/10/stage3d-cover-flow/",
     "blog_ja": "https://clockmaker.jp/blog/2011/10/stage3d-cover-flow/",
     "date": "2011/10/19",
-    "demo": "https://clockmaker.jp/labs/111016_stage3d_coverflow/Main.html",
+    "demo": "https://ics-creative.github.io/230428_three_coverflow/",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2011/10/111019_coverflow_refrection.jpg",
     "title": "Cover Flow",
     "type" : "Interactive",
     "technology": [
-      "Flash",
-      "Stage3D",
-      "Alternativa3D"
+      "HTML",
+      "WebGL"
     ]
   },
   {
@@ -429,7 +470,7 @@
     "id": "stardust-butterfly",
     "blog_en": "https://clockmaker.jp/blog-en/2009/12/stardust-butterfly/",
     "blog_ja": "https://clockmaker.jp/blog/2009/12/as3-stardust/",
-    "date": "2009/9/8",
+    "date": "2009/09/08",
     "demo": "https://clockmaker.jp/labs/091221_stardust/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/12/091221-stardust.jpg",
     "title": "Stardust Butterfly",
@@ -529,13 +570,13 @@
     "blog_en": "https://clockmaker.jp/blog-en/2009/07/pv3d-betweenas3/",
     "blog_ja": "https://clockmaker.jp/blog/2009/07/wonderfl-betweenas3/",
     "date": "2009/07/16",
-    "demo": "https://clockmaker.jp/labs/090716_timestrech/index.html",
+    "demo": "https://ics-creative.github.io/150810_threejs_mosaic/DemoCubes.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/07/090715_wonderfl.png",
     "title": "Time Stretch Motion #2",
     "type" : "Real Time Motion Graphics",
     "technology": [
-      "Flash",
-      "Papervision3D"
+      "WebGL",
+      "Three.js"
     ]
   },
   {
@@ -654,9 +695,9 @@
   {
     "id": "rgb-image-Separate",
     "blog_en": "https://clockmaker.jp/blog-en/2008/11/rgb-image-separater-with-papervision3d/",
-    "blog_ja": "https://clockmaker.jp/blog/2008/11/rgb_sepapater/",
+    "blog_ja": "https://ics.media/entry/1762/",
     "date": "2008/11/13",
-    "demo": "https://clockmaker.jp/labs/081111_pv3d_rgb/bin/index.html",
+    "demo": "https://ics-creative.github.io/data-demos/140804_awayjs_rgb/src/0_demo.html",
     "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/11/081111_rgb1.jpg",
     "title": "RGB Image Separate",
     "type" : "Interactive",
@@ -683,13 +724,13 @@
     "blog_en": "https://clockmaker.jp/blog-en/2008/10/3-demos-of-as3dmod-on-pv3d/",
     "blog_ja": "https://clockmaker.jp/blog/2008/10/pv3d_as3dmod/",
     "date": "2008/10/08",
-    "demo": "https://clockmaker.jp/labs/081004_pv3d_as3dmod/bin/main3.html",
+    "demo": "https://clockmaker.jp/labs/210425_as3mod/index.html",
     "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/10/081008_as3dmod_2.png",
     "title": "Swinging flag",
     "type" : "Interactive",
     "technology": [
-      "Flash",
-      "Papervision3D"
+      "WebGL",
+      "Three.js"
     ]
   },
   {
@@ -697,13 +738,13 @@
     "blog_en": "https://clockmaker.jp/blog-en/2008/10/3-demos-of-as3dmod-on-pv3d/",
     "blog_ja": "https://clockmaker.jp/blog/2008/10/pv3d_as3dmod/",
     "date": "2008/10/08",
-    "demo": "https://clockmaker.jp/labs/081004_pv3d_as3dmod/bin/main2.html",
+    "demo": "https://clockmaker.jp/labs/210425_as3mod/twist.html",
     "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/10/081008_as3dmod_1.png",
     "title": "Dancing Panel",
     "type" : "Interactive",
     "technology": [
-      "Flash",
-      "Papervision3D"
+      "WebGL",
+      "Three.js"
     ]
   },
   {
@@ -737,15 +778,15 @@
   {
     "id": "reflection-butterfly",
     "blog_en": "https://clockmaker.jp/blog/2008/08/papervision3d_butterfly_reflection/",
-    "blog_ja": "https://clockmaker.jp/blog/2008/08/papervision3d_butterfly_reflection/",
+    "blog_ja": "https://clockmaker.jp/blog/2010/10/canvas_js_demo/",
     "date": "2008/08/19",
-    "demo": "https://clockmaker.jp/labs/as3_pv3d_gw_butterfly/index.html",
+    "demo": "https://clockmaker.jp/labs/230430_threejs_butterfly/index.html",
     "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/09/080818_pv3d_butterfly1.jpg",
     "title": "Reflection Butterfly",
     "type" : "Real Time Motion Graphics",
     "technology": [
-      "Flash",
-      "Papervision3D"
+      "WebGL",
+      "Three.js"
     ]
   }
 ]
