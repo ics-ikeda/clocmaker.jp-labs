@@ -6,9 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ListPageComponent } from './components/top/page-top/page-top.component';
 import { DetailPageComponent } from './components/detail/page-detail.component';
-import { ListItemComponent } from './components/top/list-item/list-item.component';
+import { WorkItemComponent } from './components/top/work-item/work-item.component';
 import { FooterComponent } from './components/common/footer/footer.component';
-import { HeaderAuthorComponent } from './components/common/header/header-author.component';
 import { AppComponent } from './components/app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -16,10 +15,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     ListPageComponent,
-    ListItemComponent,
+    WorkItemComponent,
     DetailPageComponent,
     FooterComponent,
-    HeaderAuthorComponent,
   ],
   imports: [
     BrowserModule,

@@ -19,7 +19,7 @@
       transform: translate3d(+10px, 0, 0);
     }
 
-    .my-navi {
+    .detail-page-navi {
       background: #333;
     }
   }
@@ -59,12 +59,12 @@ h1.show {
 
   small {
     font-size: 0.75rem;
-    color: #999;
     font-weight: 200;
+    color: #999;
   }
 }
 
-.my-hero {
+.page-top-hero {
   padding-top: 172px;
   padding-bottom: 32px;
   background-image: url('../../../../assets/images/bg-photo.jpg');
@@ -75,16 +75,19 @@ h1.show {
     position: absolute;
     top: 168px;
     left: 0;
+    z-index: 0;
     width: 100%;
     height: 200px;
+    pointer-events: none;
     content: '';
     background-image: url('../../../../assets/images/bg-area.png');
     background-repeat: repeat-x;
   }
 }
 
-.my-main-area {
+.page-top-hero-area {
   height: 100%;
+
   // 背景画像のぶんだけ調整している
   padding: 10px 16px 16px;
   overflow: auto;
@@ -114,7 +117,7 @@ h1.show {
   transition: opacity 0.3s;
 }
 
-.my-navi {
+.detail-page-navi {
   background: #000;
   transition: opacity 0.3s;
 }

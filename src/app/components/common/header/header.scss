@@ -1,4 +1,4 @@
-.my-navi {
+.detail-page-navi {
   position: fixed;
   z-index: 10;
   display: flex;
@@ -6,6 +6,7 @@
   height: 52px;
   padding: 0 16px;
   overflow: hidden;
+  background-color: #333;
 
   h1 {
     display: inline-block;
@@ -27,7 +28,7 @@
   }
 }
 
-.my-navi-navigation {
+.detail-page-navi-navigation {
   display: flex;
   gap: 8px;
 }

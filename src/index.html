@@ -57,7 +57,7 @@
     // -----------------------------------------------
     // 本番環境のみ適用
     // -----------------------------------------------
-    if (location.href.indexOf('http://clockmaker.jp') > -1) {
+    if (location.href.indexOf('http://clockmaker.jp') > -1 || location.href.indexOf('https://clockmaker.jp') > -1) {
       ga('create', 'UA-569074-5', 'auto');
 
 //      var element = document.createElement('base');
@@ -68,11 +68,6 @@
 //      element.href = '/';
 //      document.head.appendChild(element);
     }
-
-    // -----------------------------------------------
-    // CreateJSの初期化 エラーになるのでやむなく…
-    // -----------------------------------------------
-    var createjs = {};
   </script>
 
   <base href="/"/>
@@ -82,12 +77,6 @@
 <app-root>
 
   <div class="loading"><i class="fa fa-refresh"></i> Now Loading...</div>
-  <footer>
-    <div class="float-md-right">
-      <span class="created">All works are created by <a href="https://twitter.com/clockmaker" target="_blank">IKEDA Yasunobu</a>.</span>
-      <span class="copyright"> &copy; 2021 <a href="http://clockmaker.jp/blog">clockmaker.jp</a></span>
-    </div>
-  </footer>
 
 </app-root>
 </body>

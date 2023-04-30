@@ -1,5 +1,5 @@
 <div class="topPage">
-  <nav class="my-navi">
+  <nav class="detail-page-navi">
     <div class="header-h1-top">
       <h1 [@animateStateH1]="viewInited">ClockMaker Labs</h1>
     </div>
@@ -13,14 +13,14 @@
     </h2>
 
 
-    <div class="my-hero">
-      <div class="my-main-area">
-        <div id="contentListHTML5" class="my-main-area-row">
-          <app-list-item
+    <div class="page-top-hero">
+      <div class="page-top-hero-area">
+        <div id="contentListHTML5" class="page-top-hero-area-row">
+          <app-work-item
                *ngFor="let dataItem of itemDataList"
                [data]="dataItem"
                class="list-item"
-          ></app-list-item>
+          ></app-work-item>
         </div>
       </div>
     </div>

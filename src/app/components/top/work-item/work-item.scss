@@ -1,4 +1,4 @@
-.item {
+.work-item {
   user-select: none;
 
   .title {
@@ -22,7 +22,7 @@
     }
   }
 
-  .item-button {
+  .work-item-button {
     position: relative;
     display: block;
     width: 100%;
@@ -154,7 +154,7 @@
   }
 }
 
-.btn-group {
+.work-item-btn-group {
   display: flex;
   gap: 4px;
 }

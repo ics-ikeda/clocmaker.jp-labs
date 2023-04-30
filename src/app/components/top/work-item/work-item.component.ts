@@ -7,11 +7,11 @@ import ShuffleText from 'shuffle-text';
 import { SoundService } from '../../../service/sound.service';
 
 @Component({
-  selector: 'app-list-item',
-  templateUrl: './list-item.html',
-  styleUrls: [`./list-item.scss`],
+  selector: 'app-work-item',
+  templateUrl: './work-item.html',
+  styleUrls: [`./work-item.scss`],
 })
-export class ListItemComponent implements AfterViewInit {
+export class WorkItemComponent implements AfterViewInit {
   @Input() data!: ItemData;
 
   @ViewChild('textTitle', { static: true }) textTitle: any;

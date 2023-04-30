@@ -1,8 +1,8 @@
 <div class="detail-page" [ngClass]="{showing: playingTransition === true}">
   <div *ngIf="data" [ngClass]="{show : !isLoading}">
 
-    <nav class="my-navi">
-      <div class="my-navi-navigation">
+    <nav class="detail-page-navi">
+      <div class="detail-page-navi-navigation">
 
         <div class="btn-back"
              (mouseenter)="onRollOver()"
@@ -32,8 +32,6 @@
         <span class="content-type">{{data.type}}</span>
         </div>
       </h1>
-
-      <!--<app-header-author></app-header-author>-->
     </nav>
 
     <div class="main-content"

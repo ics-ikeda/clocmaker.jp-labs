@@ -1,7 +1,7 @@
-<div class="item thumb"
+<div class="work-item"
      [ngClass]="{show : isRollOver}">
   <button
-    class="item-button"
+    class="work-item-button"
     (mouseenter)="_onMouseOver()"
     (mouseleave)="_onMouseOut()"
     (click)="_onClick()">
@@ -20,7 +20,7 @@
     </div>
   </button>
 
-  <div class="btn-group">
+  <div class="work-item-btn-group">
     <a class="btn-custom-link" *ngIf="data.blog_ja !== null"
        (mouseenter)="_playSoundRollOver()"
        (click)="_playSoundClick()"
