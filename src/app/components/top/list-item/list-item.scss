@@ -1,11 +1,10 @@
 .item {
-  font-family: 'Ropa Sans', sans-serif;
   user-select: none;
 
   .title {
     position: relative;
     overflow: hidden;
-    font-size: 0.8rem;
+    font-size: 0.875rem;
     color: #999;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -24,14 +23,14 @@
   }
 
   .item-button {
+    position: relative;
     display: block;
-    background: none;
+    width: 100%;
     padding: 0;
     margin: 0;
-    border: none;
-    position: relative;
     text-align: left;
-    width: 100%;
+    background: none;
+    border: none;
   }
 
   .img-container {
@@ -144,7 +143,7 @@
 
   .date {
     position: relative;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     color: #999;
     transition: left 0.2s;
   }
@@ -163,7 +162,7 @@
 a.btn-custom-link {
   display: inline-block;
   padding: 0 3px;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: #666;
   cursor: pointer;
   border: 1px solid #333;

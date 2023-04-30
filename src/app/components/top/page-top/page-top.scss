@@ -43,10 +43,25 @@ h1.show {
 
 .sub-title {
   position: absolute;
-  top: 115px;
-  left: 10px;
-  pointer-events: none;
-  user-select: none;
+  top: 96px;
+  left: 16px;
+  font-family: 'Ropa Sans', sans-serif;
+  line-height: 1;
+
+  strong {
+    font-size: 1.6rem;
+    font-weight: 200;
+
+    @media (width < 768px) {
+      font-size: 1.25rem;
+    }
+  }
+
+  small {
+    font-size: 0.75rem;
+    color: #999;
+    font-weight: 200;
+  }
 }
 
 .my-hero {
@@ -70,16 +85,19 @@ h1.show {
 
 .my-main-area {
   height: 100%;
-  padding-top: 4px;
-  padding-right: 8px;
-  padding-left: 8px;
+  // 背景画像のぶんだけ調整している
+  padding: 10px 16px 16px;
   overflow: auto;
 
   // .my-main-area-row
   &-row {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(196px, 1fr));
     gap: 16px 8px;
+
+    @media (width < 768px) {
+      grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+    }
   }
 }
 
