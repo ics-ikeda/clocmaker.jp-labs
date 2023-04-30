@@ -7,6 +7,15 @@ body {
   padding: 0;
 }
 
+
+a,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+
 .loading {
   margin-left: 20px;
   line-height: 52px;

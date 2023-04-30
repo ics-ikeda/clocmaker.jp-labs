@@ -24,7 +24,6 @@
             ],
             "styles": [
               "node_modules/@acab/reset.css",
-              "src/styles.css"
             ],
             "vendorChunk": true,
             "extractLicenses": false,

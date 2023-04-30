@@ -4,10 +4,7 @@ import { SoundService } from '../service/sound.service';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <router-outlet></router-outlet>
-    <app-sns></app-sns>
-  `,
+  template: ` <router-outlet></router-outlet> `,
   providers: [DataService, SoundService],
 })
 export class AppComponent implements OnInit {

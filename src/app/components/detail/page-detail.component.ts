@@ -69,7 +69,7 @@ import { SoundService } from '../../service/sound.service';
       transition('show => hide', animate('0.5s cubic-bezier(0, 0, 0, 1)')),
     ]),
   ],
-  styleUrls: ['../common/header.scss', './page-detail.scss'],
+  styleUrls: ['../common/header/header.scss', './page-detail.scss'],
 })
 export class DetailPageComponent implements OnInit {
   @Input() data!: ItemData;
@@ -102,8 +102,6 @@ export class DetailPageComponent implements OnInit {
           requestAnimationFrame(() => {
             this.transitionState = 'hide';
 
-            console.log(this.id);
-            console.log(this.id === null);
             const delay = this.id === null ? 0 : 500;
 
             setTimeout(() => {

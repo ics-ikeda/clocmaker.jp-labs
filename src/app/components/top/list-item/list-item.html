@@ -1,6 +1,7 @@
 <div class="item thumb"
      [ngClass]="{show : isRollOver}">
-  <div
+  <button
+    class="item-button"
     (mouseenter)="_onMouseOver()"
     (mouseleave)="_onMouseOut()"
     (click)="_onClick()">
@@ -17,9 +18,9 @@
       <div #textTitle class="title">{{data.title}}</div>
       <div #textDate class="date">{{data.date}}</div>
     </div>
-  </div>
+  </button>
 
-  <div>
+  <div class="btn-group">
     <a class="btn-custom-link" *ngIf="data.blog_ja !== null"
        (mouseenter)="_playSoundRollOver()"
        (click)="_playSoundClick()"

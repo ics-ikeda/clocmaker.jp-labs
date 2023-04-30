@@ -2,17 +2,15 @@
   <div *ngIf="data" [ngClass]="{show : !isLoading}">
 
     <nav class="my-navi">
-      <div>
+      <div class="my-navi-navigation">
 
         <div class="btn-back"
-             style="margin-right: 10px;"
              (mouseenter)="onRollOver()"
              (click)="onClick()">
           <i class="fa fa-th"></i><span class="btn-label-prev">TOP</span>
         </div>
 
         <div class="btn-back"
-             style="margin-right: 1px;"
              (mouseenter)="onRollOver()"
              (click)="onClickPrev()">
           <i class="fa fa-chevron-left"></i><span class="btn-label-prev">PREV</span>
@@ -30,7 +28,9 @@
       <h1 class="header-detail-h1"
           [@animateStateH1]="transitionState">
         {{data.title}}
+        <div>
         <span class="content-type">{{data.type}}</span>
+        </div>
       </h1>
 
       <!--<app-header-author></app-header-author>-->

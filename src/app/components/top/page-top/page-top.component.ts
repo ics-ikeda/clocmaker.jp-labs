@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, HostBinding, OnInit } from '@angular/core';
-import { DataService } from '../../service/data.service';
-import { ItemData } from '../../data/item-data';
+import { DataService } from '../../../service/data.service';
+import { ItemData } from '../../../data/item-data';
 import {
   animate,
   state,
@@ -12,7 +12,7 @@ import {
 @Component({
   selector: 'app-page-list',
   templateUrl: './page-top.html',
-  styleUrls: [`./page-top.scss`, `../common/header.scss`],
+  styleUrls: [`./page-top.scss`, `../../common/header/header.scss`],
   animations: [
     trigger('routerTransition', [
       transition(':enter', [style({}), animate('0.5s ease-in-out', style({}))]),
