@@ -1,8 +1,5 @@
 .item {
   font-family: 'Ropa Sans', sans-serif;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 
   .title {
@@ -26,13 +23,13 @@
     }
   }
 
-  div.imgContainer {
+  .img-container {
     position: relative;
     width: 100%;
     height: 0;
     padding-top: calc(100% * 200 / 460);
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0);
+    border: 1px solid rgb(255 255 255 / 0%);
     transition: border-color 0.5s ease-out;
 
     img {
@@ -52,8 +49,8 @@
   }
 
   &.show {
-    .imgContainer {
-      border: 1px solid rgba(255, 255, 255, 1);
+    .img-container {
+      border: 1px solid rgb(255 255 255 / 100%);
       transition: border-color 0.15s ease-out;
     }
   }
@@ -71,14 +68,14 @@
         width: 0;
         height: 1rem;
         content: '';
-        background: rgba(255, 255, 255, 0);
+        background: rgb(255 255 255 / 0%);
         transition: all 1.2s cubic-bezier(1, 0, 1, 0.5);
       }
     }
 
     &:hover .meta::before {
       width: 100%;
-      background: rgba(255, 255, 255, 0.2);
+      background: rgb(255 255 255 / 20%);
       transition: all 0.3s cubic-bezier(0, 0, 0, 1);
     }
   }
