@@ -1,5 +1,5 @@
 import { switchMap } from 'rxjs/operators';
-import { ItemData } from '../../data/item-data';
+import type { ItemData } from '../../data/item-data';
 import { DataService } from '../../service/data.service';
 import {
   Component,
@@ -97,7 +97,7 @@ export class DetailPageComponent implements OnInit {
       .pipe(
         switchMap((params: Params) => this.dataService.getDetail(params.id))
       )
-      .subscribe((data: ItemData | undefined) => {
+      .subscribe((data: ItemData | null) => {
         if (data != null) {
           requestAnimationFrame(() => {
             this.transitionState = 'hide';

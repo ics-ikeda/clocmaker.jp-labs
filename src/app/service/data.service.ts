@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ItemData } from '../data/item-data';
+import type { ItemData } from '../data/item-data';
 
 @Injectable()
 export class DataService {
@@ -21,8 +21,8 @@ export class DataService {
     });
   }
 
-  public getDetail(id: string): Promise<ItemData | undefined> {
-    return new Promise<ItemData | undefined>((resolve) => {
+  public getDetail(id: string): Promise<ItemData | null> {
+    return new Promise<ItemData | null>((resolve) => {
       if (this.data != null) {
         resolve(this.searchData(id));
       } else {
@@ -33,13 +33,16 @@ export class DataService {
     });
   }
 
-  private searchData(id: string): ItemData | undefined {
+  private searchData(id: string): ItemData | null {
     if (!this.data) {
-      return undefined;
+      return null;
     }
 
     const item = this.data.find((obj) => obj.id === id);
 
+    if (item == null) {
+      return null;
+    }
     return item;
   }
 

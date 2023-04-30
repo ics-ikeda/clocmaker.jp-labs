@@ -40,7 +40,12 @@
             "style": "camelCase",
             "type": "attribute"
           }
-        ]
+        ],
+        "curly": ["error"],
+        "no-undefined": ["error"],
+        "arrow-body-style": ["error", "as-needed"],
+        "no-implicit-coercion": "error",
+        "eqeqeq": ["error", "always", { "null": "ignore" }]
       }
     },
     {

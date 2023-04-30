@@ -1,10 +1,9 @@
-import { ItemData } from '../../../data/item-data';
-
-import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import type { ItemData } from '../../../data/item-data';
 import ShuffleText from 'shuffle-text';
 
 import { SoundService } from '../../../service/sound.service';
+import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-work-item',

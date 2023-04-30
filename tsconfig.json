@@ -3,6 +3,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "strict": true,
+    "strictNullChecks": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -12,10 +13,12 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "ES2022",
-    "module": "es2020",
+    "module": "ES2020",
+    // import type を強制
+//    "importsNotUsedAsValues": "error",
     "lib": [
-      "es2018",
-      "dom"
+      "ESNext",
+      "DOM"
     ],
     "useDefineForClassFields": false
   }

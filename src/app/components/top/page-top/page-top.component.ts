@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, HostBinding, OnInit } from '@angular/core';
 import { DataService } from '../../../service/data.service';
-import { ItemData } from '../../../data/item-data';
+import type { ItemData } from '../../../data/item-data';
 import {
   animate,
   state,
