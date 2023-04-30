@@ -3,15 +3,17 @@ import { Howl } from 'howler';
 
 @Injectable()
 export class SoundService {
-  private _howl: Howl;
+  private _howlOver: Howl;
   private _howlClick: Howl;
   constructor() {
-    this._howl = new Howl({
-      src: ['assets/sounds/tap_04.wav'],
+    this._howlOver = new Howl({
+      src: ['assets/sounds/tap_03.wav'],
+      volume: 0.33,
     });
 
     this._howlClick = new Howl({
       src: ['assets/sounds/toggle_on.wav'],
+      volume: 0.5,
     });
   }
 
@@ -20,6 +22,6 @@ export class SoundService {
   }
 
   public playMouseOverSound(): void {
-    this._howl.play();
+    this._howlOver.play();
   }
 }
