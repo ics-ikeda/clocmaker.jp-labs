@@ -35,11 +35,13 @@
     img {
       position: absolute;
       top: 0;
-      max-width: 100%;
+      width: 100%;
       height: auto;
+      aspect-ratio: 460/200;
       visibility: hidden;
       filter: brightness(400%);
       transition: all 0.3s ease;
+      object-fit: cover;
 
       &.show {
         visibility: visible;

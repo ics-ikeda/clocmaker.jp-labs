@@ -12,12 +12,12 @@
     </h2>
 
     <div class="my-hero">
-      <div class="container-fluid my-main-area">
-        <div id="contentListHTML5" class="row">
+      <div class="my-main-area">
+        <div id="contentListHTML5" class="my-main-area-row">
           <app-list-item
                *ngFor="let dataItem of itemDataList"
                [data]="dataItem"
-               class="list-item col-xs-6 col-sm-4 col-md-3 col-lg-2 col-xl-2"
+               class="list-item"
           ></app-list-item>
         </div>
       </div>

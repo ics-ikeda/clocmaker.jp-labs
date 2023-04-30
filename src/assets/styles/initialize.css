@@ -1,7 +1,10 @@
+
 body {
   background: #000000;
   color: #fff;
   font-size: 80%;
+  margin: 0;
+  padding: 0;
 }
 
 .loading {

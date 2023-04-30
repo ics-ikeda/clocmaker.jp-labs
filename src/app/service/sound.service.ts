@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Howl, Howler } from 'howler';
+import { Howl } from 'howler';
 
 @Injectable()
 export class SoundService {

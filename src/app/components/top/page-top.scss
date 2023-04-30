@@ -73,6 +73,12 @@ h1.show {
   padding-right: 25px;
   padding-left: 20px;
   overflow: auto;
+
+  // .my-main-area-row
+  &-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  }
 }
 
 .main-content::after {
