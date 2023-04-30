@@ -1,21 +1,25 @@
 import { Injectable } from '@angular/core';
-
-/// <reference path="../../../node_modules/@types/soundjs/index.d.ts" />
-// 効かないので仕方なくdeclareで…
-declare const createjs: any;
+import { Howl, Howler } from 'howler';
 
 @Injectable()
 export class SoundService {
+  private _howl: Howl;
+  private _howlClick: Howl;
   constructor() {
-    createjs.Sound.registerSound('assets/sounds/BtnOverSound.mp3', 'over');
-    createjs.Sound.registerSound('assets/sounds/BtnClickSound.wav', 'click');
+    this._howl = new Howl({
+      src: ['assets/sounds/tap_04.wav'],
+    });
+
+    this._howlClick = new Howl({
+      src: ['assets/sounds/toggle_on.wav'],
+    });
   }
 
   public playClickSound(): void {
-    createjs.Sound.play('click');
+    this._howlClick.play();
   }
 
   public playMouseOverSound(): void {
-    createjs.Sound.play('over', createjs.Sound.INTERRUPT_ANY, 0, 0, 0, 0.3);
+    this._howl.play();
   }
 }

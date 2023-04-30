@@ -56,4 +56,4 @@ import 'zone.js'; // Included with Angular CLI.
  * Need to import at least one locale-data with intl.
  */
 // import 'intl/locale-data/jsonp/en';
-import 'createjs-soundjs/lib/soundjs-0.6.2.combined.js';
+// import 'createjs-soundjs/lib/soundjs-0.6.2.combined.js';
