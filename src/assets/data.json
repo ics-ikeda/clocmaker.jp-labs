@@ -382,30 +382,13 @@
     "blog_en": null,
     "blog_ja": "https://clockmaker.jp/blog/2011/12/away3d-4-depth_of_field/",
     "date": "2011/12/23",
-    "demo": "https://clockmaker.jp/labs/120723_away3d_dof/Main.html",
+    "demo": "https://clockmaker.jp/labs/230514_three_dof/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2011/12/111223_away3d_depth_of_field.png",
     "title": "Depth of Field",
     "type" : "Interactive",
     "technology": [
-      "Flash",
-      "Stage3D",
-      "Away3D"
-    ]
-  },
-  {
-    "id": "wave-and-particles-blue",
-    "blog_en": "https://clockmaker.jp/blog-en/2011/11/starling-particles/",
-    "blog_ja": "https://clockmaker.jp/blog/2011/11/starling-framework-sample/",
-    "date": "2011/11/16",
-    "demo": "https://clockmaker.jp/labs/111116_starling_particle/Main.html",
-    "img": "https://clockmaker.jp/blog/wp-content/uploads/2011/11/111116_starling_particle.jpg",
-    "title": "Particle and Waves (Flash)",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "Flash",
-      "Stage3D",
-      "Starling",
-      "Frocessing"
+      "WebGL",
+      "Three.js"
     ]
   },
   {
@@ -435,21 +418,6 @@
     "technology": [
       "HTML",
       "WebGL"
-    ]
-  },
-  {
-    "id": "text-particle",
-    "blog_en": "https://clockmaker.jp/blog-en/2011/10/stage3d-demos-2/",
-    "blog_ja": "https://clockmaker.jp/blog/2011/10/convert-stage3d/",
-    "date": "2011/10/15",
-    "demo": "https://clockmaker.jp/labs/111015_stage3d_textparticle/Main.html",
-    "img": "https://clockmaker.jp/blog/wp-content/uploads/2011/10/111015_TextParticle.png",
-    "title": "Text Particle",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "Flash",
-      "Stage3D",
-      "Alternativa3D"
     ]
   },
   {
@@ -520,20 +488,6 @@
     "technology": [
       "Flash",
       "Box2D"
-    ]
-  },
-  {
-    "id": "ginny-effect",
-    "blog_en": null,
-    "blog_ja": "https://clockmaker.jp/blog/2009/09/betweenas3-demos/",
-    "date": "2009/09/09",
-    "demo": "https://clockmaker.jp/labs/091023_genny/index.html",
-    "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/09/090909-01.jpg",
-    "title": "Ginny Effect Modoki",
-    "type" : "Interactive",
-    "technology": [
-      "Flash",
-      "BetweenAS3"
     ]
   },
   {
@@ -611,7 +565,7 @@
     "blog_en": "https://clockmaker.jp/blog-en/2009/05/pv3d-photoprint-2/",
     "blog_ja": "https://clockmaker.jp/blog/2009/05/papervision3d_photoprint/",
     "date": "2009/05/07",
-    "demo": "https://clockmaker.jp/labs/090507_pv3d_motion/index.html",
+    "demo": "https://clockmaker.jp/labs/230509_three_motion/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/05/090507_photoprint.jpg",
     "title": "Photo Print Effect (Remake)",
     "type" : "Real Time Motion Graphics",
@@ -766,13 +720,13 @@
     "blog_en": "https://clockmaker.jp/blog-en/2008/10/pv3d-tiledmotion/",
     "blog_ja": "https://clockmaker.jp/blog/2008/09/papervision3d_photograph/",
     "date": "2008/09/23",
-    "demo": "https://clockmaker.jp/labs/080922_pv3d_motion2/bin/index.html",
+    "demo": "https://clockmaker.jp/labs/230514_three_tiled_motion/index.html",
     "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/10/080922_pv3d_matrix.jpg",
     "title": "Simple tiled motion of photo display",
     "type" : "Real Time Motion Graphics",
     "technology": [
-      "Flash",
-      "Papervision3D"
+      "WebGL",
+      "Three.js"
     ]
   },
   {
