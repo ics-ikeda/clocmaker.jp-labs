@@ -35,7 +35,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
           component: DetailPageComponent,
         },
       ],
-      {}
+      {
+        paramsInheritanceStrategy: 'always',
+        urlUpdateStrategy: 'eager',
+        canceledNavigationResolution: 'replace',
+        onSameUrlNavigation: 'reload'
+      }
     ),
   ],
   providers: [],
