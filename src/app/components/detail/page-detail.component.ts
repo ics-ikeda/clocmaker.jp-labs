@@ -20,11 +20,12 @@ import {
 } from '@angular/animations';
 import { SoundService } from '../../service/sound.service';
 import { CommonModule } from '@angular/common';
+import { FooterComponent } from '../common/footer/footer.component';
 
 @Component({
   selector: 'app-page-detail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FooterComponent],
   templateUrl: './page-detail.html',
   animations: [
     trigger('routerTransition', [
