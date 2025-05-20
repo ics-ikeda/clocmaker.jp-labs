@@ -1,28 +1,52 @@
-# ClockmakerLabs
+# Clockmaker Labs
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
+このプロジェクトは [Angular 19](https://angular.io/) で構築されています。
 
-## Development server
+## 開発サーバーの起動
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```sh
+npm start
+```
 
-## Code scaffolding
+`http://localhost:4200/` でアプリが自動リロードされます。
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+## ビルド
 
-## Build
+```sh
+npm run build
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+ビルド成果物は `dist/` ディレクトリに出力されます。
+本番用ビルドは `--configuration production` オプション付きで実行されます。
 
-## Running unit tests
+## コード整形・リント
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- コード整形（Prettier）:  
+  ```sh
+  npm run format
+  ```
+- TypeScript/HTMLリント（ESLint）:  
+  ```sh
+  npm run lint
+  ```
+- SCSSリント（Stylelint）:  
+  ```sh
+  npm run stylelint
+  ```
 
-## Running end-to-end tests
+## 依存技術
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+- Angular 19
+- TypeScript 5.8
+- RxJS, Zone.js
+- ESLint, Stylelint, Prettier
+- howler.js, shuffle-text など
 
-## Further help
+## 注意
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- ユニットテスト・E2Eテストは本リポジトリでは利用していません。
+
+## さらなる情報
+
+- [Angular公式ドキュメント](https://angular.jp/)
+- [Angular CLI README](https://github.com/angular/angular-cli/blob/main/README.md)
