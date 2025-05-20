@@ -30,7 +30,7 @@
     "img": "https://clockmaker.jp/labs/180725_three_waves/thumb_460x200.jpg",
     "title": "Three Waves",
     "type": "Interactive",
-    "technology": ["HTML", "WebGL"]
+    "technology": ["WebGPU"]
   },
   {
     "id": "liquildfun-pixijs",
@@ -41,7 +41,7 @@
     "img": "https://clockmaker.jp/labs/160527_liquidfun/thumb_460x200.png",
     "title": "Liquid",
     "type": "Interactive",
-    "technology": ["HTML", "WebGL"]
+    "technology": ["WebGL"]
   },
   {
     "id": "particle-develop",
@@ -75,7 +75,7 @@
     "img": "https://clockmaker.jp/labs/150601_threejs_mosaic/thumb_460x200.png",
     "title": "Many Icons in 3D",
     "type": "Real Time Motion Graphics",
-    "technology": ["WebGL", "CreateJS", "Three.js"]
+    "technology": ["WebGPU", "Three.js"]
   },
   {
     "id": "apple-watch-ui-modoki",
@@ -259,11 +259,11 @@
     "blog_en": null,
     "blog_ja": "https://clockmaker.jp/blog/2012/07/away3d_earth/",
     "date": "2013/07/13",
-    "demo": "https://ics-web.jp/lab-data/130725_away3d_extended/index.html",
+    "demo": "https://ics-creative.github.io/250512_three_lens_flare/",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2012/07/120713_earth.jpg",
     "title": "Earth with Lens Flare",
     "type": "Interactive",
-    "technology": ["Flash", "Stage3D", "Away3D"]
+    "technology": ["WebGL", "Three.js"]
   },
   {
     "id": "ginnyeffect",
