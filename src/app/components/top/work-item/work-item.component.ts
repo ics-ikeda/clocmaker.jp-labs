@@ -4,9 +4,13 @@ import ShuffleText from 'shuffle-text';
 import { SoundService } from '../../../service/sound.service';
 import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-work-item',
+  standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './work-item.html',
   styleUrls: [`./work-item.scss`],
 })
@@ -21,7 +25,10 @@ export class WorkItemComponent implements AfterViewInit {
   isRollOver = false;
   isLoadComplete = false;
 
-  constructor(private router: Router, private soundService: SoundService) {}
+  constructor(
+    private router: Router,
+    private soundService: SoundService,
+  ) {}
 
   ngAfterViewInit(): void {
     this.shuffleTextTitle = new ShuffleText(this.textTitle.nativeElement);

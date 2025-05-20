@@ -1,16 +1,18 @@
-<div class="work-item"
-     [ngClass]="{show : isRollOver}">
+<div class="work-item" [ngClass]="{show : isRollOver}">
   <button
     class="work-item-button"
     (mouseenter)="_onMouseOver()"
     (mouseleave)="_onMouseOut()"
-    (click)="_onClick()">
-
+    (click)="_onClick()"
+  >
     <div class="img-container">
-      <img src="{{data.img}}"
-           width="460" height="200"
-           (load)="_onLoadComplete()"
-           [ngClass]="{show : isLoadComplete}">
+      <img
+        src="{{data.img}}"
+        width="460"
+        height="200"
+        (load)="_onLoadComplete()"
+        [ngClass]="{show : isLoadComplete}"
+      />
       <div class="img-rollover"></div>
     </div>
 
@@ -21,20 +23,25 @@
   </button>
 
   <div class="work-item-btn-group">
-    <a class="btn-custom-link" *ngIf="data.blog_ja !== null"
-       (mouseenter)="_playSoundRollOver()"
-       (click)="_playSoundClick()"
-       href="{{data.blog_ja}}"
-       target="_blank">
+    <a
+      class="btn-custom-link"
+      *ngIf="data.blog_ja !== null"
+      (mouseenter)="_playSoundRollOver()"
+      (click)="_playSoundClick()"
+      href="{{data.blog_ja}}"
+      target="_blank"
+    >
       MORE - JP
     </a>
-    <a class="btn-custom-link" *ngIf="data.blog_en !== null"
-       (mouseenter)="_playSoundRollOver()"
-       (click)="_playSoundClick()"
-       href="{{data.blog_en}}"
-       target="_blank">
+    <a
+      class="btn-custom-link"
+      *ngIf="data.blog_en !== null"
+      (mouseenter)="_playSoundRollOver()"
+      (click)="_playSoundClick()"
+      href="{{data.blog_en}}"
+      target="_blank"
+    >
       MORE - EN
     </a>
   </div>
 </div>
-

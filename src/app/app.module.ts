@@ -13,35 +13,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ListPageComponent,
-    WorkItemComponent,
-    DetailPageComponent,
-    FooterComponent,
+    // AppComponent,
+    // ListPageComponent,
+    // WorkItemComponent,
+    // DetailPageComponent,
+    // FooterComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(
-      [
-        {
-          path: '',
-          component: ListPageComponent,
-        },
-        {
-          path: 'works/:id',
-          component: DetailPageComponent,
-        },
-      ],
-      {
-        paramsInheritanceStrategy: 'always',
-        urlUpdateStrategy: 'eager',
-        canceledNavigationResolution: 'replace',
-        onSameUrlNavigation: 'reload'
-      }
-    ),
+    RouterModule.forRoot([
+      { path: '', component: ListPageComponent },
+      { path: 'works/:id', component: DetailPageComponent },
+    ]),
+    AppComponent,
+    ListPageComponent,
+    WorkItemComponent,
+    DetailPageComponent,
+    FooterComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

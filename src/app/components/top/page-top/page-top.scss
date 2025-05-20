@@ -32,8 +32,8 @@ h1 {
   pointer-events: none;
   user-select: none;
   opacity: 0;
-  transition: all 0.2s cubic-bezier(0, 0, 0, 1);
   transform: translate3d(+10px, 0, 0);
+  transition: all 0.2s cubic-bezier(0, 0, 0, 1);
 }
 
 h1.show {

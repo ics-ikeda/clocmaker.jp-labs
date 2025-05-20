@@ -12,19 +12,20 @@
       <small>https://clockmaker.jp/labs/</small>
     </h2>
 
-
     <div class="page-top-hero">
       <div class="page-top-hero-area">
         <div id="contentListHTML5" class="page-top-hero-area-row">
           <app-work-item
-               *ngFor="let dataItem of itemDataList"
-               [data]="dataItem"
-               class="list-item"
+            *ngFor="let dataItem of itemDataList"
+            [data]="dataItem"
+            class="list-item"
           ></app-work-item>
         </div>
       </div>
     </div>
   </div>
 
-  <app-site-footer meta="This website is build with Angular 15."></app-site-footer>
+  <app-site-footer
+    meta="This website is build with Angular 15."
+  ></app-site-footer>
 </div>

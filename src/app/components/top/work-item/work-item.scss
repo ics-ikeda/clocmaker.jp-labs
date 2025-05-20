@@ -4,9 +4,9 @@
   .title {
     position: relative;
     overflow: hidden;
+    text-overflow: ellipsis;
     font-size: 0.875rem;
     color: #999;
-    text-overflow: ellipsis;
     white-space: nowrap;
     transition: left 0.2s;
   }
@@ -45,13 +45,13 @@
     img {
       position: absolute;
       top: 0;
+      visibility: hidden;
       width: 100%;
       height: auto;
       aspect-ratio: 460/200;
-      visibility: hidden;
+      object-fit: cover;
       filter: brightness(400%);
       transition: all 0.3s ease;
-      object-fit: cover;
 
       &.show {
         visibility: visible;

@@ -7,11 +7,8 @@
     "demo": "https://ics-creative.github.io/230411_sound_visualizer/index.html",
     "img": "https://clockmaker.jp/labs/230421_sound_visualizer/thumb.png",
     "title": "Sound Visualizer 3D",
-    "type" : "Interactive",
-    "technology": [
-      "WebGL",
-      "Three.js"
-    ]
+    "type": "Interactive",
+    "technology": ["WebGL", "Three.js"]
   },
   {
     "id": "text-spread",
@@ -21,11 +18,8 @@
     "demo": "https://ics-creative.github.io/220822_gsap_examples/pixi_particle.html",
     "img": "https://clockmaker.jp/labs/221216_spread_text/thumb.png",
     "title": "Text Spread",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "WebGL",
-      "gsap"
-    ]
+    "type": "Real Time Motion Graphics",
+    "technology": ["WebGL", "gsap"]
   },
   {
     "id": "three-waves",
@@ -35,11 +29,8 @@
     "demo": "https://ics-creative.github.io/180725_three_waves/",
     "img": "https://clockmaker.jp/labs/180725_three_waves/thumb_460x200.jpg",
     "title": "Three Waves",
-    "type" : "Interactive",
-    "technology": [
-      "HTML",
-      "WebGL"
-    ]
+    "type": "Interactive",
+    "technology": ["HTML", "WebGL"]
   },
   {
     "id": "liquildfun-pixijs",
@@ -49,11 +40,8 @@
     "demo": "https://ics-creative.github.io/160527_liquidfun/samples/sample_pixijs.html",
     "img": "https://clockmaker.jp/labs/160527_liquidfun/thumb_460x200.png",
     "title": "Liquid",
-    "type" : "Interactive",
-    "technology": [
-      "HTML",
-      "WebGL"
-    ]
+    "type": "Interactive",
+    "technology": ["HTML", "WebGL"]
   },
   {
     "id": "particle-develop",
@@ -63,12 +51,8 @@
     "demo": "https://ics-web.jp/projects/particle-develop/",
     "img": "https://clockmaker.jp/labs/160122_particle_develop/thumb_460x200.png",
     "title": "Particle Develop",
-    "type" : "Web Application",
-    "technology": [
-      "HTML",
-      "Angular2",
-      "CreateJS"
-    ]
+    "type": "Web Application",
+    "technology": ["HTML", "Angular2", "CreateJS"]
   },
   {
     "id": "particle-and-waves",
@@ -78,12 +62,8 @@
     "demo": "https://clockmaker.jp/labs/151118_createjs_title/content/CodePen.html",
     "img": "https://clockmaker.jp/labs/151118_createjs_title/thumb_460x200.png",
     "title": "Particle and Waves",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "HTML Canvas",
-      "CSS3",
-      "CreateJS"
-    ]
+    "type": "Real Time Motion Graphics",
+    "technology": ["HTML Canvas", "CSS3", "CreateJS"]
   },
 
   {
@@ -94,12 +74,8 @@
     "demo": "https://ics-creative.github.io/150810_threejs_mosaic/DemoIcons.html",
     "img": "https://clockmaker.jp/labs/150601_threejs_mosaic/thumb_460x200.png",
     "title": "Many Icons in 3D",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "WebGL",
-      "CreateJS",
-      "Three.js"
-    ]
+    "type": "Real Time Motion Graphics",
+    "technology": ["WebGL", "CreateJS", "Three.js"]
   },
   {
     "id": "apple-watch-ui-modoki",
@@ -109,11 +85,8 @@
     "demo": "https://clockmaker.jp/labs/150128_clock_pixijs/",
     "img": "https://clockmaker.jp/labs/150128_clock_pixijs/thumb_460x200.png",
     "title": "Apple Watch UI Modoki",
-    "type" : "Interactive",
-    "technology": [
-      "HTML Canvas",
-      "CreateJS"
-    ]
+    "type": "Interactive",
+    "technology": ["HTML Canvas", "CreateJS"]
   },
   {
     "id": "apple-watch-clock-modoki",
@@ -123,11 +96,8 @@
     "demo": "https://clockmaker.jp/labs/150125_clock/index.html",
     "img": "https://clockmaker.jp/labs/150125_clock/thumb_460x200.png",
     "title": "Apple Watch Clock Modoki",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "WebGL",
-      "Pixi.js"
-    ]
+    "type": "Real Time Motion Graphics",
+    "technology": ["WebGL", "Pixi.js"]
   },
   {
     "id": "particle-emitter-2d",
@@ -137,11 +107,8 @@
     "demo": "https://codepen.io/clockmaker/full/aOqVBa/",
     "img": "https://clockmaker.jp/labs/141120_facebook_flow/thumb_460x200.jpg",
     "title": "Particle Emitter 2D",
-    "type" : "Interactive",
-    "technology": [
-      "WebGL",
-      "Pixi.js"
-    ]
+    "type": "Interactive",
+    "technology": ["WebGL", "Pixi.js"]
   },
   {
     "id": "lens-flare",
@@ -151,12 +118,8 @@
     "demo": "https://clockmaker.jp/labs/141211_lens_flare_timeline/lensflares.html",
     "img": "https://clockmaker.jp/labs/141211_lens_flare_timeline/thumb_460x200.png",
     "title": "Lens Flare Animation",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "HTML Canvas",
-      "CreateJS",
-      "Adobe Animate CC"
-    ]
+    "type": "Real Time Motion Graphics",
+    "technology": ["HTML Canvas", "CreateJS", "Adobe Animate CC"]
   },
   {
     "id": "particle-emitter-3d",
@@ -166,11 +129,8 @@
     "demo": "https://clockmaker.jp/labs/140904_threejs_particles/",
     "img": "https://clockmaker.jp/labs/140904_threejs_particles/thumb_460x200.jpg",
     "title": "Particle Emitter 3D",
-    "type" : "Interactive",
-    "technology": [
-      "WebGL",
-      "Three.js"
-    ]
+    "type": "Interactive",
+    "technology": ["WebGL", "Three.js"]
   },
   {
     "id": "arrows",
@@ -180,11 +140,8 @@
     "demo": "https://clockmaker.jp/labs/140120_createjs_webgl_demo",
     "img": "https://clockmaker.jp/labs/140120_createjs_webgl_demo/thumb_460x200.jpg",
     "title": "Performance of Arrows",
-    "type" : "Interactive",
-    "technology": [
-      "WebGL",
-      "CreateJS"
-    ]
+    "type": "Interactive",
+    "technology": ["WebGL", "CreateJS"]
   },
   {
     "id": "blue-light-3d",
@@ -194,11 +151,8 @@
     "demo": "https://clockmaker.jp/labs/140102_away3d_ts_particle_flare/",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2013/09/130919_lensfrare.jpg",
     "title": "Blue Light 3D",
-    "type" : "Interactive",
-    "technology": [
-      "WebGL",
-      "Away3D"
-    ]
+    "type": "Interactive",
+    "technology": ["WebGL", "Away3D"]
   },
 
   {
@@ -209,11 +163,8 @@
     "demo": "https://clockmaker.jp/labs/140104_away3d_ts_fires/",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2014/01/140107_away3d_title.jpg",
     "title": "Fire Particles 3D",
-    "type" : "Interactive",
-    "technology": [
-      "WebGL",
-      "Away3D"
-    ]
+    "type": "Interactive",
+    "technology": ["WebGL", "Away3D"]
   },
   {
     "id": "particle-cloud",
@@ -223,11 +174,8 @@
     "demo": "https://clockmaker.jp/labs/140102_away3d_ts_particle/",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2013/01/130110_particles.png",
     "title": "Cloud Particle",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "WebGL",
-      "Away3D"
-    ]
+    "type": "Real Time Motion Graphics",
+    "technology": ["WebGL", "Away3D"]
   },
   {
     "id": "physics-60fps",
@@ -237,10 +185,8 @@
     "demo": "https://clockmaker.jp/labs/130708_FlashProCC_video/physics/video.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2013/07/130708_flashprocc_video.png",
     "title": "Physics 60fps",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "Box2D"
-    ]
+    "type": "Real Time Motion Graphics",
+    "technology": ["Box2D"]
   },
   {
     "id": "rainbow-snow",
@@ -250,11 +196,8 @@
     "demo": "https://clockmaker.jp/labs/130623_createjs_kirakira/",
     "img": "https://clockmaker.jp/labs/130623_createjs_kirakira/thumb.jpg",
     "title": "Rainbow Snow",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "HTML Canvas",
-      "CreateJS"
-    ]
+    "type": "Real Time Motion Graphics",
+    "technology": ["HTML Canvas", "CreateJS"]
   },
   {
     "id": "pollen-map",
@@ -264,12 +207,8 @@
     "demo": "https://ics-web.jp/projects/pollenmap/",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2013/03/130319_pollenmap.gif",
     "title": "Pollen Map in Japan",
-    "type" : "Web Application",
-    "technology": [
-      "HTML Canvas",
-      "CreateJS",
-      "Adobe Animate CC"
-    ]
+    "type": "Web Application",
+    "technology": ["HTML Canvas", "CreateJS", "Adobe Animate CC"]
   },
   {
     "id": "box2d-drop",
@@ -279,12 +218,8 @@
     "demo": "https://clockmaker.jp/labs/130215_createjs_box2d_forlab/index.html",
     "img": "https://clockmaker.jp/labs/130215_createjs_box2d_forlab/thumb.jpg",
     "title": "Box2D Drop",
-    "type" : "Interactive",
-    "technology": [
-      "HTML Canvas",
-      "CreateJS",
-      "Box2D"
-    ]
+    "type": "Interactive",
+    "technology": ["HTML Canvas", "CreateJS", "Box2D"]
   },
   {
     "id": "physics-fire-balls-3d",
@@ -294,13 +229,8 @@
     "demo": "https://clockmaker.jp/labs/130101_starling_away3d/bin-release/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2013/01/130107_away_physics4.1a.png",
     "title": "Physics Fire Balls 3D",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "Flash",
-      "Stage3D",
-      "Away3D",
-      "Starling"
-    ]
+    "type": "Real Time Motion Graphics",
+    "technology": ["Flash", "Stage3D", "Away3D", "Starling"]
   },
   {
     "id": "physics-fire-balls-2d",
@@ -310,12 +240,8 @@
     "demo": "https://clockmaker.jp/labs/121231_starling_box2d_particles/bin-release/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2013/01/130104_box2d_1.png",
     "title": "Physics Fire Balls 2D",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "Flash",
-      "Stage3D",
-      "Starling"
-    ]
+    "type": "Real Time Motion Graphics",
+    "technology": ["Flash", "Stage3D", "Starling"]
   },
   {
     "id": "arrows-with-force-map",
@@ -325,13 +251,8 @@
     "demo": "https://clockmaker.jp/labs/130123_starling_worker/StarlingArrows.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2013/01/130124_arrows.png",
     "title": "Arrows with Force Map",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "Flash",
-      "Stage3D",
-      "Starling",
-      "Worker"
-    ]
+    "type": "Real Time Motion Graphics",
+    "technology": ["Flash", "Stage3D", "Starling", "Worker"]
   },
   {
     "id": "earth",
@@ -341,12 +262,8 @@
     "demo": "https://ics-web.jp/lab-data/130725_away3d_extended/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2012/07/120713_earth.jpg",
     "title": "Earth with Lens Flare",
-    "type" : "Interactive",
-    "technology": [
-      "Flash",
-      "Stage3D",
-      "Away3D"
-    ]
+    "type": "Interactive",
+    "technology": ["Flash", "Stage3D", "Away3D"]
   },
   {
     "id": "ginnyeffect",
@@ -356,11 +273,8 @@
     "demo": "https://clockmaker.jp/labs/230430_threejs_ginnyeffect/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2012/02/120215_webgl.jpg",
     "title": "Ginny Effect",
-    "type" : "Interactive",
-    "technology": [
-      "WebGL",
-      "Three.js"
-    ]
+    "type": "Interactive",
+    "technology": ["WebGL", "Three.js"]
   },
   {
     "id": "particle-cloud-away3d",
@@ -370,12 +284,8 @@
     "demo": "https://clockmaker.jp/labs/111223_away3d_flint/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2011/12/111227_flint_particles_1.jpg",
     "title": "Cloud Particle",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "Flash",
-      "Stage3D",
-      "Away3D"
-    ]
+    "type": "Real Time Motion Graphics",
+    "technology": ["Flash", "Stage3D", "Away3D"]
   },
   {
     "id": "depth-of-field",
@@ -385,11 +295,8 @@
     "demo": "https://clockmaker.jp/labs/230514_three_dof/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2011/12/111223_away3d_depth_of_field.png",
     "title": "Depth of Field",
-    "type" : "Interactive",
-    "technology": [
-      "WebGL",
-      "Three.js"
-    ]
+    "type": "Interactive",
+    "technology": ["WebGL", "Three.js"]
   },
   {
     "id": "particle-fire-2d",
@@ -399,12 +306,8 @@
     "demo": "https://clockmaker.jp/labs/111030_starling_particle/StarlingParticlesFire.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2011/11/111101_starling_2.jpg",
     "title": "Fire Particle",
-    "type" : "Interactive",
-    "technology": [
-      "Flash",
-      "Stage3D",
-      "Starling"
-    ]
+    "type": "Interactive",
+    "technology": ["Flash", "Stage3D", "Starling"]
   },
   {
     "id": "cover-flow",
@@ -414,11 +317,8 @@
     "demo": "https://ics-creative.github.io/230428_three_coverflow/",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2011/10/111019_coverflow_refrection.jpg",
     "title": "Cover Flow",
-    "type" : "Interactive",
-    "technology": [
-      "HTML",
-      "WebGL"
-    ]
+    "type": "Interactive",
+    "technology": ["HTML", "WebGL"]
   },
   {
     "id": "physics-3d",
@@ -428,11 +328,8 @@
     "demo": "https://clockmaker.jp/labs/101216_jiglib/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2010/12/101216_jiglib.jpg",
     "title": "3D Physics with Dynamic Sound",
-    "type" : "Interactive",
-    "technology": [
-      "Flash",
-      "Papervision3D"
-    ]
+    "type": "Interactive",
+    "technology": ["Flash", "Papervision3D"]
   },
   {
     "id": "stardust-butterfly",
@@ -442,11 +339,8 @@
     "demo": "https://clockmaker.jp/labs/091221_stardust/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/12/091221-stardust.jpg",
     "title": "Stardust Butterfly",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "Flash",
-      "Papervision3D"
-    ]
+    "type": "Real Time Motion Graphics",
+    "technology": ["Flash", "Papervision3D"]
   },
   {
     "id": "3D-icon-in-spaces",
@@ -457,10 +351,7 @@
     "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2009/12/091222_pv3d_particle.jpg",
     "title": "3D Icon in Spaces",
     "type": "Real Time Motion Graphics",
-    "technology": [
-      "Flash",
-      "Papervision3D"
-    ]
+    "technology": ["Flash", "Papervision3D"]
   },
   {
     "id": "xmas-message",
@@ -470,11 +361,8 @@
     "demo": "https://clockmaker.jp/labs/091022_pv3d_xmas/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/10/091021_xmas.jpg",
     "title": "Xmas Message from Tweets",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "Flash",
-      "Papervision3D"
-    ]
+    "type": "Real Time Motion Graphics",
+    "technology": ["Flash", "Papervision3D"]
   },
   {
     "id": "generation-cluster",
@@ -484,11 +372,8 @@
     "demo": "https://clockmaker.jp/labs/091023_nodes/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/09/090918.jpg",
     "title": "Generation Cluster with Twitter",
-    "type" : "Interactive",
-    "technology": [
-      "Flash",
-      "Box2D"
-    ]
+    "type": "Interactive",
+    "technology": ["Flash", "Box2D"]
   },
   {
     "id": "transition-cube",
@@ -498,11 +383,8 @@
     "demo": "https://clockmaker.jp/labs/091229_cube_transition/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/09/090909-03.jpg",
     "title": "Cube Transition",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "Flash",
-      "BetweenAS3"
-    ]
+    "type": "Real Time Motion Graphics",
+    "technology": ["Flash", "BetweenAS3"]
   },
   {
     "id": "tenorion-3d",
@@ -512,12 +394,8 @@
     "demo": "https://clockmaker.jp/labs/091023_union/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/08/090820_tenorion.png",
     "title": "3D Tenorion (Online Collaboration)",
-    "type" : "Interactive",
-    "technology": [
-      "Flash",
-      "Papervision3D",
-      "SION"
-    ]
+    "type": "Interactive",
+    "technology": ["Flash", "Papervision3D", "SION"]
   },
   {
     "id": "time-stretch-motion-2",
@@ -527,11 +405,8 @@
     "demo": "https://ics-creative.github.io/150810_threejs_mosaic/DemoCubes.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/07/090715_wonderfl.png",
     "title": "Time Stretch Motion #2",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "WebGL",
-      "Three.js"
-    ]
+    "type": "Real Time Motion Graphics",
+    "technology": ["WebGL", "Three.js"]
   },
   {
     "id": "time-stretch-motion-1",
@@ -541,11 +416,8 @@
     "demo": "https://clockmaker.jp/labs/090716_betweenas3/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/07/090716_bet.jpg",
     "title": "Time Stretch Motion #1",
-    "type" : "Interactive",
-    "technology": [
-      "Flash",
-      "Papervision3D"
-    ]
+    "type": "Interactive",
+    "technology": ["Flash", "Papervision3D"]
   },
   {
     "id": "arrows-flow-simulation",
@@ -555,10 +427,8 @@
     "demo": "https://clockmaker.jp/labs/090518_re_arrows/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/05/090518_arrow.jpg",
     "title": "Arrows Flow Simulation",
-    "type" : "Interactive",
-    "technology": [
-      "Flash"
-    ]
+    "type": "Interactive",
+    "technology": ["Flash"]
   },
   {
     "id": "photo-print-effect",
@@ -568,11 +438,8 @@
     "demo": "https://clockmaker.jp/labs/230509_three_motion/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/05/090507_photoprint.jpg",
     "title": "Photo Print Effect (Remake)",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "Flash",
-      "Papervision3D"
-    ]
+    "type": "Real Time Motion Graphics",
+    "technology": ["Flash", "Papervision3D"]
   },
   {
     "id": "3d-balls",
@@ -582,11 +449,8 @@
     "demo": "https://clockmaker.jp/labs/090402_box2d_jampack/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/04/090402_jampack.png",
     "title": "Jam Pack Modoki - 3D",
-    "type" : "Interactive",
-    "technology": [
-      "Flash",
-      "Papervision3D"
-    ]
+    "type": "Interactive",
+    "technology": ["Flash", "Papervision3D"]
   },
   {
     "id": "water-ball",
@@ -596,11 +460,8 @@
     "demo": "https://clockmaker.jp/labs/090201_waterball/bin/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/02/090201_waterball.jpg",
     "title": "Waterball",
-    "type" : "Interactive",
-    "technology": [
-      "Flash",
-      "Papervision3D"
-    ]
+    "type": "Interactive",
+    "technology": ["Flash", "Papervision3D"]
   },
   {
     "id": "q-films",
@@ -610,13 +471,8 @@
     "demo": "https://clockmaker.jp/labs/090211_qfilms/website/index.html",
     "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2009/01/090114_02.jpg",
     "title": "Q.films",
-    "type" : "Web Site",
-    "technology": [
-      "Flash",
-      "Papervision3D",
-      "Progression",
-      "Box2D"
-    ]
+    "type": "Web Site",
+    "technology": ["Flash", "Papervision3D", "Progression", "Box2D"]
   },
   {
     "id": "air-ship",
@@ -626,11 +482,8 @@
     "demo": "https://clockmaker.jp/labs/090125_pv3d_spring/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/01/090125_spring.png",
     "title": "Air Ship Game",
-    "type" : "Interactive (Keyboard)",
-    "technology": [
-      "Flash",
-      "Papervision3D"
-    ]
+    "type": "Interactive (Keyboard)",
+    "technology": ["Flash", "Papervision3D"]
   },
   {
     "id": "moving-logo",
@@ -640,11 +493,8 @@
     "demo": "https://clockmaker.jp/project/ichigoichie/web_movie/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2008/12/081214_ichigoichie.jpg",
     "title": "Moving Logo",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "Flash",
-      "Papervision3D"
-    ]
+    "type": "Real Time Motion Graphics",
+    "technology": ["Flash", "Papervision3D"]
   },
   {
     "id": "rgb-image-Separate",
@@ -654,10 +504,8 @@
     "demo": "https://ics-creative.github.io/data-demos/140804_awayjs_rgb/src/0_demo.html",
     "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/11/081111_rgb1.jpg",
     "title": "RGB Image Separate",
-    "type" : "Interactive",
-    "technology": [
-      "Flash"
-    ]
+    "type": "Interactive",
+    "technology": ["Flash"]
   },
   {
     "id": "music-visualizer",
@@ -667,11 +515,8 @@
     "demo": "https://clockmaker.jp/labs/081031_pv3d_visualizer/bin/",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2008/10/081031_visualizer.jpg",
     "title": "Music Visualizer",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "Flash",
-      "Papervision3D"
-    ]
+    "type": "Real Time Motion Graphics",
+    "technology": ["Flash", "Papervision3D"]
   },
   {
     "id": "swinging-flag",
@@ -681,11 +526,8 @@
     "demo": "https://clockmaker.jp/labs/210425_as3mod/index.html",
     "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/10/081008_as3dmod_2.png",
     "title": "Swinging flag",
-    "type" : "Interactive",
-    "technology": [
-      "WebGL",
-      "Three.js"
-    ]
+    "type": "Interactive",
+    "technology": ["WebGL", "Three.js"]
   },
   {
     "id": "dancing-panel",
@@ -695,11 +537,8 @@
     "demo": "https://clockmaker.jp/labs/210425_as3mod/twist.html",
     "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/10/081008_as3dmod_1.png",
     "title": "Dancing Panel",
-    "type" : "Interactive",
-    "technology": [
-      "WebGL",
-      "Three.js"
-    ]
+    "type": "Interactive",
+    "technology": ["WebGL", "Three.js"]
   },
   {
     "id": "3d-paint",
@@ -709,11 +548,8 @@
     "demo": "https://clockmaker.jp/labs/081004_astro_3d/bin/",
     "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/10/papervision3d_paint.jpg",
     "title": "Rewritable 3D Paint",
-    "type" : "Interactive",
-    "technology": [
-      "Flash",
-      "Papervision3D"
-    ]
+    "type": "Interactive",
+    "technology": ["Flash", "Papervision3D"]
   },
   {
     "id": "tiled-motion",
@@ -723,11 +559,8 @@
     "demo": "https://clockmaker.jp/labs/230514_three_tiled_motion/index.html",
     "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/10/080922_pv3d_matrix.jpg",
     "title": "Simple tiled motion of photo display",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "WebGL",
-      "Three.js"
-    ]
+    "type": "Real Time Motion Graphics",
+    "technology": ["WebGL", "Three.js"]
   },
   {
     "id": "reflection-butterfly",
@@ -737,10 +570,7 @@
     "demo": "https://clockmaker.jp/labs/230430_threejs_butterfly/index.html",
     "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/09/080818_pv3d_butterfly1.jpg",
     "title": "Reflection Butterfly",
-    "type" : "Real Time Motion Graphics",
-    "technology": [
-      "WebGL",
-      "Three.js"
-    ]
+    "type": "Real Time Motion Graphics",
+    "technology": ["WebGL", "Three.js"]
   }
 ]

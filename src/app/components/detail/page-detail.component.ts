@@ -19,9 +19,12 @@ import {
   trigger,
 } from '@angular/animations';
 import { SoundService } from '../../service/sound.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-page-detail',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './page-detail.html',
   animations: [
     trigger('routerTransition', [
@@ -39,13 +42,13 @@ import { SoundService } from '../../service/sound.service';
         'hide',
         style({
           filter: `brightness(0%)`,
-        })
+        }),
       ),
       state(
         'show',
         style({
           filter: `brightness(100%)`,
-        })
+        }),
       ),
       transition('hide => show', animate('0.5s ease-in')),
       transition('show => hide', animate('0.5s ease-out')),
@@ -56,14 +59,14 @@ import { SoundService } from '../../service/sound.service';
         style({
           opacity: 0,
           transform: `translate(-10px, 0)`,
-        })
+        }),
       ),
       state(
         'show',
         style({
           opacity: 1,
           transform: `translate(0px, 0)`,
-        })
+        }),
       ),
       transition('hide => show', animate('0.5s cubic-bezier(0, 0, 0, 1)')),
       transition('show => hide', animate('0.5s cubic-bezier(0, 0, 0, 1)')),
@@ -89,13 +92,13 @@ export class DetailPageComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private sanitizer: DomSanitizer,
-    private soundService: SoundService
+    private soundService: SoundService,
   ) {}
 
   ngOnInit(): void {
     this.route.params
       .pipe(
-        switchMap((params: Params) => this.dataService.getDetail(params.id))
+        switchMap((params: Params) => this.dataService.getDetail(params.id)),
       )
       .subscribe((data: ItemData | null) => {
         if (data != null) {
@@ -126,7 +129,7 @@ export class DetailPageComponent implements OnInit {
 
   private _updateVideoUrl(): void {
     this.iframeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
-      this.data.demo
+      this.data.demo,
     );
   }
 

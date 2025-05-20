@@ -8,9 +8,14 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import { CommonModule } from '@angular/common';
+import { FooterComponent } from '../../common/footer/footer.component';
+import { WorkItemComponent } from '../work-item/work-item.component';
 
 @Component({
   selector: 'app-page-list',
+  standalone: true,
+  imports: [CommonModule, FooterComponent, WorkItemComponent],
   templateUrl: './page-top.html',
   styleUrls: [`./page-top.scss`, `../../common/header/header.scss`],
   animations: [
@@ -24,14 +29,14 @@ import {
         style({
           opacity: 1,
           transform: `translate(300px, 0)`,
-        })
+        }),
       ),
       state(
         'show',
         style({
           opacity: 1,
           transform: `translate(0px, 0)`,
-        })
+        }),
       ),
       transition('void => show', animate('0.5s cubic-bezier(0, 0, 0, 1)')),
       transition('show => void', animate('0.5s ease')),

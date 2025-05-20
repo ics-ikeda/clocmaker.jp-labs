@@ -11,10 +11,12 @@ export class DataService {
   public getJson(): Promise<ItemData[]> {
     return new Promise<ItemData[]>((resolve: (items: ItemData[]) => void) => {
       if (this.data == null) {
-        this.http.get<ItemData[]>('assets/data.json' + "?cc=" + Date.now()).subscribe((res) => {
-          this.data = res;
-          resolve(this.data);
-        });
+        this.http
+          .get<ItemData[]>('assets/data.json' + '?cc=' + Date.now())
+          .subscribe((res) => {
+            this.data = res;
+            resolve(this.data);
+          });
       } else {
         resolve(this.data);
       }
