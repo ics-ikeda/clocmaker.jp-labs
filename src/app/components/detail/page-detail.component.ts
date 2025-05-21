@@ -73,7 +73,7 @@ import { FooterComponent } from '../common/footer/footer.component';
       transition('show => hide', animate('0.5s cubic-bezier(0, 0, 0, 1)')),
     ]),
   ],
-  styleUrls: ['../common/header/header.scss', './page-detail.scss'],
+  styleUrls: ['../common/header/header.css', './page-detail.css'],
 })
 export class DetailPageComponent implements OnInit {
   @Input() data!: ItemData;

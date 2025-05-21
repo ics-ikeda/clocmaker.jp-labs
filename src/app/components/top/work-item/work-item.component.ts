@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './work-item.html',
-  styleUrls: [`./work-item.scss`],
+  styleUrls: [`./work-item.css`],
 })
 export class WorkItemComponent implements AfterViewInit {
   @Input() data!: ItemData;

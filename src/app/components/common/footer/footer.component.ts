@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './footer.html',
-  styleUrls: ['./footer.scss'],
+  styleUrls: ['./footer.css'],
 })
 export class FooterComponent {
   @Input() meta!: string;

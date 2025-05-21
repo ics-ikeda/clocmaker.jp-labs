@@ -88,12 +88,12 @@ h1.show {
 .page-top-hero-area {
   height: 100%;
 
-  // 背景画像のぶんだけ調整している
+  /* 背景画像のぶんだけ調整している */
   padding: 10px 16px 16px;
   overflow: auto;
 
-  // .my-main-area-row
-  &-row {
+  /* .my-main-area-row */
+  .my-main-area-row {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(196px, 1fr));
     gap: 16px 8px;
@@ -122,16 +122,18 @@ h1.show {
   transition: opacity 0.3s;
 }
 
-// .showing {
-//   pointer-events: none;
-//   .main-content:after {
-//     opacity: 1.0;
-//   }
-//   h1 {
-//     opacity: 0;
-//     transform: translate3d(+10px, 0, 0);
-//   }
-//   .my-navi {
-//     background: #333;
-//   }
-// }
+/*
+.showing {
+  pointer-events: none;
+  .main-content:after {
+    opacity: 1.0;
+  }
+  h1 {
+    opacity: 0;
+    transform: translate3d(+10px, 0, 0);
+  }
+  .my-navi {
+    background: #333;
+  }
+}
+*/

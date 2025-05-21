@@ -75,7 +75,7 @@
   }
 
   div.show .main-content::after {
-    // opacity: 1.0;
+    /* opacity: 1.0; */
   }
 
   &.showing {

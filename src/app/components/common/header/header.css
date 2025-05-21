@@ -12,7 +12,7 @@
     display: inline-block;
     font-family: Lato, sans-serif;
     font-weight: 300;
-    -webkit-font-smoothing: antialiased; // なめらか
+    -webkit-font-smoothing: antialiased; /* なめらか */
   }
 
   .header-h1-top {
@@ -55,7 +55,7 @@
   border: 1px solid #444;
   border-radius: 0;
   transition: all 1s;
-  -webkit-font-smoothing: antialiased; // なめらか
+  -webkit-font-smoothing: antialiased; /* なめらか */
 
   span.btn-label-prev {
     margin-left: 5px;

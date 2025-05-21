@@ -17,7 +17,7 @@ import { WorkItemComponent } from '../work-item/work-item.component';
   standalone: true,
   imports: [CommonModule, FooterComponent, WorkItemComponent],
   templateUrl: './page-top.html',
-  styleUrls: [`./page-top.scss`, `../../common/header/header.scss`],
+  styleUrls: [`./page-top.css`, `../../common/header/header.css`],
   animations: [
     trigger('routerTransition', [
       transition(':enter', [style({}), animate('0.5s ease-in-out', style({}))]),
