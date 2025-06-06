@@ -13,7 +13,7 @@
   "private": true,
   "dependencies": {
     "@acab/reset.css": "^0.11.0",
-    "@angular-devkit/build-angular": "19",
+    "@angular-devkit/build-angular": "20",
     "@angular/animations": "19",
     "@angular/common": "19",
     "@angular/compiler": "19",
