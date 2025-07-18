@@ -1,5 +1,27 @@
 [
   {
+    "id": "glitch-monitor",
+    "blog_en": null,
+    "blog_ja": null,
+    "date": "2025/07/17",
+    "demo": "https://ics-ikeda.github.io/250717_pixijs_glitch/index.html",
+    "img": "https://ics-ikeda.github.io/250717_pixijs_glitch/eyecatch.jpg",
+    "title": "Glitch Monitor",
+    "type": "Real Time Motion Graphics",
+    "technology": ["WebGPU"]
+  },
+  {
+    "id": "compute-shader-particles",
+    "blog_en": null,
+    "blog_ja": null,
+    "date": "2025/06/27",
+    "demo": "https://ics-creative.github.io/250627_webgpu_particles/webgpu.html",
+    "img": "https://ics-creative.github.io/250627_webgpu_particles/eyecatch.jpg",
+    "title": "Compute Shader 200,000 Particles",
+    "type": "Real Time Motion Graphics",
+    "technology": ["WebGPU"]
+  },
+  {
     "id": "sound-visualizer-3d",
     "blog_en": null,
     "blog_ja": "https://ics.media/entry/230421/",
