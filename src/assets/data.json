@@ -1,5 +1,16 @@
 [
   {
+    "id": "three_turbulence",
+    "blog_en": null,
+    "blog_ja": null,
+    "date": "2025/07/23",
+    "demo": "https://ics-ikeda.github.io/250723_three_turbulence/index.html",
+    "img": "https://ics-ikeda.github.io/250723_three_turbulence/eyecatch.jpg",
+    "title": "Turbulence Particles",
+    "type": "Real Time Motion Graphics",
+    "technology": ["WebGL", "Three.js"]
+  },
+  {
     "id": "glitch-monitor",
     "blog_en": null,
     "blog_ja": null,
@@ -534,11 +545,11 @@
     "blog_en": null,
     "blog_ja": "https://clockmaker.jp/blog/2008/10/pv3d_visualizer/",
     "date": "2008/10/31",
-    "demo": "https://clockmaker.jp/labs/081031_pv3d_visualizer/bin/",
+    "demo": "https://ics-ikeda.github.io/250724_three_sound_visualizer/",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2008/10/081031_visualizer.jpg",
     "title": "Music Visualizer",
     "type": "Real Time Motion Graphics",
-    "technology": ["Flash", "Papervision3D"]
+    "technology": ["WebGL", "Three.js"]
   },
   {
     "id": "swinging-flag",
