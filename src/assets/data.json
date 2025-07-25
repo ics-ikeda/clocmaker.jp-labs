@@ -54,6 +54,17 @@
     "type": "Real Time Motion Graphics",
     "technology": ["WebGL", "gsap"]
   },
+    {
+    "id": "tail-y",
+    "blog_en": null,
+    "blog_ja": null,
+    "date": "2020/12/20",
+    "demo": "https://ics-ikeda.github.io/201220_pixijs_tails/index.html",
+    "img": "https://ics-ikeda.github.io/201220_pixijs_tails/eyecatch.jpg",
+    "title": "Tails",
+    "type": "Real Time Motion Graphics",
+    "technology": ["WebGPU", "PixiJS"]
+  },
   {
     "id": "three-waves",
     "blog_en": null,
