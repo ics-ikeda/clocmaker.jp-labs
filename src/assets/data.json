@@ -402,11 +402,11 @@
     "blog_en": "https://clockmaker.jp/blog-en/2009/10/pv3d-xmas/",
     "blog_ja": "https://clockmaker.jp/blog/2009/10/papervision3d-particle/",
     "date": "2009/10/20",
-    "demo": "https://clockmaker.jp/labs/091022_pv3d_xmas/index.html",
+    "demo": "https://ics-ikeda.github.io/250724_three_xmas_message/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/10/091021_xmas.jpg",
     "title": "Xmas Message from Tweets",
     "type": "Real Time Motion Graphics",
-    "technology": ["Flash", "Papervision3D"]
+    "technology": ["WebGPU", "Three.js", "GSAP"]
   },
   {
     "id": "generation-cluster",
