@@ -1,6 +1,6 @@
 /.angular/cache
 node_modules
-.idea
+../.idea
 app/*.map
 app/*.js
 _labs/styles/*.map
