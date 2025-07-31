@@ -1,49 +1,37 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import type { ItemData } from '../types/item-data';
-import { DataService } from '../lib/data-service';
-import Header from '../components/Header';
+import { data } from '../lib/data-service';
 import WorkItem from '../components/WorkItem';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
 import styles from './page.module.css';
 
-export default function HomePage() {
-  const [itemDataList, setItemDataList] = useState<ItemData[]>([]);
-
-  useEffect(() => {
-    const dataService = new DataService();
-    dataService.getJson().then((items) => {
-      setItemDataList(items);
-    });
-  }, []);
-
+export default function Home() {
   return (
-    <div className={styles.topPage}>
-      <Header title="ClockMaker Labs" />
+    <div className={styles.pageGrid}>
+      <header className={styles.header}>
+        <Header />
+      </header>
 
-      <div className={styles.mainContent}>
-        <h2 className={styles.subTitle}>
-          <strong>Interaction Design &times; Web Technology</strong><br />
-          <small>https://clockmaker.jp/labs/</small>
-        </h2>
-
+      <main className={styles.main}>
         <div className={styles.pageTopHero}>
-          <div className={styles.pageTopHeroArea}>
-            <div id="contentListHTML5" className={styles.pageTopHeroAreaRow}>
-              {itemDataList.map((dataItem) => (
-                <WorkItem
-                  key={dataItem.id}
-                  data={dataItem}
-                  className={styles.listItem}
-                />
-              ))}
-            </div>
+          <h2 className={styles.subTitle}>
+            <strong>Interaction Design &times; Web Technology</strong><br />
+            <small>https://clockmaker.jp/labs/</small>
+          </h2>
+        </div>
+        <div className={styles.pageTopHeroArea}>
+          <div className={styles.pageTopHeroAreaRow}>
+            {data.map((item) => (
+              <WorkItem key={item.id} data={item} />
+            ))}
           </div>
         </div>
-      </div>
+      </main>
 
-      <Footer meta="This website is build with Next.js 15." />
+      <footer className={styles.footer}>
+        <Footer meta="This work is build with WebGPU." />
+      </footer>
     </div>
   );
 }

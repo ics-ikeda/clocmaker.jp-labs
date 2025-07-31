@@ -25,6 +25,10 @@
   --color-link-active: #ddd;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   background: var(--color-background);
   color: var(--color-text-primary);

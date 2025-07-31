@@ -1,63 +1,49 @@
 import type { ItemData } from '../types/item-data';
+import jsonData from '../data.json';
 
-export class DataService {
-  private data: ItemData[] | null = null;
+export const data: ItemData[] = jsonData;
 
-  public async getJson(): Promise<ItemData[]> {
-    if (this.data === null) {
-      const response = await fetch('/data.json');
-      this.data = await response.json();
-    }
-    return this.data!;
+export function getDetail(id: string) {
+  return searchData(id);
+}
+
+function searchData(id: string): ItemData | null {
+  if (!data) {
+    return null;
   }
 
-  public async getDetail(id: string): Promise<ItemData | null> {
-    if (this.data !== null) {
-      return this.searchData(id);
-    } else {
-      await this.getJson();
-      return this.searchData(id);
-    }
+  const item = data.find((obj) => obj.id === id);
+
+  if (!item) {
+    return null;
   }
+  return item;
+}
 
-  private searchData(id: string): ItemData | null {
-    if (!this.data) {
-      return null;
-    }
-
-    const item = this.data.find((obj) => obj.id === id);
-
-    if (item == null) {
-      return null;
-    }
-    return item;
-  }
-
-  public getIndex(id: string): number {
-    if (!this.data) {
-      return -1;
-    }
-
-    for (let i = 0; i < this.data.length; i++) {
-      if (this.data[i].id === id) {
-        return i;
-      }
-    }
+export function getIndex(id: string): number {
+  if (!data) {
     return -1;
   }
 
-  public getItemAt(index: number): ItemData | null {
-    if (!this.data) {
-      return null;
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].id === id) {
+      return i;
     }
-
-    if (index < 0) {
-      return this.data[this.data.length - 1];
-    }
-    if (index > this.data.length - 1) {
-      return this.data[0];
-    }
-
-    return this.data[index];
   }
+  return -1;
+}
+
+export function getItemAt(index: number) {
+  if (!data) {
+    return null;
+  }
+
+  if (index < 0) {
+    return data[data.length - 1];
+  }
+  if (index > data.length - 1) {
+    return data[0];
+  }
+
+  return data[index];
 }
