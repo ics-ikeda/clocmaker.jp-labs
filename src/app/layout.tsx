@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { IframeProvider } from "../contexts/IframeContext";
 
 export const metadata: Metadata = {
   title: "ClockMaker Labs - Interaction Design × Web Technology",
@@ -92,7 +93,11 @@ export default function RootLayout({
         {/* Favicon */}
         <link rel="icon" type="image/x-icon" href="/clockmaker-labs-nextjs/src/app/favicon.ico" />
       </head>
-      <body>{children}</body>
+      <body>
+        <IframeProvider>
+          {children}
+        </IframeProvider>
+      </body>
     </html>
   );
 }

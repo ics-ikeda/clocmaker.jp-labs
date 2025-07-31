@@ -7,6 +7,7 @@ import ShuffleText from 'shuffle-text';
 import { unstable_ViewTransition as ViewTransition } from 'react';
 import type { ItemData } from '../types/item-data';
 import { SoundService } from '../lib/sound-service';
+import { useIframe } from '../contexts/IframeContext';
 import styles from './WorkItem.module.css';
 
 interface WorkItemProps {
@@ -16,6 +17,7 @@ interface WorkItemProps {
 
 export default function WorkItem({ data, className }: WorkItemProps) {
   const router = useRouter();
+  const { preloadIframe } = useIframe();
   const soundService = useRef(new SoundService());
   const textTitleRef = useRef<HTMLDivElement>(null);
   const textDateRef = useRef<HTMLDivElement>(null);
@@ -23,6 +25,7 @@ export default function WorkItem({ data, className }: WorkItemProps) {
   const shuffleTextDateRef = useRef<ShuffleText | null>(null);
   const [isRollOver, setIsRollOver] = useState(false);
   const [isLoadComplete, setIsLoadComplete] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (textTitleRef.current && textDateRef.current) {
@@ -32,6 +35,11 @@ export default function WorkItem({ data, className }: WorkItemProps) {
       shuffleTextTitleRef.current.emptyCharacter = '---';
       shuffleTextDateRef.current.emptyCharacter = '---';
     }
+
+    // コンポーネントがアンマウントされたときにローディング状態をリセット
+    return () => {
+      setIsLoading(false);
+    };
   }, []);
 
   const handleMouseOver = () => {
@@ -47,7 +55,7 @@ export default function WorkItem({ data, className }: WorkItemProps) {
     setIsRollOver(false);
   };
 
-  const handleClick = () => {
+  const handleClick = async () => {
     soundService.current.playClickSound();
     if (window.innerWidth < 768) {
       const win = window.open(data.demo);
@@ -55,9 +63,20 @@ export default function WorkItem({ data, className }: WorkItemProps) {
         win.focus();
       }
     } else {
-      router.push(`/works/${data.id}`);
+      // iframeの読み込みを待ってから遷移
+      setIsLoading(true);
+      try {
+        await preloadIframe(data.demo);
+        router.push(`/works/${data.id}`);
+      } catch (error) {
+        // エラーが発生した場合はローディング状態をリセット
+        setIsLoading(false);
+        console.error('Failed to preload iframe:', error);
+      }
     }
   };
+
+
 
   const handleLoadComplete = () => {
     setIsLoadComplete(true);
@@ -78,6 +97,7 @@ export default function WorkItem({ data, className }: WorkItemProps) {
         onMouseEnter={handleMouseOver}
         onMouseLeave={handleMouseOut}
         onClick={handleClick}
+        disabled={isLoading}
       >
 
           <div className={styles.imgContainer}>
@@ -103,6 +123,12 @@ export default function WorkItem({ data, className }: WorkItemProps) {
               />
             </ViewTransition>
             <div className={styles.imgRollover}></div>
+            {isLoading && (
+              <div className={styles.loadingOverlay}>
+                <div className={styles.loadingSpinner}></div>
+                <span>Loading...</span>
+              </div>
+            )}
           </div>
 
 
