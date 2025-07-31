@@ -2,6 +2,7 @@ import { getDetail } from '../../../lib/data-service';
 import { unstable_ViewTransition as ViewTransition } from 'react';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
+import IframeLoader from './IframeLoader';
 import styles from './page.module.css';
 
 // 静的パラメータを生成
@@ -55,14 +56,10 @@ export default async function DetailPage({ params }: PageProps) {
 
       <main className={styles.main}>
         <ViewTransition name={`work-item-${itemData.id}`}>
-          <div className={styles.iframeContainer}>
-            <iframe
-              src={itemData.demo}
-              title={itemData.title}
-              className={styles.demoIframe}
-              allowFullScreen
-            />
-          </div>
+          <IframeLoader
+            src={itemData.demo}
+            title={itemData.title}
+          />
         </ViewTransition>
       </main>
 
