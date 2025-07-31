@@ -1,4 +1,5 @@
 import { getDetail } from '../../../lib/data-service';
+import { unstable_ViewTransition as ViewTransition } from 'react';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import styles from './page.module.css';
@@ -18,7 +19,8 @@ interface PageProps {
 }
 
 export default async function DetailPage({ params }: PageProps) {
-  const itemData = getDetail(params.id);
+  const resolvedParams = await params;
+  const itemData = getDetail(resolvedParams.id);
 
   if (!itemData) {
     return (
@@ -52,14 +54,16 @@ export default async function DetailPage({ params }: PageProps) {
       </header>
 
       <main className={styles.main}>
-        <div className={styles.iframeContainer}>
-          <iframe
-            src={itemData.demo}
-            title={itemData.title}
-            className={styles.demoIframe}
-            allowFullScreen
-          />
-        </div>
+        <ViewTransition name={`work-item-${itemData.id}`}>
+          <div className={styles.iframeContainer}>
+            <iframe
+              src={itemData.demo}
+              title={itemData.title}
+              className={styles.demoIframe}
+              allowFullScreen
+            />
+          </div>
+        </ViewTransition>
       </main>
 
       <footer className={styles.footer}>

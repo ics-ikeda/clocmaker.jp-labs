@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("http://clockmaker.jp/labs/"),
+  metadataBase: new URL("https://clockmaker.jp/labs/"),
   openGraph: {
     title: "ClockMaker Labs - Interaction Design × Web Technology",
     description: "Portfolio website of IKEDA Yasunobu a.k.a ClockMaker / Web Designer and Developer from Tokyo, Japan.",

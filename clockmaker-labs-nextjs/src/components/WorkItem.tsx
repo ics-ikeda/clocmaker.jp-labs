@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import ShuffleText from 'shuffle-text';
+import { unstable_ViewTransition as ViewTransition } from 'react';
 import type { ItemData } from '../types/item-data';
 import { SoundService } from '../lib/sound-service';
 import styles from './WorkItem.module.css';
@@ -78,28 +79,32 @@ export default function WorkItem({ data, className }: WorkItemProps) {
         onMouseLeave={handleMouseOut}
         onClick={handleClick}
       >
-        <div className={styles.imgContainer}>
-          <Image
-            src={data.img}
-            width={460}
-            height={200}
-            onLoad={handleLoadComplete}
-            className={isLoadComplete ? styles.show : ''}
-            alt={data.title}
-            style={{
-              position: 'absolute',
-              top: 0,
-              visibility: isLoadComplete ? 'visible' : 'hidden',
-              width: '100%',
-              height: 'auto',
-              aspectRatio: '460/200',
-              objectFit: 'cover',
-              filter: isLoadComplete ? 'brightness(100%)' : 'brightness(400%)',
-              transition: 'all 0.3s ease'
-            }}
-          />
-          <div className={styles.imgRollover}></div>
-        </div>
+
+          <div className={styles.imgContainer}>
+            <ViewTransition name={`work-item-${data.id}`}>
+              <Image
+                src={data.img}
+                width={460}
+                height={200}
+                onLoad={handleLoadComplete}
+                className={isLoadComplete ? styles.show : ''}
+                alt={data.title}
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  visibility: isLoadComplete ? 'visible' : 'hidden',
+                  width: '100%',
+                  height: 'auto',
+                  aspectRatio: '460/200',
+                  objectFit: 'cover',
+                  filter: isLoadComplete ? 'brightness(100%)' : 'brightness(400%)',
+                  transition: 'all 0.3s ease'
+                }}
+              />
+            </ViewTransition>
+            <div className={styles.imgRollover}></div>
+          </div>
+
 
         <div className={styles.meta}>
           <div ref={textTitleRef} className={styles.title}>{data.title}</div>
