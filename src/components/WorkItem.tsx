@@ -39,6 +39,23 @@ export default function WorkItem({ data, className }: WorkItemProps) {
     shuffleTextDateRef.current?.start();
     soundService.current.playMouseOverSound();
     setIsRollOver(true);
+
+    // ホバー時にprerenderリンクを追加
+    addPrerenderLink(data.demo);
+  };
+
+  const addPrerenderLink = (url: string) => {
+    // 既存のprerenderリンクを削除
+    const existingLink = document.querySelector('link[rel="prerender"]');
+    if (existingLink) {
+      existingLink.remove();
+    }
+
+    // 新しいprerenderリンクを追加
+    const link = document.createElement('link');
+    link.rel = 'prerender';
+    link.href = url;
+    document.head.appendChild(link);
   };
 
   const handleMouseOut = () => {
