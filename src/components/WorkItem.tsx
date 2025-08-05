@@ -7,7 +7,6 @@ import ShuffleText from 'shuffle-text';
 import { unstable_ViewTransition as ViewTransition } from 'react';
 import type { ItemData } from '../types/item-data';
 import { SoundService } from '../lib/sound-service';
-import { useIframe } from '../contexts/IframeContext';
 import styles from './WorkItem.module.css';
 
 interface WorkItemProps {
@@ -17,7 +16,6 @@ interface WorkItemProps {
 
 export default function WorkItem({ data, className }: WorkItemProps) {
   const router = useRouter();
-  const { preloadIframe } = useIframe();
   const soundService = useRef(new SoundService());
   const textTitleRef = useRef<HTMLDivElement>(null);
   const textDateRef = useRef<HTMLDivElement>(null);
@@ -63,16 +61,9 @@ export default function WorkItem({ data, className }: WorkItemProps) {
         win.focus();
       }
     } else {
-      // iframeの読み込みを待ってから遷移
+      // 直接ページ遷移
       setIsLoading(true);
-      try {
-        await preloadIframe(data.demo);
-        router.push(`/works/${data.id}`);
-      } catch (error) {
-        // エラーが発生した場合はローディング状態をリセット
-        setIsLoading(false);
-        console.error('Failed to preload iframe:', error);
-      }
+      router.push(`/works/${data.id}`);
     }
   };
 
@@ -80,6 +71,12 @@ export default function WorkItem({ data, className }: WorkItemProps) {
 
   const handleLoadComplete = () => {
     setIsLoadComplete(true);
+  };
+
+  const handleLoadError = () => {
+    // 画像の読み込みに失敗した場合でも表示する
+    setIsLoadComplete(true);
+    console.warn(`Failed to load image for: ${data.title}`);
   };
 
   const handlePlaySoundRollOver = () => {
@@ -107,6 +104,7 @@ export default function WorkItem({ data, className }: WorkItemProps) {
                 width={460}
                 height={200}
                 onLoad={handleLoadComplete}
+                onError={handleLoadError}
                 className={isLoadComplete ? styles.show : ''}
                 alt={data.title}
                 style={{
@@ -120,6 +118,7 @@ export default function WorkItem({ data, className }: WorkItemProps) {
                   filter: isLoadComplete ? 'brightness(100%)' : 'brightness(400%)',
                   transition: 'all 0.3s ease'
                 }}
+                unoptimized={true}
               />
             </ViewTransition>
             <div className={styles.imgRollover}></div>
