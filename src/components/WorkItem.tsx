@@ -23,7 +23,6 @@ export default function WorkItem({ data, className }: WorkItemProps) {
   const shuffleTextDateRef = useRef<ShuffleText | null>(null);
   const [isRollOver, setIsRollOver] = useState(false);
   const [isLoadComplete, setIsLoadComplete] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (textTitleRef.current && textDateRef.current) {
@@ -33,11 +32,6 @@ export default function WorkItem({ data, className }: WorkItemProps) {
       shuffleTextTitleRef.current.emptyCharacter = '---';
       shuffleTextDateRef.current.emptyCharacter = '---';
     }
-
-    // コンポーネントがアンマウントされたときにローディング状態をリセット
-    return () => {
-      setIsLoading(false);
-    };
   }, []);
 
   const handleMouseOver = () => {
@@ -62,7 +56,6 @@ export default function WorkItem({ data, className }: WorkItemProps) {
       }
     } else {
       // 直接ページ遷移
-      setIsLoading(true);
       router.push(`/works/${data.id}`);
     }
   };
@@ -94,7 +87,8 @@ export default function WorkItem({ data, className }: WorkItemProps) {
         onMouseEnter={handleMouseOver}
         onMouseLeave={handleMouseOut}
         onClick={handleClick}
-        disabled={isLoading}
+        data-prefetch
+        data-demo-url={data.demo}
       >
 
           <div className={styles.imgContainer}>
@@ -122,12 +116,7 @@ export default function WorkItem({ data, className }: WorkItemProps) {
               />
             </ViewTransition>
             <div className={styles.imgRollover}></div>
-            {isLoading && (
-              <div className={styles.loadingOverlay}>
-                <div className={styles.loadingSpinner}></div>
-                <span>Loading...</span>
-              </div>
-            )}
+
           </div>
 
 
