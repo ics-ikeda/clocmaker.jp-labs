@@ -455,11 +455,11 @@
     "blog_en": "https://clockmaker.jp/blog-en/2009/07/pv3d-betweenas3/",
     "blog_ja": "https://clockmaker.jp/blog/2009/07/betweenas3/",
     "date": "2009/07/16",
-    "demo": "https://clockmaker.jp/labs/090716_betweenas3/index.html",
+    "demo": "https://ics-ikeda.github.io/250805_three_time_remap/",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/07/090716_bet.jpg",
     "title": "Time Stretch Motion #1",
     "type": "Interactive",
-    "technology": ["Flash", "Papervision3D"]
+    "technology": ["WebGPU", "Three.js", "GSAP"]
   },
   {
     "id": "arrows-flow-simulation",
