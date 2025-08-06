@@ -90,7 +90,7 @@ export default function RootLayout({
         />
 
         {/* Favicon */}
-        <link rel="icon" type="image/x-icon" href="/clockmaker-labs-nextjs/src/app/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </head>
       <body>
         {children}

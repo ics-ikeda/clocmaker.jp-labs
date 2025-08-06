@@ -566,7 +566,7 @@
     "blog_ja": "https://clockmaker.jp/blog/2008/10/pv3d_as3dmod/",
     "date": "2008/10/08",
     "demo": "https://clockmaker.jp/labs/210425_as3mod/index.html",
-    "img": "https://clockmaker.jp.blog-en/wp-content/uploads/2008/10/081008_as3dmod_2.png",
+    "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/10/081008_as3dmod_2.png",
     "title": "Swinging flag",
     "type": "Interactive",
     "technology": ["WebGL", "Three.js"]
@@ -577,7 +577,7 @@
     "blog_ja": "https://clockmaker.jp/blog/2008/10/pv3d_as3dmod/",
     "date": "2008/10/08",
     "demo": "https://clockmaker.jp/labs/210425_as3mod/twist.html",
-    "img": "https://clockmaker.jp.blog-en/wp-content/uploads/2008/10/081008_as3dmod_1.png",
+    "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/10/081008_as3dmod_1.png",
     "title": "Dancing Panel",
     "type": "Interactive",
     "technology": ["WebGL", "Three.js"]
@@ -588,18 +588,18 @@
     "blog_ja": "https://clockmaker.jp/blog/2008/10/astro_filereference/",
     "date": "2008/10/04",
     "demo": "https://clockmaker.jp/labs/081004_astro_3d/bin/",
-    "img": "https://clockmaker.jp.blog-en/wp-content/uploads/2008/10/papervision3d_paint.jpg",
+    "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/10/papervision3d_paint.jpg",
     "title": "Rewritable 3D Paint",
     "type": "Interactive",
     "technology": ["Flash", "Papervision3D"]
   },
   {
     "id": "tiled-motion",
-    "blog_en": "https://clockmaker.jp.blog-en/2008/10/pv3d-tiledmotion/",
+    "blog_en": "https://clockmaker.jp/blog-en/2008/10/pv3d-tiledmotion/",
     "blog_ja": "https://clockmaker.jp/blog/2008/09/papervision3d_photograph/",
     "date": "2008/09/23",
     "demo": "https://clockmaker.jp/labs/230514_three_tiled_motion/index.html",
-    "img": "https://clockmaker.jp.blog-en/wp-content/uploads/2008/10/080922_pv3d_matrix.jpg",
+    "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/10/080922_pv3d_matrix.jpg",
     "title": "Simple tiled motion of photo display",
     "type": "Real Time Motion Graphics",
     "technology": ["WebGL", "Three.js"]
@@ -610,7 +610,7 @@
     "blog_ja": "https://clockmaker.jp/blog/2010/10/canvas_js_demo/",
     "date": "2008/08/19",
     "demo": "https://clockmaker.jp/labs/230430_threejs_butterfly/index.html",
-    "img": "https://clockmaker.jp.blog-en/wp-content/uploads/2008/09/080818_pv3d_butterfly1.jpg",
+    "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/09/080818_pv3d_butterfly1.jpg",
     "title": "Reflection Butterfly",
     "type": "Real Time Motion Graphics",
     "technology": ["WebGL", "Three.js"]
