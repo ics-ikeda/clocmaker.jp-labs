@@ -1,4 +1,5 @@
 import { unstable_ViewTransition as ViewTransition } from "react";
+import { Metadata } from "next";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import { getDetail, data } from "@/lib/data-service";
@@ -9,6 +10,51 @@ export async function generateStaticParams() {
   return data.map((item) => ({
     id: item.id,
   }));
+}
+
+// 動的メタデータを生成
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const resolvedParams = await params;
+  const itemData = getDetail(resolvedParams.id);
+
+  if (!itemData) {
+    return {
+      title: "Work Not Found - ClockMaker Labs",
+      description: "The requested work could not be found.",
+    };
+  }
+
+  return {
+    title: `${itemData.title} - ClockMaker Labs`,
+    description: `${itemData.date} - This work is build with ${itemData.technology.join(", ")}.`,
+    openGraph: {
+      title: `${itemData.title} - ClockMaker Labs`,
+      description: `${itemData.date} - This work is build with ${itemData.technology.join(", ")}.`,
+      url: `https://clockmaker.jp/labs/works/${itemData.id}`,
+      siteName: "clockmaker.jp",
+      images: [
+        {
+          url: "https://labs.clockmaker.jp/images/preview.jpg",
+          width: 1200,
+          height: 630,
+          alt: `${itemData.title} Preview`,
+        },
+      ],
+      locale: "ja_JP",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${itemData.title} - ClockMaker Labs`,
+      description: `${itemData.date} - This work is build with ${itemData.technology.join(", ")}.`,
+      site: "@clockmaker",
+      images: ["https://labs.clockmaker.jp/images/preview.jpg"],
+    },
+  };
 }
 
 interface PageProps {
