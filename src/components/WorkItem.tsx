@@ -106,6 +106,7 @@ export default function WorkItem({ data, className }: WorkItemProps) {
               src={data.img}
               width={460}
               height={200}
+              loading="lazy"
               onLoad={handleLoadComplete}
               onError={handleLoadError}
               className={isLoadComplete ? styles.show : ""}
