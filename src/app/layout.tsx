@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "clockmaker.jp",
     images: [
       {
-        url: "https://clockmaker.jp/labs/_labs/images/preview_160208.jpg",
+        url: "https://labs.clockmaker.jp/images/preview.jpg",
         width: 1200,
         height: 630,
         alt: "ClockMaker Labs Preview",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description:
       "Portfolio website of IKEDA Yasunobu a.k.a ClockMaker / Web Designer and Developer from Tokyo, Japan.",
     site: "@clockmaker",
-    images: ["https://clockmaker.jp/labs/_labs/images/preview_160208.jpg"],
+    images: ["https://labs.clockmaker.jp/images/preview.jpg"],
   },
   robots: {
     index: true,
