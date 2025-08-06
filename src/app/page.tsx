@@ -31,7 +31,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <Footer meta="This work is build with WebGPU." />
+        <Footer meta="This website is build with Next.js." />
       </footer>
     </div>
   );

@@ -14,7 +14,7 @@ import {
   playMouseOverSound,
   playTransitionUpSound,
 } from "@/lib/sound-service";
-import type { ItemData } from "../types/item-data";
+import type { ItemData } from "@/types/item-data";
 import styles from "./WorkItem.module.css";
 
 // 定数定義
@@ -71,12 +71,6 @@ export default function WorkItem({ data, className }: WorkItemProps) {
     setIsLoadComplete(true);
   };
 
-  const handleLoadError = () => {
-    // 画像の読み込みに失敗した場合でも表示する
-    setIsLoadComplete(true);
-    console.warn(`Failed to load image for: ${data.title}`);
-  };
-
   const handlePlaySoundRollOver = () => {
     playMouseOverSound();
   };
@@ -108,9 +102,8 @@ export default function WorkItem({ data, className }: WorkItemProps) {
               height={200}
               loading="lazy"
               onLoad={handleLoadComplete}
-              onError={handleLoadError}
               className={isLoadComplete ? styles.show : ""}
-              alt={data.title}
+              alt=""
               style={{
                 position: "absolute",
                 top: 0,
