@@ -1,12 +1,11 @@
 import { unstable_ViewTransition as ViewTransition } from "react";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
-import { getDetail } from "@/lib/data-service";
+import { getDetail, data } from "@/lib/data-service";
 import styles from "./page.module.css";
 
 // 静的パラメータを生成
 export async function generateStaticParams() {
-  const { data } = await import("../../../lib/data-service");
   return data.map((item) => ({
     id: item.id,
   }));
