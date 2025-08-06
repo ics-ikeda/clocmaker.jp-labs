@@ -1,0 +1,84 @@
+.detailPageNavi {
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  width: 100%;
+  height: 52px;
+  padding: 0 16px;
+  overflow: hidden;
+  background-color: var(--color-background-secondary);
+  align-items: center;
+
+  h1 {
+    display: inline-block;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+  }
+}
+
+.headerH1Top {
+  flex: 1;
+}
+
+.headerDetailH1 {
+  flex: 1;
+  padding-left: 8px;
+}
+
+.headerAuthor {
+  flex: 1;
+}
+
+.detailPageNaviNavigation {
+  display: flex;
+  gap: 8px;
+}
+
+.btnLink {
+}
+
+.btnBack {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 10px;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid var(--color-border-primary);
+  border-radius: 0;
+  transition: all 1s;
+  gap: 4px;
+
+  span.btnLabelPrev {
+  }
+
+  span.btnLabelNext {
+  }
+
+  &,
+  &:visited {
+    color: var(--color-text-primary);
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: var(--color-hover-text);
+    text-decoration: none;
+    background: var(--color-hover-background);
+    border: 1px solid var(--color-hover-background);
+    transition: all 0.05s;
+  }
+
+  &:active {
+    text-decoration: none;
+    background: var(--color-active-background);
+    border: 1px solid var(--color-active-background);
+  }
+}

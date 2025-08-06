@@ -1,52 +1,36 @@
-# Clockmaker Labs
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-このプロジェクトは [Angular 19](https://angular.io/) で構築されています。
+## Getting Started
 
-## 開発サーバーの起動
+First, run the development server:
 
-```sh
-npm start
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-`http://localhost:4200/` でアプリが自動リロードされます。
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## ビルド
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-```sh
-npm run build
-```
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-ビルド成果物は `dist/` ディレクトリに出力されます。
-本番用ビルドは `--configuration production` オプション付きで実行されます。
+## Learn More
 
-## コード整形・リント
+To learn more about Next.js, take a look at the following resources:
 
-- コード整形（Prettier）:  
-  ```sh
-  npm run format
-  ```
-- TypeScript/HTMLリント（ESLint）:  
-  ```sh
-  npm run lint
-  ```
-- SCSSリント（Stylelint）:  
-  ```sh
-  npm run stylelint
-  ```
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## 依存技術
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-- Angular 19
-- TypeScript 5.8
-- RxJS, Zone.js
-- ESLint, Stylelint, Prettier
-- howler.js, shuffle-text など
+## Deploy on Vercel
 
-## 注意
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-- ユニットテスト・E2Eテストは本リポジトリでは利用していません。
-
-## さらなる情報
-
-- [Angular公式ドキュメント](https://angular.jp/)
-- [Angular CLI README](https://github.com/angular/angular-cli/blob/main/README.md)
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

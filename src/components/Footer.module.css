@@ -1,0 +1,50 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  display: grid;
+  grid-template: '. author .' auto / auto 1fr auto;
+  gap: 8px;
+  place-content: center;
+  width: 100%;
+  min-height: 32px;
+  padding-right: 16px;
+  padding-left: 8px;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  text-align: right;
+  background: var(--color-background-secondary);
+}
+
+@media (width < 768px) {
+  .footer {
+    position: static;
+    display: block;
+    text-align: center;
+  }
+}
+
+.footerAuthor {
+  grid-area: author;
+  text-align: right;
+}
+
+@media (width < 768px) {
+  .footerAuthor {
+    text-align: center;
+  }
+}
+
+.footer a,
+.footer a:visited {
+  color: var(--color-link);
+}
+
+.footer a:hover {
+  color: var(--color-link-hover);
+}
+
+.footer a:active {
+  color: var(--color-link-active);
+}

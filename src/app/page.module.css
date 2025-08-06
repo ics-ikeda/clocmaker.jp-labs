@@ -1,0 +1,85 @@
+/* CSS Grid Layout for Home Page */
+.pageGrid {
+  display: grid;
+  grid-template-rows: 52px 1fr 32px;
+  min-height: 100%;
+  width: 100%;
+}
+
+.header {
+}
+
+.main {
+  position: relative;
+  overflow: auto;
+}
+
+.footer {
+}
+
+.subTitle {
+  position: absolute;
+  top: 46px;
+  left: 16px;
+  z-index: 1;
+  line-height: 1;
+}
+
+.subTitle strong {
+  font-size: 1.6rem;
+  font-weight: 200;
+}
+
+@media (width < 768px) {
+  .subTitle strong {
+    font-size: 1.25rem;
+  }
+}
+
+.subTitle small {
+  font-size: 0.75rem;
+  font-weight: 200;
+  color: var(--color-text-secondary);
+}
+
+.pageTopHero {
+  position: relative;
+  height: 84px;
+  padding-bottom: 32px;
+  background-image: url('./assets/bg-photo.jpg');
+  background-repeat: no-repeat;
+}
+
+.pageTopHeroArea {
+  padding: 10px 16px 16px;
+  overflow: auto;
+  position: relative;
+}
+
+.pageTopHeroArea::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  pointer-events: none;
+  content: '';
+  background-image: url('./assets/bg-area.png');
+  background-repeat: repeat-x;
+  background-size: 50%;
+}
+
+.pageTopHeroAreaRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(196px, 1fr));
+  gap: 16px 8px;
+  align-items: start;
+  grid-auto-rows: min-content;
+  grid-auto-flow: row;
+}
+
+@media (width < 768px) {
+  .pageTopHeroAreaRow {
+    grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+  }
+}
