@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "ClockMaker Labs - Interaction Design × Web Technology",
-  description: "Portfolio website of IKEDA Yasunobu a.k.a ClockMaker / Web Designer and Frontend Engineer from Tokyo, Japan.",
-  keywords: "portfolio, web design, frontend, interaction design, web technology",
+  description:
+    "Portfolio website of IKEDA Yasunobu a.k.a ClockMaker / Web Designer and Frontend Engineer from Tokyo, Japan.",
+  keywords:
+    "portfolio, web design, frontend, interaction design, web technology",
   authors: [{ name: "IKEDA Yasunobu" }],
   creator: "IKEDA Yasunobu",
   publisher: "clockmaker.jp",
@@ -17,7 +19,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://clockmaker.jp/labs/"),
   openGraph: {
     title: "ClockMaker Labs - Interaction Design × Web Technology",
-    description: "Portfolio website of IKEDA Yasunobu a.k.a ClockMaker / Web Designer and Developer from Tokyo, Japan.",
+    description:
+      "Portfolio website of IKEDA Yasunobu a.k.a ClockMaker / Web Designer and Developer from Tokyo, Japan.",
     url: "http://clockmaker.jp/labs/",
     siteName: "clockmaker.jp",
     images: [
@@ -34,7 +37,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ClockMaker Labs - Interaction Design × Web Technology",
-    description: "Portfolio website of IKEDA Yasunobu a.k.a ClockMaker / Web Designer and Developer from Tokyo, Japan.",
+    description:
+      "Portfolio website of IKEDA Yasunobu a.k.a ClockMaker / Web Designer and Developer from Tokyo, Japan.",
     site: "@clockmaker",
     images: ["https://clockmaker.jp/labs/_labs/images/preview_160208.jpg"],
   },
@@ -66,14 +70,14 @@ export default function RootLayout({
     <html lang="ja">
       <head>
         <meta name="google" content="notranslate" />
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+        <meta
+          name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0"
+        />
         <meta name="color-scheme" content="dark" />
 
         {/* Google Fonts */}
-        <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com"
-        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
@@ -82,7 +86,6 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Ropa+Sans:wght@400&family=Lato:wght@100;300;400&display=swap"
           rel="stylesheet"
-
         />
 
         {/* Font Awesome */}
@@ -94,9 +97,7 @@ export default function RootLayout({
         {/* Favicon */}
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </head>
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
       <GoogleAnalytics gaId="G-3PRT3QNJLL" />
     </html>
   );

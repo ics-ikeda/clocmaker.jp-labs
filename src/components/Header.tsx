@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useRouter } from 'next/navigation';
-import { getIndex, getItemAt } from '../lib/data-service';
-import { playClickSound, playTransitionDownSound } from '../lib/sound-service';
-import type { ItemData } from '../types/item-data';
-import styles from './Header.module.css';
+import { useRouter } from "next/navigation";
+import { getIndex, getItemAt } from "../lib/data-service";
+import { playClickSound, playTransitionDownSound } from "../lib/sound-service";
+import type { ItemData } from "../types/item-data";
+import styles from "./Header.module.css";
 
 interface HeaderProps {
   title?: string;
@@ -17,13 +17,13 @@ export default function Header({
   title = "ClockMaker Labs",
   showNavigation = false,
   isLoading = false,
-  itemData
+  itemData,
 }: HeaderProps) {
   const router = useRouter();
 
   const handleBackClick = () => {
     playClickSound();
-    router.push('/');
+    router.push("/");
     playTransitionDownSound();
   };
 
@@ -57,17 +57,20 @@ export default function Header({
         <div className={styles.detailPageNaviNavigation}>
           <div className={styles.btnLink}>
             <button className={styles.btnBack} onClick={handleBackClick}>
-              <i className="fa fa-th"></i><span className={styles.btnLabelPrev}>TOP</span>
+              <i className="fa fa-th"></i>
+              <span className={styles.btnLabelPrev}>TOP</span>
             </button>
           </div>
           <div className={styles.btnLink}>
             <button className={styles.btnBack} onClick={handlePrevClick}>
-              <i className="fa fa-chevron-left"></i><span className={styles.btnLabelPrev}>PREV</span>
+              <i className="fa fa-chevron-left"></i>
+              <span className={styles.btnLabelPrev}>PREV</span>
             </button>
           </div>
           <div className={styles.btnLink}>
             <button className={styles.btnBack} onClick={handleNextClick}>
-              <span className={styles.btnLabelNext}>NEXT</span><i className="fa fa-chevron-right"></i>
+              <span className={styles.btnLabelNext}>NEXT</span>
+              <i className="fa fa-chevron-right"></i>
             </button>
           </div>
         </div>

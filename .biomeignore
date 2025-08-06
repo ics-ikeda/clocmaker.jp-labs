@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+.next/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Assets
+public/

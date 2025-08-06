@@ -1,12 +1,12 @@
-import { getDetail } from '../../../lib/data-service';
-import { unstable_ViewTransition as ViewTransition } from 'react';
-import Header from '../../../components/Header';
-import Footer from '../../../components/Footer';
-import styles from './page.module.css';
+import { unstable_ViewTransition as ViewTransition } from "react";
+import Footer from "../../../components/Footer";
+import Header from "../../../components/Header";
+import { getDetail } from "@/lib/data-service";
+import styles from "./page.module.css";
 
 // 静的パラメータを生成
 export async function generateStaticParams() {
-  const { data } = await import('../../../lib/data-service');
+  const { data } = await import("../../../lib/data-service");
   return data.map((item) => ({
     id: item.id,
   }));
@@ -26,10 +26,7 @@ export default async function DetailPage({ params }: PageProps) {
     return (
       <div className={styles.detailPageGrid}>
         <header className={styles.header}>
-          <Header
-            title="Not Found"
-            showNavigation={false}
-          />
+          <Header title="Not Found" showNavigation={false} />
         </header>
         <main className={styles.main}>
           <div className={styles.errorContainer}>
@@ -41,7 +38,7 @@ export default async function DetailPage({ params }: PageProps) {
     );
   }
 
-  const meta = `${itemData.date} - This work is build with ${itemData.technology.join(', ')}.`;
+  const meta = `${itemData.date} - This work is build with ${itemData.technology.join(", ")}.`;
 
   return (
     <div className={styles.detailPageGrid}>

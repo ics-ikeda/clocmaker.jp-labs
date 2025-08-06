@@ -1,13 +1,24 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import Image from 'next/image';
-import ShuffleText from 'shuffle-text';
-import { unstable_ViewTransition as ViewTransition } from 'react';
-import type { ItemData } from '../types/item-data';
-import { playClickSound, playMouseOverSound, playTransitionUpSound } from '@/lib/sound-service';
-import styles from './WorkItem.module.css';
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import {
+  useEffect,
+  useRef,
+  useState,
+  unstable_ViewTransition as ViewTransition,
+} from "react";
+import ShuffleText from "shuffle-text";
+import {
+  playClickSound,
+  playMouseOverSound,
+  playTransitionUpSound,
+} from "@/lib/sound-service";
+import type { ItemData } from "../types/item-data";
+import styles from "./WorkItem.module.css";
+
+// 定数定義
+const MOBILE_BREAKPOINT = 768;
 
 interface WorkItemProps {
   data: ItemData;
@@ -27,34 +38,13 @@ export default function WorkItem({ data, className }: WorkItemProps) {
     if (textTitleRef.current && textDateRef.current) {
       shuffleTextTitleRef.current = new ShuffleText(textTitleRef.current);
       shuffleTextDateRef.current = new ShuffleText(textDateRef.current);
-
-      shuffleTextTitleRef.current.emptyCharacter = '---';
-      shuffleTextDateRef.current.emptyCharacter = '---';
     }
   }, []);
 
   const handleMouseOver = () => {
+    setIsRollOver(true);
     shuffleTextTitleRef.current?.start();
     shuffleTextDateRef.current?.start();
-    playMouseOverSound();
-    setIsRollOver(true);
-
-    // ホバー時にprerenderリンクを追加
-    addPrerenderLink(data.demo);
-  };
-
-  const addPrerenderLink = (url: string) => {
-    // 既存のprerenderリンクを削除
-    const existingLink = document.querySelector('link[rel="prerender"]');
-    if (existingLink) {
-      existingLink.remove();
-    }
-
-    // 新しいprerenderリンクを追加
-    const link = document.createElement('link');
-    link.rel = 'prerender';
-    link.href = url;
-    document.head.appendChild(link);
   };
 
   const handleMouseOut = () => {
@@ -65,7 +55,7 @@ export default function WorkItem({ data, className }: WorkItemProps) {
 
   const handleClick = async () => {
     playClickSound();
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < MOBILE_BREAKPOINT) {
       const win = window.open(data.demo);
       if (win) {
         win.focus();
@@ -76,8 +66,6 @@ export default function WorkItem({ data, className }: WorkItemProps) {
       playTransitionUpSound();
     }
   };
-
-
 
   const handleLoadComplete = () => {
     setIsLoadComplete(true);
@@ -98,48 +86,56 @@ export default function WorkItem({ data, className }: WorkItemProps) {
   };
 
   return (
-    <div className={`${styles.workItem} ${isRollOver ? styles.show : ''} ${className || ''}`}>
+    <div
+      className={`${styles.workItem} ${isRollOver ? styles.show : ""} ${className || ""}`}
+    >
       <button
+        type="button"
         className={styles.workItemButton}
-        onMouseEnter={handleMouseOver}
-        onMouseLeave={handleMouseOut}
+        onMouseEnter={handlePlaySoundRollOver}
+        onFocus={handlePlaySoundRollOver}
         onClick={handleClick}
+        onMouseOver={handleMouseOver}
+        onMouseLeave={handleMouseOut}
         data-prefetch
         data-demo-url={data.demo}
       >
-
-          <div className={styles.imgContainer}>
-            <ViewTransition name={`work-item-${data.id}`}>
-              <Image
-                src={data.img}
-                width={460}
-                height={200}
-                onLoad={handleLoadComplete}
-                onError={handleLoadError}
-                className={isLoadComplete ? styles.show : ''}
-                alt={data.title}
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  visibility: isLoadComplete ? 'visible' : 'hidden',
-                  width: '100%',
-                  height: 'auto',
-                  aspectRatio: '460/200',
-                  objectFit: 'cover',
-                  filter: isLoadComplete ? 'brightness(100%)' : 'brightness(400%)',
-                  transition: 'all 0.3s ease'
-                }}
-                unoptimized={true}
-              />
-            </ViewTransition>
-            <div className={styles.imgRollover}></div>
-
-          </div>
-
+        <div className={styles.imgContainer}>
+          <ViewTransition name={`work-item-${data.id}`}>
+            <Image
+              src={data.img}
+              width={460}
+              height={200}
+              onLoad={handleLoadComplete}
+              onError={handleLoadError}
+              className={isLoadComplete ? styles.show : ""}
+              alt={data.title}
+              style={{
+                position: "absolute",
+                top: 0,
+                visibility: isLoadComplete ? "visible" : "hidden",
+                width: "100%",
+                height: "auto",
+                aspectRatio: "460/200",
+                objectFit: "cover",
+                filter: isLoadComplete
+                  ? "brightness(100%)"
+                  : "brightness(400%)",
+                transition: "all 0.3s ease",
+              }}
+              unoptimized={true}
+            />
+          </ViewTransition>
+          <div className={styles.imgRollover}></div>
+        </div>
 
         <div className={styles.meta}>
-          <div ref={textTitleRef} className={styles.title}>{data.title}</div>
-          <div ref={textDateRef} className={styles.date}>{data.date}</div>
+          <div ref={textTitleRef} className={styles.title}>
+            {data.title}
+          </div>
+          <div ref={textDateRef} className={styles.date}>
+            {data.date}
+          </div>
         </div>
       </button>
 

@@ -1,5 +1,5 @@
-import type { ItemData } from '../types/item-data';
-import jsonData from '../data.json';
+import jsonData from "../data.json";
+import type { ItemData } from "../types/item-data";
 
 export const data: ItemData[] = jsonData;
 
