@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import data from "../data.json";
 
 export const metadata: Metadata = {
   title: "ClockMaker Labs - Interaction Design × Web Technology",
@@ -66,6 +67,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // demo URLからドメインを抽出してprefetch対象にする（DNS解決のみ）
+  const demoDomains = data
+    .map((item) => item.demo)
+    .filter((url) => url && url.startsWith("http"))
+    .map((url) => {
+      try {
+        return new URL(url).origin;
+      } catch {
+        return null;
+      }
+    })
+    .filter((domain) => domain !== null)
+    .filter((domain, index, self) => self.indexOf(domain) === index); // 重複削除
+
   return (
     <html lang="ja">
       <head>
@@ -96,6 +111,11 @@ export default function RootLayout({
 
         {/* Favicon */}
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+        {/* Demo Domains DNS Prefetch */}
+        {demoDomains.map((domain, index) => (
+          <link key={index} rel="dns-prefetch" href={domain} />
+        ))}
       </head>
       <body>{children}</body>
       <GoogleAnalytics gaId="G-3PRT3QNJLL" />
