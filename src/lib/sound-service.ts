@@ -1,26 +1,35 @@
 import { Howl } from 'howler';
 
-export class SoundService {
-  private _howlOver: Howl;
-  private _howlClick: Howl;
+// 共有の音声インスタンス
+const sharedHowlOver = new Howl({
+  src: ['/sounds/tap_03.wav'],
+  volume: 0.33,
+});
+const sharedHowlClick= new Howl({
+  src: ['/sounds/toggle_on.wav'],
+  volume: 0.5,
+});
 
-  constructor() {
-    this._howlOver = new Howl({
-      src: ['/sounds/tap_03.wav'],
-      volume: 0.33,
-    });
+const sharedHowlTransitionUp = new Howl({
+  src: ['/sounds/transition_up.wav'],
+  volume: 0.33,
+});
+const sharedHowlTransitionDown= new Howl({
+  src: ['/sounds/transition_down.wav'],
+  volume: 0.5,
+});
 
-    this._howlClick = new Howl({
-      src: ['/sounds/toggle_on.wav'],
-      volume: 0.5,
-    });
-  }
 
-  public playClickSound(): void {
-    this._howlClick.play();
-  }
-
-  public playMouseOverSound(): void {
-    this._howlOver.play();
-  }
+// 音声サービスを作成する関数
+export function playClickSound (){
+      sharedHowlClick.play();
+    }
+    export function playMouseOverSound (){
+      sharedHowlOver.play();
+    }
+export function playTransitionUpSound (){
+  sharedHowlTransitionUp.play();
+}
+export function playTransitionDownSound (){
+  sharedHowlTransitionDown.play();
 }

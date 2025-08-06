@@ -6,7 +6,7 @@ import Image from 'next/image';
 import ShuffleText from 'shuffle-text';
 import { unstable_ViewTransition as ViewTransition } from 'react';
 import type { ItemData } from '../types/item-data';
-import { SoundService } from '../lib/sound-service';
+import { playClickSound, playMouseOverSound, playTransitionUpSound } from '@/lib/sound-service';
 import styles from './WorkItem.module.css';
 
 interface WorkItemProps {
@@ -16,7 +16,6 @@ interface WorkItemProps {
 
 export default function WorkItem({ data, className }: WorkItemProps) {
   const router = useRouter();
-  const soundService = useRef(new SoundService());
   const textTitleRef = useRef<HTMLDivElement>(null);
   const textDateRef = useRef<HTMLDivElement>(null);
   const shuffleTextTitleRef = useRef<ShuffleText | null>(null);
@@ -37,7 +36,7 @@ export default function WorkItem({ data, className }: WorkItemProps) {
   const handleMouseOver = () => {
     shuffleTextTitleRef.current?.start();
     shuffleTextDateRef.current?.start();
-    soundService.current.playMouseOverSound();
+    playMouseOverSound();
     setIsRollOver(true);
 
     // ホバー時にprerenderリンクを追加
@@ -65,7 +64,7 @@ export default function WorkItem({ data, className }: WorkItemProps) {
   };
 
   const handleClick = async () => {
-    soundService.current.playClickSound();
+    playClickSound();
     if (window.innerWidth < 768) {
       const win = window.open(data.demo);
       if (win) {
@@ -74,6 +73,7 @@ export default function WorkItem({ data, className }: WorkItemProps) {
     } else {
       // 直接ページ遷移
       router.push(`/works/${data.id}`);
+      playTransitionUpSound();
     }
   };
 
@@ -90,11 +90,11 @@ export default function WorkItem({ data, className }: WorkItemProps) {
   };
 
   const handlePlaySoundRollOver = () => {
-    soundService.current.playMouseOverSound();
+    playMouseOverSound();
   };
 
   const handlePlaySoundClick = () => {
-    soundService.current.playClickSound();
+    playClickSound();
   };
 
   return (

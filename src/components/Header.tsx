@@ -1,9 +1,8 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useRef } from 'react';
 import { getIndex, getItemAt } from '../lib/data-service';
-import { SoundService } from '../lib/sound-service';
+import { playClickSound, playTransitionDownSound } from '../lib/sound-service';
 import type { ItemData } from '../types/item-data';
 import styles from './Header.module.css';
 
@@ -21,15 +20,15 @@ export default function Header({
   itemData
 }: HeaderProps) {
   const router = useRouter();
-  const soundService = useRef(new SoundService());
 
   const handleBackClick = () => {
-    soundService.current.playClickSound();
+    playClickSound();
     router.push('/');
+    playTransitionDownSound();
   };
 
   const handlePrevClick = () => {
-    soundService.current.playClickSound();
+    playClickSound();
     if (itemData) {
       const pageShift = -1;
       const index = getIndex(itemData.id);
@@ -41,7 +40,7 @@ export default function Header({
   };
 
   const handleNextClick = () => {
-    soundService.current.playClickSound();
+    playClickSound();
     if (itemData) {
       const pageShift = 1;
       const index = getIndex(itemData.id);
