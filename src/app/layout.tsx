@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
   title: "ClockMaker Labs - Interaction Design × Web Technology",
@@ -81,6 +82,7 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Ropa+Sans:wght@400&family=Lato:wght@100;300;400&display=swap"
           rel="stylesheet"
+
         />
 
         {/* Font Awesome */}
@@ -95,6 +97,7 @@ export default function RootLayout({
       <body>
         {children}
       </body>
+      <GoogleAnalytics gaId="G-3PRT3QNJLL" />
     </html>
   );
 }

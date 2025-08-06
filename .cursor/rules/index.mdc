@@ -1,0 +1,11 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+
+- 作業を開始するときは、`npm run dev`コマンドを使い、viteを起動すること
+- `playwright-mcp`はCursorにセットアップ済です。MCPにつないでブラウザのコンソールや描画結果を参考に開発を進めてください。
+    - DevToolsのコンソールエラーやワーニングは必ず解消ください。
+- 修正作業をしたら、`npm run lint`コマンドを実行すること。
+  - エラーが発生したら、すべて修正すること。
