@@ -38,7 +38,7 @@ export async function generateMetadata({
       siteName: "clockmaker.jp",
       images: [
         {
-          url: "https://labs.clockmaker.jp/images/preview.jpg",
+          url: itemData.img,
           width: 1200,
           height: 630,
           alt: `${itemData.title} Preview`,
@@ -52,7 +52,7 @@ export async function generateMetadata({
       title: `${itemData.title} - ClockMaker Labs`,
       description: `${itemData.date} - This work is build with ${itemData.technology.join(", ")}.`,
       site: "@clockmaker",
-      images: ["https://labs.clockmaker.jp/images/preview.jpg"],
+      images: [itemData.img],
     },
   };
 }
