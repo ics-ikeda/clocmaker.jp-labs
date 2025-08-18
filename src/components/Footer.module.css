@@ -15,6 +15,7 @@
   color: var(--color-text-secondary);
   text-align: right;
   background: var(--color-background-secondary);
+  box-sizing: border-box;
 }
 
 @media (width < 768px) {
@@ -28,6 +29,9 @@
 .footerAuthor {
   grid-area: author;
   text-align: right;
+  @media (width < 768px) {
+    display: none;
+  }
 }
 
 @media (width < 768px) {
@@ -47,4 +51,11 @@
 
 .footer a:active {
   color: var(--color-link-active);
+}
+
+.footerLink {
+  @media (width >= 768px) {
+    padding-right: 16px;
+  }
+
 }

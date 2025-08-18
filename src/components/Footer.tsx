@@ -19,7 +19,7 @@ export default function Footer({ meta }: FooterProps) {
       <div className={styles.footerAuthor}>
         All works are created by
         <a
-          href="https://twitter.com/clockmaker"
+          href="https://x.com/clockmaker"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -28,8 +28,11 @@ export default function Footer({ meta }: FooterProps) {
         </a>
         .
       </div>
-      <div className="footer-copyright">
-        &copy; {year} <a href="http://clockmaker.jp/blog">clockmaker.jp</a>
+      <div className={styles.footerLink}>
+        &copy; {year}{" "}
+        <a href="http://clockmaker.jp/blog" target="_blank">
+          clockmaker.jp
+        </a>
       </div>
     </footer>
   );
