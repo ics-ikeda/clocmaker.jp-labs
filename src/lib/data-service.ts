@@ -22,6 +22,28 @@ function searchData(id: string): ItemData | null {
   return null;
 }
 
+// 特定のIDに関連する作品（同じ配列内の他の作品）を取得
+export function getRelatedWorks(id: string): ItemData[] {
+  if (!data) {
+    return [];
+  }
+
+  // 各配列内で検索
+  for (const itemArray of data) {
+    const item = itemArray.find((obj) => obj.id === id);
+    if (item) {
+      return itemArray; // 同じ配列内のすべての作品を返す
+    }
+  }
+  return [];
+}
+
+// 特定のIDが関連作品を持つかどうかをチェック
+export function hasRelatedWorks(id: string): boolean {
+  const relatedWorks = getRelatedWorks(id);
+  return relatedWorks.length > 1;
+}
+
 export function getIndex(id: string): number {
   if (!data) {
     return -1;
