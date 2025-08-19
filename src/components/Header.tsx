@@ -112,18 +112,29 @@ export default function Header({
         <h1>{title}</h1>
       </div>
 
-      {hasRelated && (
+      {hasRelated && itemData && (
         <div className={styles.versionSelector}>
           <select
-            value={itemData?.id || ""}
+            value={itemData.id}
             onChange={handleVersionChange}
             className={styles.versionSelect}
           >
-            {relatedWorks.map((work) => (
-              <option key={work.id} value={work.id}>
-                {getVersionNumber(work.id, relatedWorks)} - {work.date}
-              </option>
-            ))}
+            <>
+              <button>
+                <selectedcontent></selectedcontent>
+              </button>
+              {relatedWorks.map((work) => (
+                <option key={work.id} value={work.id}>
+                  <img src={work.img} alt="" className={styles.selectedImage} />
+                  <div className={styles.selectedTitle}>
+                    {getVersionNumber(work.id, relatedWorks)} - {work.date}
+                  </div>
+                  <div className={styles.selectedTech}>
+                    {work.technology.join(", ")}
+                  </div>
+                </option>
+              ))}
+            </>
           </select>
         </div>
       )}
