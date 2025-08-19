@@ -544,8 +544,23 @@
     "id": "230518_cube_transition",
     "blog_en": null,
     "blog_ja": "https://clockmaker.jp/blog/2009/09/betweenas3-demos/",
-    "date": "2009/08/13",
+    "date": "2023/05/18",
     "demo": "https://ics-ikeda.github.io/230518_cube_transition/",
+    "img": "https://ics-ikeda.github.io/230518_cube_transition/eyecatch.jpg",
+    "title": "Cube Transition",
+    "type": "Real Time Motion Graphics",
+    "technology": [
+      "WebGPU",
+      "Three",
+      "GSAP"
+    ]
+  },
+  {
+    "id": "091229_cube_transition",
+    "blog_en": null,
+    "blog_ja": "https://clockmaker.jp/blog/2009/09/betweenas3-demos/",
+    "date": "2009/08/13",
+    "demo": "https://clockmaker.jp/labs/091229_cube_transition/index.html",
     "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/09/090909-03.jpg",
     "title": "Cube Transition",
     "type": "Real Time Motion Graphics",
