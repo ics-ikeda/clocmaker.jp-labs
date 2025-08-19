@@ -717,10 +717,39 @@
       "id": "230509_three_motion",
       "blog_en": "https://clockmaker.jp/blog-en/2009/05/pv3d-photoprint-2/",
       "blog_ja": "https://clockmaker.jp/blog/2009/05/papervision3d_photoprint/",
-      "date": "2009/05/07",
+      "date": "2023/05/09",
       "demo": "https://clockmaker.jp/labs/230509_three_motion/index.html",
       "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/05/090507_photoprint.jpg",
+      "title": "Photo Print Effect 2023",
+      "type": "Real Time Motion Graphics",
+      "technology": [
+        "WebGPU",
+        "Three.js",
+        "GSAP"
+      ]
+    },
+    {
+      "id": "090507_pv3d_motion",
+      "blog_en": "https://clockmaker.jp/blog-en/2009/05/pv3d-photoprint-2/",
+      "blog_ja": "https://clockmaker.jp/blog/2009/05/papervision3d_photoprint/",
+      "date": "2009/05/07",
+      "demo": "https://clockmaker.jp/labs/090507_pv3d_motion/index.html",
+      "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/05/090507_photoprint.jpg",
       "title": "Photo Print Effect (Remake)",
+      "type": "Real Time Motion Graphics",
+      "technology": [
+        "Flash",
+        "Papervision3D"
+      ]
+    },
+    {
+      "id": "080915_pv3d_motion",
+      "blog_en": null,
+      "blog_ja": "https://clockmaker.jp/blog/2008/09/papervision3d_photo_particle/",
+      "date": "2028/09/15",
+      "demo": "https://clockmaker.jp/labs/080915_pv3d_motion/bin/index.html",
+      "img": "https://clockmaker.jp/blog/wp-content/uploads/2008/09/080915_pv3d_01.jpg",
+      "title": "Photo Print Effect",
       "type": "Real Time Motion Graphics",
       "technology": [
         "Flash",
