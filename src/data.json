@@ -490,7 +490,7 @@
       "id": "230514_three_dof",
       "blog_en": null,
       "blog_ja": "https://clockmaker.jp/blog/2011/12/away3d-4-depth_of_field/",
-      "date": "2011/12/23",
+      "date": "2023/05/14",
       "demo": "https://clockmaker.jp/labs/230514_three_dof/index.html",
       "img": "https://clockmaker.jp/blog/wp-content/uploads/2011/12/111223_away3d_depth_of_field.png",
       "title": "Depth of Field",
@@ -498,6 +498,21 @@
       "technology": [
         "WebGL",
         "Three.js"
+      ]
+    },
+    {
+      "id": "120723_away3d_dof",
+      "blog_en": null,
+      "blog_ja": "https://clockmaker.jp/blog/2011/12/away3d-4-depth_of_field/",
+      "date": "2011/12/23",
+      "demo": "https://clockmaker.jp/labs/111217_away3d_depth_of_field/billboard/index.html",
+      "img": "https://clockmaker.jp/blog/wp-content/uploads/2011/12/111223_away3d_depth_of_field.png",
+      "title": "Depth of Field",
+      "type": "Interactive",
+      "technology": [
+        "Flash",
+        "Stage3D",
+        "Away3D"
       ]
     }
   ],
@@ -588,15 +603,29 @@
       "id": "250724_three_xmas_message",
       "blog_en": "https://clockmaker.jp/blog-en/2009/10/pv3d-xmas/",
       "blog_ja": "https://clockmaker.jp/blog/2009/10/papervision3d-particle/",
-      "date": "2009/10/20",
+      "date": "2025/07/24",
       "demo": "https://ics-ikeda.github.io/250724_three_xmas_message/index.html",
       "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/10/091021_xmas.jpg",
-      "title": "Xmas Message from Tweets",
+      "title": "Xmas Message from X",
       "type": "Real Time Motion Graphics",
       "technology": [
         "WebGPU",
         "Three.js",
         "GSAP"
+      ]
+    },
+    {
+      "id": "091022_pv3d_xmas",
+      "blog_en": "https://clockmaker.jp/blog-en/2009/10/pv3d-xmas/",
+      "blog_ja": "https://clockmaker.jp/blog/2009/10/papervision3d-particle/",
+      "date": "2009/10/20",
+      "demo": "https://clockmaker.jp/labs/091022_pv3d_xmas/index.html",
+      "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/10/091021_xmas.jpg",
+      "title": "Xmas Message from Tweets",
+      "type": "Real Time Motion Graphics",
+      "technology": [
+        "Flash",
+        "Papervision3D"
       ]
     }
   ],
@@ -669,7 +698,7 @@
       "id": "150810_threejs_mosaic_cubes",
       "blog_en": "https://clockmaker.jp/blog-en/2009/07/pv3d-betweenas3/",
       "blog_ja": "https://clockmaker.jp/blog/2009/07/wonderfl-betweenas3/",
-      "date": "2009/07/16",
+      "date": "2015/08/10",
       "demo": "https://ics-creative.github.io/150810_threejs_mosaic/DemoCubes.html",
       "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/07/090715_wonderfl.png",
       "title": "Time Stretch Motion #2",
@@ -678,6 +707,21 @@
         "WebGL",
         "Three.js"
       ]
+    },
+    {
+      "id": "090716_timestrech",
+      "blog_en": "https://clockmaker.jp/blog-en/2009/07/pv3d-betweenas3/",
+      "blog_ja": "https://clockmaker.jp/blog/2009/07/wonderfl-betweenas3/",
+      "date": "2009/07/16",
+      "demo": "https://clockmaker.jp/labs/090716_timestrech/index.html",
+      "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/07/090715_wonderfl.png",
+      "title": "Time Stretch Motion #2",
+      "type": "Real Time Motion Graphics",
+      "technology": [
+        "Papervision3D",
+        "BetweenAS3",
+        "Flash"
+      ]
     }
   ],
   [
@@ -685,7 +729,7 @@
       "id": "250805_three_time_remap",
       "blog_en": "https://clockmaker.jp/blog-en/2009/07/pv3d-betweenas3/",
       "blog_ja": "https://clockmaker.jp/blog/2009/07/betweenas3/",
-      "date": "2009/07/16",
+      "date": "2025/08/05",
       "demo": "https://ics-ikeda.github.io/250805_three_time_remap/",
       "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/07/090716_bet.jpg",
       "title": "Time Stretch Motion #1",
@@ -694,6 +738,20 @@
         "WebGPU",
         "Three.js",
         "GSAP"
+      ]
+    },
+    {
+      "id": "090716_betweenas3",
+      "blog_en": "http://clockmaker.jp/blog-en/2009/07/pv3d-betweenas3/",
+      "blog_ja": "http://clockmaker.jp/blog/2009/07/betweenas3/",
+      "date": "2009/07/16",
+      "demo": "http://clockmaker.jp/labs/090716_betweenas3/",
+      "img": "http://clockmaker.jp/blog/wp-content/uploads/2009/07/090716_bet.jpg",
+      "title": "Time Stretch Motion #1",
+      "type": "Interactive",
+      "technology": [
+        "Flash",
+        "Papervision3D"
       ]
     }
   ],
@@ -844,13 +902,28 @@
       "id": "140804_awayjs_rgb",
       "blog_en": "https://clockmaker.jp/blog-en/2008/11/rgb-image-separater-with-papervision3d/",
       "blog_ja": "https://ics.media/entry/1762/",
-      "date": "2008/11/13",
+      "date": "2014/08/04",
       "demo": "https://ics-creative.github.io/data-demos/140804_awayjs_rgb/src/0_demo.html",
       "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/11/081111_rgb1.jpg",
       "title": "RGB Image Separate",
       "type": "Interactive",
       "technology": [
-        "Flash"
+        "WebGL",
+        "Away3D"
+      ]
+    },
+    {
+      "id": "081111_pv3d_rgb",
+      "blog_en": "https://clockmaker.jp/blog-en/2008/11/rgb-image-separater-with-papervision3d/",
+      "blog_ja": "https://clockmaker.jp/blog/2008/11/rgb_sepapater/",
+      "date": "2008/11/13",
+      "demo": "https://clockmaker.jp/labs/081111_pv3d_rgb/bin/index.html",
+      "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/11/081111_rgb1.jpg",
+      "title": "RGB Image Separate",
+      "type": "Interactive",
+      "technology": [
+        "Flash",
+        "Papervision3D"
       ]
     }
   ],
@@ -859,7 +932,7 @@
       "id": "250724_three_sound_visualizer",
       "blog_en": null,
       "blog_ja": "https://clockmaker.jp/blog/2008/10/pv3d_visualizer/",
-      "date": "2008/10/31",
+      "date": "2025/07/24",
       "demo": "https://ics-ikeda.github.io/250724_three_sound_visualizer/",
       "img": "https://clockmaker.jp/blog/wp-content/uploads/2008/10/081031_visualizer.jpg",
       "title": "Music Visualizer",
@@ -868,6 +941,20 @@
         "WebGL",
         "Three.js"
       ]
+    },
+    {
+      "id": "081031_pv3d_visualizer",
+      "blog_en": null,
+      "blog_ja": "http://clockmaker.jp/blog/2008/10/pv3d_visualizer/",
+      "date": "2008/10/31",
+      "demo": "https://clockmaker.jp/labs/081031_pv3d_visualizer/bin/",
+      "img": "https://clockmaker.jp/blog/wp-content/uploads/2008/10/081031_visualizer.jpg",
+      "title": "Music Visualizer",
+      "type": "Real Time Motion Graphics",
+      "technology": [
+        "Flash",
+        "Papervision3D"
+      ]
     }
   ],
   [
@@ -875,7 +962,7 @@
       "id": "210425_as3mod_flag",
       "blog_en": "https://clockmaker.jp/blog-en/2008/10/3-demos-of-as3dmod-on-pv3d/",
       "blog_ja": "https://clockmaker.jp/blog/2008/10/pv3d_as3dmod/",
-      "date": "2008/10/08",
+      "date": "2021/04/25",
       "demo": "https://clockmaker.jp/labs/210425_as3mod/index.html",
       "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/10/081008_as3dmod_2.png",
       "title": "Swinging flag",
@@ -884,6 +971,20 @@
         "WebGL",
         "Three.js"
       ]
+    },
+    {
+      "id": "081004_pv3d_as3dmod_main3",
+      "blog_en": "https://clockmaker.jp/blog-en/2008/10/3-demos-of-as3dmod-on-pv3d/",
+      "blog_ja": "https://clockmaker.jp/blog/2008/10/pv3d_as3dmod/",
+      "date": "2008/10/08",
+      "demo": "https://clockmaker.jp/labs/081004_pv3d_as3dmod/bin/main3.html",
+      "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/10/081008_as3dmod_2.png",
+      "title": "Swinging flag",
+      "type": "Interactive",
+      "technology": [
+        "Flash",
+        "Papervision3D"
+      ]
     }
   ],
   [
@@ -891,7 +992,7 @@
       "id": "210425_as3mod_twist",
       "blog_en": "https://clockmaker.jp/blog-en/2008/10/3-demos-of-as3dmod-on-pv3d/",
       "blog_ja": "https://clockmaker.jp/blog/2008/10/pv3d_as3dmod/",
-      "date": "2008/10/08",
+      "date": "2021/04/25",
       "demo": "https://clockmaker.jp/labs/210425_as3mod/twist.html",
       "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/10/081008_as3dmod_1.png",
       "title": "Dancing Panel",
@@ -899,6 +1000,20 @@
       "technology": [
         "WebGL",
         "Three.js"
+      ]
+    },
+    {
+      "id": "081004_pv3d_as3dmod_main2",
+      "blog_en": "https://clockmaker.jp/blog-en/2008/10/3-demos-of-as3dmod-on-pv3d/",
+      "blog_ja": "https://clockmaker.jp/blog/2008/10/pv3d_as3dmod/",
+      "date": "2008/10/08",
+      "demo": "https://clockmaker.jp/labs/081004_pv3d_as3dmod/bin/main2.html",
+      "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/10/081008_as3dmod_1.png",
+      "title": "Dancing Panel",
+      "type": "Interactive",
+      "technology": [
+        "Flash",
+        "Papervision3D"
       ]
     }
   ],
@@ -923,7 +1038,7 @@
       "id": "230514_three_tiled_motion",
       "blog_en": "https://clockmaker.jp/blog-en/2008/10/pv3d-tiledmotion/",
       "blog_ja": "https://clockmaker.jp/blog/2008/09/papervision3d_photograph/",
-      "date": "2008/09/23",
+      "date": "2023/05/14",
       "demo": "https://ics-ikeda.github.io/230514_three_tiled_motion/",
       "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/10/080922_pv3d_matrix.jpg",
       "title": "Simple tiled motion of photo display",
@@ -932,6 +1047,20 @@
         "WebGL",
         "Three.js"
       ]
+    },
+    {
+      "id": "080922_pv3d_motion2",
+      "blog_en": "https://clockmaker.jp/blog-en/2008/10/pv3d-tiledmotion/",
+      "blog_ja": "https://clockmaker.jp/blog/2008/09/papervision3d_photograph/",
+      "date": "2008/09/23",
+      "demo": "https://clockmaker.jp/labs/080922_pv3d_motion2/bin/index.html",
+      "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/10/080922_pv3d_matrix.jpg",
+      "title": "Simple tiled motion of photo display",
+      "type": "Real Time Motion Graphics",
+      "technology": [
+        "Flash",
+        "Papervision3D"
+      ]
     }
   ],
   [
@@ -939,7 +1068,7 @@
       "id": "230430_threejs_butterfly",
       "blog_en": "https://clockmaker.jp/blog/2008/08/papervision3d_butterfly_reflection/",
       "blog_ja": "https://clockmaker.jp/blog/2010/10/canvas_js_demo/",
-      "date": "2008/08/19",
+      "date": "2023/04/30",
       "demo": "https://clockmaker.jp/labs/230430_threejs_butterfly/index.html",
       "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/09/080818_pv3d_butterfly1.jpg",
       "title": "Reflection Butterfly",
@@ -947,6 +1076,34 @@
       "technology": [
         "WebGL",
         "Three.js"
+      ]
+    },
+    {
+      "id": "101003_js_3d",
+      "blog_en": "https://clockmaker.jp/blog/2008/08/papervision3d_butterfly_reflection/",
+      "blog_ja": "https://clockmaker.jp/blog/2010/10/canvas_js_demo/",
+      "date": "2010/10/03",
+      "demo": "https://clockmaker.jp/labs/101003_js_3d/index.html",
+      "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/09/080818_pv3d_butterfly1.jpg",
+      "title": "Reflection Butterfly",
+      "type": "Real Time Motion Graphics",
+      "technology": [
+        "Canvas",
+        "Three.js"
+      ]
+    },
+    {
+      "id": "as3_pv3d_gw_butterfly",
+      "blog_en": null,
+      "blog_ja": "https://clockmaker.jp/blog/2008/08/papervision3d_butterfly_reflection/",
+      "date": "2008/08/19",
+      "demo": "https://clockmaker.jp/labs/as3_pv3d_gw_butterfly/index.html",
+      "img": "https://clockmaker.jp/blog-en/wp-content/uploads/2008/09/080818_pv3d_butterfly1.jpg",
+      "title": "Reflection Butterfly",
+      "type": "Real Time Motion Graphics",
+      "technology": [
+        "Flash",
+        "Papervision3D"
       ]
     }
   ]
