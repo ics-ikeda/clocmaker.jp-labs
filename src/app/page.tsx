@@ -16,15 +16,15 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.pageTopHero}>
           <h2 className={styles.subTitle}>
-            <strong>Interaction Design &times; Web Technology</strong>
+            <strong>Interaction Design × Web Technology</strong>
             <br />
             <small>https://clockmaker.jp/labs/</small>
           </h2>
         </div>
         <div className={styles.pageTopHeroArea}>
           <div className={styles.pageTopHeroAreaRow}>
-            {data.map((item) => (
-              <WorkItem key={item.id} data={item} />
+            {data.map((itemArray, index) => (
+              <WorkItem key={index} data={itemArray[0]} />
             ))}
           </div>
         </div>

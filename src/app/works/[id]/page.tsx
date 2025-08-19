@@ -7,8 +7,8 @@ import styles from "./page.module.css";
 
 // 静的パラメータを生成
 export async function generateStaticParams() {
-  return data.map((item) => ({
-    id: item.id,
+  return data.map((itemArray) => ({
+    id: itemArray[0].id,
   }));
 }
 
