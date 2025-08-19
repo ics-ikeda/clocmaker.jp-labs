@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import data from "../data.json";
+import type { DataStructure } from "../types/item-data";
 
 export const metadata: Metadata = {
   title: "ClockMaker Labs - Interaction Design × Web Technology",
@@ -68,7 +69,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   // demo URLからドメインを抽出してprefetch対象にする（DNS解決のみ）
-  const demoDomains = data
+  const demoDomains = (data as DataStructure)
+    .flat() // 2次元配列を1次元に平坦化
     .map((item) => item.demo)
     .filter((url) => url && url.startsWith("http"))
     .map((url) => {

@@ -9,3 +9,6 @@ export interface ItemData {
   type: string;
   technology: string[];
 }
+
+// data.jsonの構造を表す型
+export type DataStructure = ItemData[][];
