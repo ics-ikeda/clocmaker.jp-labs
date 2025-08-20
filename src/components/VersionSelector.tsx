@@ -6,6 +6,8 @@ import { playClickSound } from "../lib/sound-service";
 import type { ItemData } from "../types/item-data";
 import styles from "./VersionSelector.module.css";
 
+
+
 interface VersionSelectorProps {
   itemData: ItemData;
 }
@@ -52,6 +54,7 @@ export default function VersionSelector({ itemData }: VersionSelectorProps) {
       >
         <>
           <button>
+            {/* @ts-expect-error - selectedcontent is an experimental web standard element */}
             <selectedcontent></selectedcontent>
           </button>
           {relatedWorks.map((work) => (
