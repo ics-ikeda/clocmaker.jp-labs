@@ -930,4 +930,4 @@ export const data = [
       technology: ["Flash", "Papervision3D"],
     },
   ],
-] as const;
+];
