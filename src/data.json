@@ -440,8 +440,8 @@
     {
       "id": "250512_three_lens_flare",
       "blog_en": null,
-      "blog_ja": "https://clockmaker.jp/blog/2012/07/away3d_earth/",
-      "date": "2013/07/13",
+      "blog_ja": "https://ics.media/entry/476/",
+      "date": "2025/05/12",
       "demo": "https://ics-creative.github.io/250512_three_lens_flare/",
       "img": "https://clockmaker.jp/blog/wp-content/uploads/2012/07/120713_earth.jpg",
       "title": "Earth with Lens Flare",
@@ -449,6 +449,20 @@
       "technology": [
         "WebGL",
         "Three.js"
+      ]
+    },
+    {
+      "id": "250512_three_lens_flare",
+      "blog_en": null,
+      "blog_ja": "https://ics.media/entry/476/",
+      "date": "2023/07/25",
+      "demo": "https://ics-creative.github.io/data-demos/130725_away3d_extended/index.html",
+      "img": "https://clockmaker.jp/blog/wp-content/uploads/2012/07/120713_earth.jpg",
+      "title": "Earth with Lens Flare",
+      "type": "Interactive",
+      "technology": [
+        "Flash",
+        "Stage3D"
       ]
     }
   ],
@@ -805,7 +819,7 @@
       "blog_ja": "https://clockmaker.jp/blog/2009/05/papervision3d_photoprint/",
       "date": "2023/05/09",
       "demo": "https://clockmaker.jp/labs/230509_three_motion/index.html",
-      "img": "https://clockmaker.jp/blog/wp-content/uploads/2009/05/090507_photoprint.jpg",
+      "img": "https://clockmaker.jp/labs/230509_three_motion/eyecatch.jpg",
       "title": "Photo Print Effect 2023",
       "type": "Real Time Motion Graphics",
       "technology": [
