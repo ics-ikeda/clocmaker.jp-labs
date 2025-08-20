@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import data from "../data.json";
-import type { DataStructure } from "../types/item-data";
+import { data } from "@/data";
+import type { DataStructure } from "@/types/item-data";
 
 export const metadata: Metadata = {
   title: "ClockMaker Labs - Interaction Design × Web Technology",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "ClockMaker Labs - Interaction Design × Web Technology",
     description:
       "Portfolio website of IKEDA Yasunobu a.k.a ClockMaker / Web Designer and Developer from Tokyo, Japan.",
-    url: "http://clockmaker.jp/labs/",
+    url: "https://clockmaker.jp/labs/",
     siteName: "clockmaker.jp",
     images: [
       {
@@ -69,7 +69,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   // demo URLからドメインを抽出してprefetch対象にする（DNS解決のみ）
-  const demoDomains = (data as DataStructure)
+  const demoDomains = data
     .flat() // 2次元配列を1次元に平坦化
     .map((item) => item.demo)
     .filter((url) => url && url.startsWith("http"))

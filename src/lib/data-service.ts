@@ -1,7 +1,7 @@
-import jsonData from "../data.json";
+import { data } from "@/data";
 import type { ItemData } from "@/types/item-data";
 
-export const data: ItemData[][] = jsonData;
+export { data };
 
 export function getDetail(id: string) {
   return searchData(id);
