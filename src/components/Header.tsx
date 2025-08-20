@@ -1,15 +1,11 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import {
-  getIndex,
-  getItemAt,
-  getRelatedWorks,
-  hasRelatedWorks,
-} from "../lib/data-service";
+import { getIndex, getItemAt } from "../lib/data-service";
 import { playClickSound, playTransitionDownSound } from "../lib/sound-service";
 import type { ItemData } from "../types/item-data";
 import styles from "./Header.module.css";
+import VersionSelector from "./VersionSelector";
 
 interface HeaderProps {
   title?: string;
@@ -56,27 +52,6 @@ export default function Header({
     }
   };
 
-  const handleVersionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedId = event.target.value;
-    if (selectedId && selectedId !== itemData?.id) {
-      playClickSound();
-      router.push(`/works/${selectedId}`);
-    }
-  };
-
-  // 関連作品があるかチェック
-  const hasRelated = itemData ? hasRelatedWorks(itemData.id) : false;
-  const relatedWorks = itemData ? getRelatedWorks(itemData.id) : [];
-
-  // バージョン番号を動的に生成（配列の順序に基づく）
-  const getVersionNumber = (workId: string, works: ItemData[]) => {
-    const index = works.findIndex((work) => work.id === workId);
-    if (index === -1) return "";
-    // 配列の最後から順番に番号をふる（最後がVer.1、その前がVer.2...）
-    const versionNumber = works.length - index;
-    return `Ver.${versionNumber}`;
-  };
-
   return (
     <nav className={styles.detailPageNavi}>
       {showNavigation && (
@@ -112,32 +87,7 @@ export default function Header({
         <h1>{title}</h1>
       </div>
 
-      {hasRelated && itemData && (
-        <div className={styles.versionSelector}>
-          <select
-            value={itemData.id}
-            onChange={handleVersionChange}
-            className={styles.versionSelect}
-          >
-            <>
-              <button>
-                <selectedcontent></selectedcontent>
-              </button>
-              {relatedWorks.map((work) => (
-                <option key={work.id} value={work.id}>
-                  <img src={work.img} alt="" className={styles.selectedImage} />
-                  <div className={styles.selectedTitle}>
-                    {getVersionNumber(work.id, relatedWorks)} - {work.date}
-                  </div>
-                  <div className={styles.selectedTech}>
-                    {work.technology.join(", ")}
-                  </div>
-                </option>
-              ))}
-            </>
-          </select>
-        </div>
-      )}
+      {itemData && <VersionSelector itemData={itemData} />}
     </nav>
   );
 }

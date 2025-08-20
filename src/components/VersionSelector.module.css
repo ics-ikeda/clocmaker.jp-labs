@@ -1,0 +1,106 @@
+.versionSelector {
+  margin-left: auto;
+  padding-right: 32px;
+
+  select,
+  ::picker(select) {
+    appearance: base-select;
+    border:none;
+  }
+
+  ::picker(select) {
+    transition: 0.2s;
+    @starting-style {
+      scale: 0.9;
+    }
+  }
+
+  /* ボタン要素内の補足は非表示にする */
+
+  selectedcontent {
+    .optionImage, .optionTech {
+      display: none;
+    }
+  }
+  .versionSelect {
+    /* カスタムセレクトスタイル */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-family: inherit;
+    font-size: 0.875rem;
+    color: var(--color-text-primary);
+    background-color: var(--color-background-primary);
+    border: 1px solid var(--color-border-primary);
+    border-radius: 0;
+    padding: 8px 32px 8px 12px;
+    cursor: pointer;
+    min-width: 196px;
+
+    &:hover {
+      border-color: var(--color-hover-background);
+      background-color: var(--color-background-secondary);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--color-hover-background);
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    }
+
+    /* base-selectを使用したカスタムスタイリング */
+    appearance: base-select;
+
+    /* カスタムコンテンツ表示を有効にする */
+    selectedcontent: normal;
+
+    /* option要素のスタイリング */
+    option {
+      display: grid;
+      padding: 8px;
+      gap: 0;
+      grid-template:
+        "visual title" auto
+        "visual meta"  auto /
+        auto     1fr;
+
+      /* チェックマークを非表示 */
+      &::checkmark {
+        content: none;
+      }
+
+      /* 選択状態のスタイル */
+      &:checked {
+        background: var(--color-background-secondary);
+      }
+
+      /* ホバー状態のスタイル */
+      &:hover {
+      }
+
+      /* option内の画像 */
+      .optionImage {
+        grid-area: visual;
+        object-fit: cover;
+        width: 42px;
+        height: 42px;
+        margin-right: 8px;
+      }
+
+      /* option内のタイトル */
+      .optionTitle {
+        grid-area: title;
+        font-weight: bold;
+        font-size: 0.875rem;
+        color: var(--color-text-primary);
+      }
+
+      /* option内のテクノロジー情報 */
+      .optionTech {
+        grid-area: meta;
+        font-size: 0.75rem;
+        color: var(--color-text-secondary);
+      }
+    }
+  }
+}
