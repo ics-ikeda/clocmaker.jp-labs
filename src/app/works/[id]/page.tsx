@@ -33,7 +33,7 @@ export async function generateMetadata({
     description: `${itemData.date} - This work is build with ${itemData.technology.join(", ")}.`,
     openGraph: {
       title: `${itemData.title} - ClockMaker Labs`,
-      description: `${itemData.date} - This work is build with ${itemData.technology.join(", ")}.`,
+      description: `This work is build with ${itemData.technology.join(", ")}. Created on ${itemData.date}.`,
       url: `https://clockmaker.jp/labs/works/${itemData.id}`,
       siteName: "clockmaker.jp",
       images: [
@@ -48,9 +48,9 @@ export async function generateMetadata({
       type: "website",
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary",
       title: `${itemData.title} - ClockMaker Labs`,
-      description: `${itemData.date} - This work is build with ${itemData.technology.join(", ")}.`,
+      description: `This work is build with ${itemData.technology.join(", ")}. Created on ${itemData.date}.`,
       site: "@clockmaker",
       images: [itemData.img],
     },
