@@ -3,7 +3,8 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import WorkItem from "../components/WorkItem";
-import { data } from "@/lib/data-service";
+import { data, formatStartDateForGroup } from "@/lib/data-service";
+import type { ItemData } from "@/types/item-data";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -23,9 +24,11 @@ export default function Home() {
         </div>
         <div className={styles.pageTopHeroArea}>
           <div className={styles.pageTopHeroAreaRow}>
-            {data.map((itemArray, index) => (
-              <WorkItem key={index} data={itemArray[0]} />
-            ))}
+            {data.map((itemArray, index) => {
+              const formattedDate = formatStartDateForGroup(itemArray);
+              const head: ItemData = { ...itemArray[0], date: formattedDate };
+              return <WorkItem key={index} data={head} />;
+            })}
           </div>
         </div>
       </main>

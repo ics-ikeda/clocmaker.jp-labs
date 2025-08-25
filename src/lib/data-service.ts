@@ -75,3 +75,14 @@ export function getItemAt(index: number) {
 
   return data[index][0]; // 指定された配列の最初の要素
 }
+
+// 配列（同一グループ）から開始日を算出して表示用に整形
+export function formatStartDateForGroup(items: ItemData[]): string {
+  if (!items || items.length === 0) {
+    return "";
+  }
+  const earliestDate = items
+    .map((item) => item.date)
+    .reduce((min, cur) => (cur < min ? cur : min));
+  return items.length > 1 ? `${earliestDate} -` : earliestDate;
+}
