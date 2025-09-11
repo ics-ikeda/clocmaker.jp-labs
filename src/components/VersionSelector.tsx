@@ -68,7 +68,7 @@ export default function VersionSelector({ itemData }: VersionSelectorProps) {
                 {getYearFromDate(work.date)}
               </div>
               <div className={styles.optionTech}>
-                {work.technology.join(", ")}
+                {" " + work.technology.join(", ")}
               </div>
             </option>
           ))}
