@@ -144,6 +144,17 @@ export const data = [
   ],
   [
     {
+      id: "250909_apple_watch_modoki",
+      blog_en: null,
+      blog_ja: null,
+      date: "2025-09-09",
+      demo: "https://ics-ikeda.github.io/250909_apple_watch_modoki/",
+      img: "https://ics-ikeda.github.io/250909_apple_watch_modoki/eyecatch.png",
+      title: "Apple Watch UI Modoki",
+      type: "Interactive",
+      technology: ["CSS"],
+    },
+    {
       id: "150128_clock_pixijs",
       blog_en: null,
       blog_ja: "https://ics.media/entry/5140",
