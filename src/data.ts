@@ -937,7 +937,7 @@ export const data = [
       img: "https://clockmaker.jp/blog-en/wp-content/uploads/2008/09/080818_pv3d_butterfly1.jpg",
       title: "Reflection Butterfly",
       type: "Real Time Motion Graphics",
-      technology: ["WebGL", "Three.js"],
+      technology: ["WebGPU", "Three.js"],
     },
     {
       id: "101003_js_3d",
