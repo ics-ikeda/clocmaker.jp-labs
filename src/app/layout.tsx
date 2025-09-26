@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { data } from "@/data";
+import { ViewTransitionNavigation } from "@/components/ViewTransitionNavigation";
 
 export const metadata: Metadata = {
   title: "ClockMaker Labs - Interaction Design × Web Technology",
@@ -118,7 +119,10 @@ export default function RootLayout({
           <link key={index} rel="dns-prefetch" href={domain} />
         ))}
       </head>
-      <body>{children}</body>
+      <body>
+        <ViewTransitionNavigation />
+        {children}
+      </body>
       <GoogleAnalytics gaId="G-3PRT3QNJLL" />
     </html>
   );

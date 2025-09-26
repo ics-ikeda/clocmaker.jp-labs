@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   useEffect,
@@ -8,17 +9,22 @@ import {
   useState,
   unstable_ViewTransition as ViewTransition,
 } from "react";
+import type { MouseEvent as ReactMouseEvent } from "react";
 import ShuffleText from "shuffle-text";
 import {
   playClickSound,
   playMouseOverSound,
   playTransitionUpSound,
 } from "@/lib/sound-service";
+import { runViewTransition } from "@/lib/view-transition";
 import type { ItemData } from "@/types/item-data";
 import styles from "./WorkItem.module.css";
 
 // 定数定義
 const MOBILE_BREAKPOINT = 768;
+
+// Keep track of loaded thumbnails so they stay visible after returning via back navigation.
+const loadedWorkItems = new Set<string>();
 
 interface WorkItemProps {
   data: ItemData;
@@ -32,7 +38,9 @@ export default function WorkItem({ data, className }: WorkItemProps) {
   const shuffleTextTitleRef = useRef<ShuffleText | null>(null);
   const shuffleTextDateRef = useRef<ShuffleText | null>(null);
   const [isRollOver, setIsRollOver] = useState(false);
-  const [isLoadComplete, setIsLoadComplete] = useState(false);
+  const [isLoadComplete, setIsLoadComplete] = useState(() =>
+    loadedWorkItems.has(data.id),
+  );
 
   useEffect(() => {
     if (textTitleRef.current && textDateRef.current) {
@@ -53,21 +61,26 @@ export default function WorkItem({ data, className }: WorkItemProps) {
     setIsRollOver(false);
   };
 
-  const handleClick = async () => {
+  const handleClick = async (event: ReactMouseEvent<HTMLAnchorElement>) => {
     playClickSound();
     if (window.innerWidth < MOBILE_BREAKPOINT) {
+      event.preventDefault();
       const win = window.open(data.demo);
       if (win) {
         win.focus();
       }
-    } else {
-      // 直接ページ遷移
-      router.push(`/works/${data.id}`);
-      playTransitionUpSound();
+      return;
     }
+
+    event.preventDefault();
+    playTransitionUpSound();
+    runViewTransition(() => {
+      router.push(`/works/${data.id}`);
+    });
   };
 
   const handleLoadComplete = () => {
+    loadedWorkItems.add(data.id);
     setIsLoadComplete(true);
   };
 
@@ -83,8 +96,8 @@ export default function WorkItem({ data, className }: WorkItemProps) {
     <div
       className={`${styles.workItem} ${isRollOver ? styles.show : ""} ${className || ""}`}
     >
-      <button
-        type="button"
+      <Link
+        href={`/works/${data.id}`}
         className={styles.workItemButton}
         onMouseEnter={handlePlaySoundRollOver}
         onFocus={handlePlaySoundRollOver}
@@ -131,7 +144,7 @@ export default function WorkItem({ data, className }: WorkItemProps) {
             {data.date}
           </div>
         </div>
-      </button>
+      </Link>
 
       <div className={styles.btnGroup}>
         {data.blog_ja && (

@@ -1,11 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
+import type { MouseEvent as ReactMouseEvent } from "react";
 import { getIndex, getItemAt } from "../lib/data-service";
 import { playClickSound, playTransitionDownSound } from "../lib/sound-service";
 import type { ItemData } from "../types/item-data";
 import styles from "./Header.module.css";
 import VersionSelector from "./VersionSelector";
+import { runViewTransition } from "@/lib/view-transition";
 
 interface HeaderProps {
   title?: string;
@@ -21,35 +24,23 @@ export default function Header({
   itemData,
 }: HeaderProps) {
   const router = useRouter();
+  const currentIndex = itemData ? getIndex(itemData.id) : -1;
+  const prevItem =
+    itemData && currentIndex !== -1 ? getItemAt(currentIndex - 1) : null;
+  const nextItem =
+    itemData && currentIndex !== -1 ? getItemAt(currentIndex + 1) : null;
 
-  const handleBackClick = () => {
+  const handleNavigate = (
+    event: ReactMouseEvent<HTMLAnchorElement>,
+    path: string,
+    onAfterClick?: () => void,
+  ) => {
+    event.preventDefault();
     playClickSound();
-    router.push("/");
-    playTransitionDownSound();
-  };
-
-  const handlePrevClick = () => {
-    playClickSound();
-    if (itemData) {
-      const pageShift = -1;
-      const index = getIndex(itemData.id);
-      const dataItem = getItemAt(index + pageShift);
-      if (dataItem) {
-        router.push(`/works/${dataItem.id}`);
-      }
-    }
-  };
-
-  const handleNextClick = () => {
-    playClickSound();
-    if (itemData) {
-      const pageShift = 1;
-      const index = getIndex(itemData.id);
-      const dataItem = getItemAt(index + pageShift);
-      if (dataItem) {
-        router.push(`/works/${dataItem.id}`);
-      }
-    }
+    onAfterClick?.();
+    runViewTransition(() => {
+      router.push(path);
+    });
   };
 
   return (
@@ -57,22 +48,44 @@ export default function Header({
       {showNavigation && (
         <div className={styles.detailPageNaviNavigation}>
           <div className={styles.btnLink}>
-            <button className={styles.btnBack} onClick={handleBackClick}>
+            <Link
+              className={styles.btnBack}
+              href="/"
+              onClick={(event) =>
+                handleNavigate(event, "/", playTransitionDownSound)
+              }
+            >
               <i className="fa fa-th"></i>
               <span className={styles.btnLabelPrev}>TOP</span>
-            </button>
+            </Link>
           </div>
           <div className={styles.btnLink}>
-            <button className={styles.btnBack} onClick={handlePrevClick}>
-              <i className="fa fa-chevron-left"></i>
-              <span className={styles.btnLabelPrev}>PREV</span>
-            </button>
+            {prevItem && (
+              <Link
+                className={styles.btnBack}
+                href={`/works/${prevItem.id}`}
+                onClick={(event) =>
+                  handleNavigate(event, `/works/${prevItem.id}`)
+                }
+              >
+                <i className="fa fa-chevron-left"></i>
+                <span className={styles.btnLabelPrev}>PREV</span>
+              </Link>
+            )}
           </div>
           <div className={styles.btnLink}>
-            <button className={styles.btnBack} onClick={handleNextClick}>
-              <span className={styles.btnLabelNext}>NEXT</span>
-              <i className="fa fa-chevron-right"></i>
-            </button>
+            {nextItem && (
+              <Link
+                className={styles.btnBack}
+                href={`/works/${nextItem.id}`}
+                onClick={(event) =>
+                  handleNavigate(event, `/works/${nextItem.id}`)
+                }
+              >
+                <span className={styles.btnLabelNext}>NEXT</span>
+                <i className="fa fa-chevron-right"></i>
+              </Link>
+            )}
           </div>
         </div>
       )}
