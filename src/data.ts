@@ -272,6 +272,17 @@ export const data = [
   ],
   [
     {
+      id: "250925_rapier2d",
+      blog_en: null,
+      blog_ja: "https://clockmaker.jp/blog/2013/07/flash-pro-cc-video/",
+      date: "2025/09/25",
+      demo: "https://ics-ikeda.github.io/250925_rapier2d/index.html",
+      img: "https://ics-ikeda.github.io/250925_rapier2d/eyecatch.png",
+      title: "Physics 60fps",
+      type: "Real Time Motion Graphics",
+      technology: ["PixiJS", "Rapier.js", "WebAssembly"],
+    },
+    {
       id: "130708_FlashProCC_video",
       blog_en: null,
       blog_ja: "https://clockmaker.jp/blog/2013/07/flash-pro-cc-video/",
@@ -280,7 +291,7 @@ export const data = [
       img: "https://clockmaker.jp/blog/wp-content/uploads/2013/07/130708_flashprocc_video.png",
       title: "Physics 60fps",
       type: "Real Time Motion Graphics",
-      technology: ["Box2D"],
+      technology: ["Box2D", "Flash"],
     },
   ],
   [
