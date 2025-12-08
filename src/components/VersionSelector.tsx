@@ -1,5 +1,7 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element */
+
 import { useRouter } from "next/navigation";
 import { getRelatedWorks, hasRelatedWorks } from "../lib/data-service";
 import { playClickSound } from "../lib/sound-service";

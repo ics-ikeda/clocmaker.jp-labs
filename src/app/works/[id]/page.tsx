@@ -1,8 +1,8 @@
-import { unstable_ViewTransition as ViewTransition } from "react";
 import { Metadata } from "next";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import { getDetail, data } from "@/lib/data-service";
+import { ViewTransition } from "@/components/ViewTransition";
 import styles from "./page.module.css";
 
 // 静的パラメータを生成

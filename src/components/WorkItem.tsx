@@ -3,12 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import {
-  useEffect,
-  useRef,
-  useState,
-  unstable_ViewTransition as ViewTransition,
-} from "react";
+import { useEffect, useRef, useState } from "react";
 import type { MouseEvent as ReactMouseEvent } from "react";
 import ShuffleText from "shuffle-text";
 import {
@@ -18,6 +13,7 @@ import {
 } from "@/lib/sound-service";
 import { runViewTransition } from "@/lib/view-transition";
 import type { ItemData } from "@/types/item-data";
+import { ViewTransition } from "@/components/ViewTransition";
 import styles from "./WorkItem.module.css";
 
 // 定数定義
