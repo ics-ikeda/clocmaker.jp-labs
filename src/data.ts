@@ -210,7 +210,7 @@ export const data = [
       id: "260206_threejs_particles",
       blog_en: null,
       blog_ja: null,
-      date: "2014/09/19",
+      date: "2026/02/06",
       demo: "https://ics-ikeda.github.io/260206_threejs_particles/",
       img: "https://ics-ikeda.github.io/260206_threejs_particles/thumb.png",
       title: "Particle Emitter HDR",
