@@ -209,10 +209,10 @@ export const data = [
     {
       id: "140904_threejs_particles",
       blog_en: null,
-      blog_ja: "https://ics.media/entry/2328/",
+      blog_ja: null,
       date: "2014/09/19",
       demo: "https://ics-ikeda.github.io/140904_threejs_particles/",
-      img: "https://ics-ikeda.github.io/140904_threejs_particles/thumb_460x200.jpg",
+      img: "https://ics-ikeda.github.io/140904_threejs_particles/thumb.png",
       title: "Particle Emitter 3D",
       type: "Interactive",
       technology: ["WebGPU", "Three.js"],
