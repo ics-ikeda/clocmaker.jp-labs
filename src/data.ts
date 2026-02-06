@@ -213,7 +213,7 @@ export const data = [
       date: "2014/09/19",
       demo: "https://ics-ikeda.github.io/260206_threejs_particles/",
       img: "https://ics-ikeda.github.io/260206_threejs_particles/thumb.png",
-      title: "Particle Emitter 3D",
+      title: "Particle Emitter HDR",
       type: "Interactive",
       technology: ["WebGPU", "Three.js"],
     },
