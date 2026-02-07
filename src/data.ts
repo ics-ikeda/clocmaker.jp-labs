@@ -209,7 +209,7 @@ export const data = [
     {
       id: "260206_threejs_particles",
       blog_en: null,
-      blog_ja: null,
+      blog_ja: "https://ics.media/entry/476/",
       date: "2026/02/06",
       demo: "https://ics-ikeda.github.io/260206_threejs_particles/",
       img: "https://ics-ikeda.github.io/260206_threejs_particles/thumb.png",
