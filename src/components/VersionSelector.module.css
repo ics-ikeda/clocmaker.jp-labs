@@ -5,15 +5,21 @@
   select,
   ::picker(select) {
     appearance: base-select;
-    border:none;
+    border: none;
   }
 
+
   ::picker(select) {
-    transition: 0.2s;
+    transition: all 0.3s;
+    transform: translateY(0);
+    opacity: 1;
     @starting-style {
-      scale: 0.9;
+      transform: translateY(-16px);
+      opacity: 0;
     }
   }
+
+
 
   /* ボタン要素内の補足は非表示にする */
 

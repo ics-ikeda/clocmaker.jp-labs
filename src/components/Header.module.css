@@ -67,6 +67,10 @@
   transition: all 1s;
   gap: 4px;
 
+  i {
+    transition: transform 0.2s ease;
+  }
+
   span.btnLabelPrev {
   }
 
@@ -87,6 +91,14 @@
     transition: all 0.05s;
   }
 
+  &:hover :global(.fa-chevron-left) {
+    transform: translateX(-4px);
+  }
+
+  &:hover :global(.fa-chevron-right) {
+    transform: translateX(4px);
+  }
+
   &:active {
     text-decoration: none;
     background: var(--color-active-background);
@@ -94,6 +106,16 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .btnBack :global(.fa-chevron-left),
+  .btnBack :global(.fa-chevron-right) {
+    transition: none;
+  }
 
+  .btnBack:hover :global(.fa-chevron-left),
+  .btnBack:hover :global(.fa-chevron-right) {
+    transform: none;
+  }
+}
 
 
