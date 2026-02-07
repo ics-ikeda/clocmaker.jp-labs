@@ -103,8 +103,11 @@ export default function WorkItem({ data, className }: WorkItemProps) {
         data-prefetch
         data-demo-url={data.demo}
       >
-        <div className={styles.imgContainer}>
-          <ViewTransition name={`work-item-${data.id}`}>
+        <ViewTransition name={`work-item-${data.id}`}>
+          <div
+            className={styles.imgContainer}
+            style={{ viewTransitionName: `work-item-${data.id}` }}
+          >
             <Image
               src={data.img}
               width={460}
@@ -128,12 +131,16 @@ export default function WorkItem({ data, className }: WorkItemProps) {
               }}
               unoptimized={true}
             />
-          </ViewTransition>
-          <div className={styles.imgRollover}></div>
-        </div>
+            <div className={styles.imgRollover}></div>
+          </div>
+        </ViewTransition>
 
         <div className={styles.meta}>
-          <div ref={textTitleRef} className={styles.title}>
+          <div
+            ref={textTitleRef}
+            className={styles.title}
+            style={{ viewTransitionName: `work-title-${data.id}` }}
+          >
             {data.title}
           </div>
           <div ref={textDateRef} className={styles.date}>

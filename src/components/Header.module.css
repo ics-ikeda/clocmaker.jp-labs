@@ -3,11 +3,12 @@
   z-index: 10;
   display: flex;
   width: 100%;
-  height: 52px;
+  height: 42px;
   padding: 0 16px;
   overflow: hidden;
   background-color: var(--color-background-secondary);
   align-items: center;
+  view-transition-name: site-header;
 
   h1 {
     display: inline-block;
@@ -15,6 +16,30 @@
     font-weight: 300;
     font-size: 20px;
   }
+}
+
+.detailPageNaviCompact {
+  height: 36px;
+  padding: 2px 12px;
+
+  h1 {
+    font-size: 1.125rem;
+  }
+}
+
+.detailPageNaviCompact :global(.loading) {
+  line-height: 32px;
+}
+
+.detailPageNaviCompact .btnBack {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 10px;
+  font-size: 0.8125rem;
+}
+
+.detailPageNaviCompact .detailPageNaviNavigation {
+  gap: 6px;
 }
 
 .headerH1Top {
@@ -117,5 +142,3 @@
     transform: none;
   }
 }
-
-

@@ -80,6 +80,28 @@ body {
   }
 }
 
+/* View Transitions (page) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.35s;
+  animation-timing-function: cubic-bezier(0, 0, 0, 1);
+}
+
+::view-transition-old(root) {
+  animation-name: page-slide-out;
+}
+
+::view-transition-new(root) {
+  animation-name: page-slide-in;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
 a,
 a:hover,
 a:visited,
@@ -89,7 +111,7 @@ a:active {
 
 .loading {
   margin-left: 16px;
-  line-height: 52px;
+  line-height: 42px;
   color: var(--color-text-secondary);
   animation: anime1 0.1s infinite;
 }
@@ -139,4 +161,3 @@ button {
   margin: 0;
   font-family: inherit;
 }
-

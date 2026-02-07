@@ -10,6 +10,7 @@ import styles from "./VersionSelector.module.css";
 
 interface VersionSelectorProps {
   itemData: ItemData;
+  compact?: boolean;
 }
 
 // 日付から年のみを抽出する関数
@@ -26,7 +27,10 @@ const getVersionNumber = (workId: string, works: ItemData[]) => {
   return `Ver.${versionNumber}`;
 };
 
-export default function VersionSelector({ itemData }: VersionSelectorProps) {
+export default function VersionSelector({
+  itemData,
+  compact = false,
+}: VersionSelectorProps) {
   const router = useRouter();
 
   // 関連作品があるかチェック
@@ -46,11 +50,21 @@ export default function VersionSelector({ itemData }: VersionSelectorProps) {
   }
 
   return (
-    <div className={styles.versionSelector}>
+    <div
+      className={
+        compact
+          ? `${styles.versionSelector} ${styles.versionSelectorCompact}`
+          : styles.versionSelector
+      }
+    >
       <select
         value={itemData.id}
         onChange={handleVersionChange}
-        className={styles.versionSelect}
+        className={
+          compact
+            ? `${styles.versionSelect} ${styles.versionSelectCompact}`
+            : styles.versionSelect
+        }
       >
         <>
           <button>

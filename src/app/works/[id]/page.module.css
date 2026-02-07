@@ -12,7 +12,7 @@
 /* CSS Grid Layout for Detail Page */
 .detailPageGrid {
   display: grid;
-  grid-template-rows: 52px 1fr 32px;
+  grid-template-rows: 36px 1fr 32px;
   height: 100%;
   width: 100%;
 }
@@ -88,8 +88,8 @@
 .content {
   position: relative;
   width: 100%;
-  height: calc(100vh - 52px - 32px);
-  margin-top: 52px;
+  height: calc(100vh - 36px - 32px);
+  margin-top: 36px;
 }
 
 .iframeContainer {

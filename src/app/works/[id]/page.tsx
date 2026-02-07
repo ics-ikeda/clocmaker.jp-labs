@@ -71,7 +71,7 @@ export default async function DetailPage({ params }: PageProps) {
     return (
       <div className={styles.detailPageGrid}>
         <header className={styles.header}>
-          <Header title="Not Found" showNavigation={false} />
+          <Header title="Not Found" showNavigation={false} compact />
         </header>
         <main className={styles.main}>
           <div className={styles.errorContainer}>
@@ -92,12 +92,16 @@ export default async function DetailPage({ params }: PageProps) {
           title={itemData.title}
           showNavigation={true}
           itemData={itemData}
+          compact
         />
       </header>
 
       <main className={styles.main}>
         <ViewTransition name={`work-item-${itemData.id}`}>
-          <div className={styles.iframeContainer}>
+          <div
+            className={styles.iframeContainer}
+            style={{ viewTransitionName: `work-item-${itemData.id}` }}
+          >
             <iframe
               src={itemData.demo}
               title={itemData.title}

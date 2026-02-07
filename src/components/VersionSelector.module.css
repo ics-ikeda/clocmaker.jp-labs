@@ -10,7 +10,7 @@
 
 
   ::picker(select) {
-    transition: all 0.3s;
+    transition: all 0.3s allow-discrete;
     transform: translateY(0);
     opacity: 1;
     @starting-style {
@@ -39,7 +39,6 @@
     background-color: var(--color-background-primary);
     border: 1px solid var(--color-border-primary);
     border-radius: 0;
-    padding: 8px 32px 8px 12px;
     cursor: pointer;
     min-width: 196px;
 
@@ -69,6 +68,7 @@
         "visual title" auto
         "visual meta"  auto /
         auto     1fr;
+      line-height: 1;
 
       /* チェックマークを非表示 */
       &::checkmark {
@@ -109,4 +109,17 @@
       }
     }
   }
+}
+
+.versionSelectorCompact {
+  padding-right: 16px;
+}
+
+.versionSelectCompact {
+  box-sizing: border-box;
+  height: 32px;
+  min-width: 164px;
+  padding: 0 26px 0 10px;
+  font-size: 0.8125rem;
+  line-height: 32px;
 }

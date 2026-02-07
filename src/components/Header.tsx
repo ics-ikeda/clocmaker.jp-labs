@@ -15,6 +15,7 @@ interface HeaderProps {
   showNavigation?: boolean;
   isLoading?: boolean;
   itemData?: ItemData;
+  compact?: boolean;
 }
 
 export default function Header({
@@ -22,6 +23,7 @@ export default function Header({
   showNavigation = false,
   isLoading = false,
   itemData,
+  compact = false,
 }: HeaderProps) {
   const router = useRouter();
   const currentIndex = itemData ? getIndex(itemData.id) : -1;
@@ -44,7 +46,13 @@ export default function Header({
   };
 
   return (
-    <nav className={styles.detailPageNavi}>
+    <nav
+      className={
+        compact
+          ? `${styles.detailPageNavi} ${styles.detailPageNaviCompact}`
+          : styles.detailPageNavi
+      }
+    >
       {showNavigation && (
         <div className={styles.detailPageNaviNavigation}>
           <div className={styles.btnLink}>
@@ -97,10 +105,10 @@ export default function Header({
       )}
 
       <div className={styles.headerDetailH1}>
-        <h1>{title}</h1>
+        {itemData ? <h1>{title}</h1> : <h1>{title}</h1>}
       </div>
 
-      {itemData && <VersionSelector itemData={itemData} />}
+      {itemData && <VersionSelector itemData={itemData} compact={compact} />}
     </nav>
   );
 }
