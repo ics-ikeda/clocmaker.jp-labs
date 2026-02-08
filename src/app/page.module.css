@@ -83,3 +83,24 @@
     grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
   }
 }
+
+.staggerPrepare {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.staggerItem {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+  transition-delay: calc((sibling-index() - 1) * 16ms);
+
+  @starting-style {
+      opacity: 0;
+      transform: translateY(8px);
+  }
+}
+
+
