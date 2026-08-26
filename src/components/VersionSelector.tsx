@@ -1,7 +1,5 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element */
-
 import { useRouter } from "next/navigation";
 import { getRelatedWorks, hasRelatedWorks } from "../lib/data-service";
 import { playClickSound } from "../lib/sound-service";
@@ -15,7 +13,7 @@ interface VersionSelectorProps {
 
 // 日付から年のみを抽出する関数
 const getYearFromDate = (dateString: string): string => {
-  return dateString.split("/")[0];
+  return dateString.split("/", 1)[0] ?? "";
 };
 
 // バージョン番号を動的に生成（配列の順序に基づく）
@@ -66,29 +64,12 @@ export default function VersionSelector({
             : styles.versionSelect
         }
       >
-        <>
-          <button>
-            {/* @ts-expect-error - selectedcontent is an experimental web standard element */}
-            <selectedcontent></selectedcontent>
-          </button>
-          {relatedWorks.map((work) => (
-            <option key={work.id} value={work.id}>
-              <img
-                src={work.img}
-                alt=""
-                className={styles.optionImage}
-                loading={"lazy"}
-              />
-              <div className={styles.optionTitle}>
-                {getVersionNumber(work.id, relatedWorks)} -{" "}
-                {getYearFromDate(work.date)}
-              </div>
-              <div className={styles.optionTech}>
-                {" " + work.technology.join(", ")}
-              </div>
-            </option>
-          ))}
-        </>
+        {relatedWorks.map((work) => (
+          <option key={work.id} value={work.id}>
+            {getVersionNumber(work.id, relatedWorks)} -{" "}
+            {getYearFromDate(work.date)} · {work.technology.join(", ")}
+          </option>
+        ))}
       </select>
     </div>
   );

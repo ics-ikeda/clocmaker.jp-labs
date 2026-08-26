@@ -29,6 +29,8 @@
   text-overflow: ellipsis;
   font-family: 'Ropa Sans', sans-serif;
   font-size: 0.875rem;
+  line-height: 1rem;
+  block-size: 1rem;
   color: #999;
   white-space: nowrap;
   transition: left 0.2s;
@@ -75,12 +77,9 @@
     height: auto;
     aspect-ratio: 460/200;
     object-fit: cover;
-    filter: brightness(400%);
-    transition: all 0.3s ease;
 
     &.show {
       visibility: visible;
-      filter: brightness(100%);
     }
   }
 }
@@ -126,8 +125,12 @@
 
 .date {
   position: relative;
+  overflow: hidden;
   font-size: 0.75rem;
+  line-height: 0.875rem;
+  block-size: 0.875rem;
   color: #999;
+  white-space: nowrap;
   transition: left 0.2s;
 
 }
@@ -179,4 +182,3 @@
     opacity: 0;
   }
 }
-

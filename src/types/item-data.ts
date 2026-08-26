@@ -11,4 +11,5 @@ export interface ItemData {
 }
 
 // data.jsonの構造を表す型
-export type DataStructure = ItemData[][];
+export type DataGroup = [ItemData, ...ItemData[]];
+export type DataStructure = DataGroup[];

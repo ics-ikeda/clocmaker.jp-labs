@@ -45,35 +45,20 @@ export function hasRelatedWorks(id: string): boolean {
 }
 
 export function getIndex(id: string): number {
-  if (!data) {
-    return -1;
-  }
-
-  // 各配列内で検索
-  for (let i = 0; i < data.length; i++) {
-    const itemArray = data[i];
-    for (let j = 0; j < itemArray.length; j++) {
-      if (itemArray[j].id === id) {
-        return i; // 配列のインデックスを返す
-      }
-    }
-  }
-  return -1;
+  return data.findIndex((itemArray) =>
+    itemArray.some((item) => item.id === id),
+  );
 }
 
-export function getItemAt(index: number) {
-  if (!data) {
+export function getItemAt(index: number): ItemData | null {
+  if (data.length === 0) {
     return null;
   }
 
-  if (index < 0) {
-    return data[data.length - 1][0]; // 最後の配列の最初の要素
-  }
-  if (index > data.length - 1) {
-    return data[0][0]; // 最初の配列の最初の要素
-  }
+  const normalizedIndex =
+    index < 0 ? data.length - 1 : index >= data.length ? 0 : index;
 
-  return data[index][0]; // 指定された配列の最初の要素
+  return data.at(normalizedIndex)?.[0] ?? null;
 }
 
 // 配列（同一グループ）から開始日を算出して表示用に整形

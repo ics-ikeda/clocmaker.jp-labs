@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  typedRoutes: true,
   images: {
     remotePatterns: [
       {
@@ -14,6 +15,10 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "clockmaker.jp",
+      },
+      {
+        protocol: "https",
+        hostname: "labs.clockmaker.jp",
       },
       {
         protocol: "https",

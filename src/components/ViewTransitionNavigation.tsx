@@ -1,5 +1,6 @@
 "use client";
 
+import type { Route } from "next";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import {
@@ -21,7 +22,7 @@ export function ViewTransitionNavigation() {
       event.stopImmediatePropagation();
 
       runViewTransition(() => {
-        router.replace(url, { scroll: false });
+        router.replace(url as Route, { scroll: false });
       });
     };
 

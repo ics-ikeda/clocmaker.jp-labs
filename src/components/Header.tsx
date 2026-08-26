@@ -1,8 +1,9 @@
 "use client";
 
+import type { Route } from "next";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import type { MouseEvent as ReactMouseEvent } from "react";
+import type { MouseEvent as ReactMouseEvent, ReactNode } from "react";
 import { getIndex, getItemAt } from "../lib/data-service";
 import { playClickSound, playTransitionDownSound } from "../lib/sound-service";
 import type { ItemData } from "../types/item-data";
@@ -16,7 +17,10 @@ interface HeaderProps {
   isLoading?: boolean;
   itemData?: ItemData;
   compact?: boolean;
+  actions?: ReactNode;
 }
+
+const getWorkRoute = (id: string): Route => `/works/${id}` as Route;
 
 export default function Header({
   title = "ClockMaker Labs",
@@ -24,6 +28,7 @@ export default function Header({
   isLoading = false,
   itemData,
   compact = false,
+  actions,
 }: HeaderProps) {
   const router = useRouter();
   const currentIndex = itemData ? getIndex(itemData.id) : -1;
@@ -34,7 +39,7 @@ export default function Header({
 
   const handleNavigate = (
     event: ReactMouseEvent<HTMLAnchorElement>,
-    path: string,
+    path: Route,
     onAfterClick?: () => void,
   ) => {
     event.preventDefault();
@@ -71,9 +76,9 @@ export default function Header({
             {prevItem && (
               <Link
                 className={styles.btnBack}
-                href={`/works/${prevItem.id}`}
+                href={getWorkRoute(prevItem.id)}
                 onClick={(event) =>
-                  handleNavigate(event, `/works/${prevItem.id}`)
+                  handleNavigate(event, getWorkRoute(prevItem.id))
                 }
               >
                 <i className="fa fa-chevron-left"></i>
@@ -85,9 +90,9 @@ export default function Header({
             {nextItem && (
               <Link
                 className={styles.btnBack}
-                href={`/works/${nextItem.id}`}
+                href={getWorkRoute(nextItem.id)}
                 onClick={(event) =>
-                  handleNavigate(event, `/works/${nextItem.id}`)
+                  handleNavigate(event, getWorkRoute(nextItem.id))
                 }
               >
                 <span className={styles.btnLabelNext}>NEXT</span>
@@ -107,6 +112,8 @@ export default function Header({
       <div className={styles.headerDetailH1}>
         {itemData ? <h1>{title}</h1> : <h1>{title}</h1>}
       </div>
+
+      {actions && <div className={styles.headerActions}>{actions}</div>}
 
       {itemData && <VersionSelector itemData={itemData} compact={compact} />}
     </nav>

@@ -18,16 +18,22 @@ import styles from "./WorkItem.module.css";
 
 // 定数定義
 const MOBILE_BREAKPOINT = 768;
+const SHUFFLE_CHARACTERS = "01";
+
+const createShuffleText = (element: HTMLElement): ShuffleText => {
+  const shuffleText = new ShuffleText(element);
+  shuffleText.sourceRandomCharacter = SHUFFLE_CHARACTERS;
+  return shuffleText;
+};
 
 // Keep track of loaded thumbnails so they stay visible after returning via back navigation.
 const loadedWorkItems = new Set<string>();
 
 interface WorkItemProps {
   data: ItemData;
-  className?: string;
 }
 
-export default function WorkItem({ data, className }: WorkItemProps) {
+export default function WorkItem({ data }: WorkItemProps) {
   const router = useRouter();
   const textTitleRef = useRef<HTMLDivElement>(null);
   const textDateRef = useRef<HTMLDivElement>(null);
@@ -40,8 +46,8 @@ export default function WorkItem({ data, className }: WorkItemProps) {
 
   useEffect(() => {
     if (textTitleRef.current && textDateRef.current) {
-      shuffleTextTitleRef.current = new ShuffleText(textTitleRef.current);
-      shuffleTextDateRef.current = new ShuffleText(textDateRef.current);
+      shuffleTextTitleRef.current = createShuffleText(textTitleRef.current);
+      shuffleTextDateRef.current = createShuffleText(textDateRef.current);
     }
   }, []);
 
@@ -89,9 +95,7 @@ export default function WorkItem({ data, className }: WorkItemProps) {
   };
 
   return (
-    <div
-      className={`${styles.workItem} ${isRollOver ? styles.show : ""} ${className || ""}`}
-    >
+    <div className={`${styles.workItem} ${isRollOver ? styles.show : ""}`}>
       <Link
         href={`/works/${data.id}`}
         className={styles.workItemButton}
@@ -124,10 +128,6 @@ export default function WorkItem({ data, className }: WorkItemProps) {
                 height: "auto",
                 aspectRatio: "460/200",
                 objectFit: "cover",
-                filter: isLoadComplete
-                  ? "brightness(100%)"
-                  : "brightness(400%)",
-                transition: "all 0.3s ease",
               }}
               unoptimized={true}
             />

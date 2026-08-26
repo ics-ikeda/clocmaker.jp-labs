@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import { getDetail, data } from "@/lib/data-service";
@@ -7,9 +7,11 @@ import styles from "./page.module.css";
 
 // 静的パラメータを生成
 export async function generateStaticParams() {
-  return data.map((itemArray) => ({
-    id: itemArray[0].id,
-  }));
+  return data.flatMap((itemArray) =>
+    itemArray.map((item) => ({
+      id: item.id,
+    })),
+  );
 }
 
 // 動的メタデータを生成
@@ -34,7 +36,7 @@ export async function generateMetadata({
     openGraph: {
       title: `${itemData.title} - ClockMaker Labs`,
       description: `This work is build with ${itemData.technology.join(", ")}. Created on ${itemData.date}.`,
-      url: `https://clockmaker.jp/labs/works/${itemData.id}`,
+      url: `https://labs.clockmaker.jp/works/${itemData.id}`,
       siteName: "clockmaker.jp",
       images: [
         {

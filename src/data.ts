@@ -1,4 +1,33 @@
-export const data = [
+import type { DataStructure } from "@/types/item-data";
+
+export const data: DataStructure = [
+  [
+    {
+      id: "250820_three_fireworks",
+      blog_en: "https://clockmaker.jp/blog-en/2008/09/pv3d-fireworks/",
+      blog_ja:
+        "https://clockmaker.jp/blog/2008/08/papervision3d_bitmapeffectlayer_fireworks/",
+      date: "2026/08/26",
+      demo: "https://ics-ikeda.github.io/250820_three_fireworks/",
+      img: "https://ics-ikeda.github.io/250820_three_fireworks/eyecatch.jpg",
+      title: "Fireworks",
+      type: "Real Time Motion Graphics",
+      technology: ["WebGPU", "Three.js", "GSAP"],
+    },
+
+    {
+      id: "as3_pv3d_gw_fireworks",
+      blog_en: "https://clockmaker.jp/blog-en/2008/09/pv3d-fireworks/",
+      blog_ja:
+        "https://clockmaker.jp/blog/2008/08/papervision3d_bitmapeffectlayer_fireworks/",
+      date: "2008/08/24",
+      demo: "https://clockmaker.jp/labs/as3_pv3d_gw_fireworks/",
+      img: "https://clockmaker.jp/blog/wp-content/uploads/2008/08/pv3d_fireworks1.jpg",
+      title: "Fireworks",
+      type: "Real Time Motion Graphics",
+      technology: ["Flash", "Papervision3D"],
+    },
+  ],
   [
     {
       id: "250723_three_turbulence",
@@ -23,6 +52,43 @@ export const data = [
       title: "Glitch Monitor",
       type: "Real Time Motion Graphics",
       technology: ["WebGPU"],
+    },
+  ],
+
+  [
+    {
+      id: "230509_three_motion",
+      blog_en: "https://clockmaker.jp/blog-en/2009/05/pv3d-photoprint-2/",
+      blog_ja: "https://clockmaker.jp/blog/2009/05/papervision3d_photoprint/",
+      date: "2023/05/09",
+      demo: "https://clockmaker.jp/labs/230509_three_motion/index.html",
+      img: "https://clockmaker.jp/labs/230509_three_motion/eyecatch.jpg",
+      title: "Photo Print Effect 2023",
+      type: "Real Time Motion Graphics",
+      technology: ["WebGPU", "Three.js", "GSAP"],
+    },
+    {
+      id: "090507_pv3d_motion",
+      blog_en: "https://clockmaker.jp/blog-en/2009/05/pv3d-photoprint-2/",
+      blog_ja: "https://clockmaker.jp/blog/2009/05/papervision3d_photoprint/",
+      date: "2009/05/07",
+      demo: "https://clockmaker.jp/labs/090507_pv3d_motion/index.html",
+      img: "https://clockmaker.jp/blog/wp-content/uploads/2009/05/090507_photoprint.jpg",
+      title: "Photo Print Effect (Remake)",
+      type: "Real Time Motion Graphics",
+      technology: ["Flash", "Papervision3D"],
+    },
+    {
+      id: "080915_pv3d_motion",
+      blog_en: null,
+      blog_ja:
+        "https://clockmaker.jp/blog/2008/09/papervision3d_photo_particle/",
+      date: "2008/09/15",
+      demo: "https://clockmaker.jp/labs/080915_pv3d_motion/bin/index.html",
+      img: "https://clockmaker.jp/blog/wp-content/uploads/2008/09/080915_pv3d_01.jpg",
+      title: "Photo Print Effect",
+      type: "Real Time Motion Graphics",
+      technology: ["Flash", "Papervision3D"],
     },
   ],
   [
@@ -61,7 +127,7 @@ export const data = [
       img: "https://clockmaker.jp/labs/221216_spread_text/thumb.png",
       title: "Text Spread",
       type: "Real Time Motion Graphics",
-      technology: ["WebGL", "gsap"],
+      technology: ["WebGL", "GSAP"],
     },
   ],
   [
@@ -105,6 +171,67 @@ export const data = [
   ],
   [
     {
+      id: "250724_three_xmas_message",
+      blog_en: "https://clockmaker.jp/blog-en/2009/10/pv3d-xmas/",
+      blog_ja: "https://clockmaker.jp/blog/2009/10/papervision3d-particle/",
+      date: "2025/07/24",
+      demo: "https://ics-ikeda.github.io/250724_three_xmas_message/index.html",
+      img: "https://clockmaker.jp/blog/wp-content/uploads/2009/10/091021_xmas.jpg",
+      title: "Xmas Message from X",
+      type: "Real Time Motion Graphics",
+      technology: ["WebGPU", "Three.js", "GSAP"],
+    },
+    {
+      id: "091022_pv3d_xmas",
+      blog_en: "https://clockmaker.jp/blog-en/2009/10/pv3d-xmas/",
+      blog_ja: "https://clockmaker.jp/blog/2009/10/papervision3d-particle/",
+      date: "2009/10/20",
+      demo: "https://clockmaker.jp/labs/091022_pv3d_xmas/index.html",
+      img: "https://clockmaker.jp/blog/wp-content/uploads/2009/10/091021_xmas.jpg",
+      title: "Xmas Message from Tweets",
+      type: "Real Time Motion Graphics",
+      technology: ["Flash", "Papervision3D"],
+    },
+  ],
+
+  [
+    {
+      id: "250821_three_time_remap_css",
+      blog_en: "https://clockmaker.jp/blog-en/2009/07/pv3d-betweenas3/",
+      blog_ja: "https://clockmaker.jp/blog/2009/07/betweenas3/",
+      date: "2025/08/21",
+      demo: "https://ics-ikeda.github.io/250821_three_time_remap_css/",
+      img: "https://ics-ikeda.github.io/250821_three_time_remap_css/eyecatch.jpg",
+      title: "Time Remap Motion by CSS",
+      type: "Interactive",
+      technology: ["CSS", "Three.js", "GSAP"],
+    },
+    {
+      id: "250805_three_time_remap",
+      blog_en: "https://clockmaker.jp/blog-en/2009/07/pv3d-betweenas3/",
+      blog_ja: "https://clockmaker.jp/blog/2009/07/betweenas3/",
+      date: "2025/08/05",
+      demo: "https://ics-ikeda.github.io/250805_three_time_remap/",
+      img: "https://ics-ikeda.github.io/250805_three_time_remap/eyecatch.jpg",
+      title: "Time Remap Motion by WebGPU",
+      type: "Interactive",
+      technology: ["WebGPU", "Three.js", "GSAP"],
+    },
+    {
+      id: "090716_betweenas3",
+      blog_en: "https://clockmaker.jp/blog-en/2009/07/pv3d-betweenas3/",
+      blog_ja: "https://clockmaker.jp/blog/2009/07/betweenas3/",
+      date: "2009/07/16",
+      demo: "https://clockmaker.jp/labs/090716_betweenas3/",
+      img: "https://clockmaker.jp/blog/wp-content/uploads/2009/07/090716_bet.jpg",
+      title: "Time Remap Motion by Flash",
+      type: "Interactive",
+      technology: ["Flash", "Papervision3D"],
+    },
+  ],
+
+  [
+    {
       id: "particle-develop",
       blog_en: null,
       blog_ja: "https://ics.media/entry/10748/",
@@ -113,7 +240,7 @@ export const data = [
       img: "https://clockmaker.jp/labs/160122_particle_develop/thumb_460x200.png",
       title: "Particle Develop",
       type: "Web Application",
-      technology: ["HTML", "Angular2", "CreateJS"],
+      technology: ["HTML", "Angular 2", "CreateJS"],
     },
   ],
   [
@@ -126,7 +253,7 @@ export const data = [
       img: "https://clockmaker.jp/labs/151118_createjs_title/thumb_460x200.png",
       title: "Particle and Waves",
       type: "Real Time Motion Graphics",
-      technology: ["HTML Canvas", "CSS3", "CreateJS"],
+      technology: ["Canvas", "CSS", "CreateJS"],
     },
   ],
   [
@@ -163,7 +290,7 @@ export const data = [
       img: "https://clockmaker.jp/labs/150128_clock_pixijs/thumb_460x200.png",
       title: "Apple Watch UI Modoki",
       type: "Interactive",
-      technology: ["HTML Canvas", "CreateJS"],
+      technology: ["Canvas", "CreateJS"],
     },
   ],
   [
@@ -176,7 +303,7 @@ export const data = [
       img: "https://clockmaker.jp/labs/150125_clock/thumb_460x200.png",
       title: "Apple Watch Clock Modoki",
       type: "Real Time Motion Graphics",
-      technology: ["WebGL", "Pixi.js"],
+      technology: ["WebGL", "PixiJS"],
     },
   ],
   [
@@ -189,7 +316,7 @@ export const data = [
       img: "https://clockmaker.jp/labs/141120_facebook_flow/thumb_460x200.jpg",
       title: "Particle Emitter 2D",
       type: "Interactive",
-      technology: ["WebGL", "Pixi.js"],
+      technology: ["WebGL", "PixiJS"],
     },
   ],
   [
@@ -202,7 +329,7 @@ export const data = [
       img: "https://clockmaker.jp/labs/141211_lens_flare_timeline/thumb_460x200.png",
       title: "Lens Flare Animation",
       type: "Real Time Motion Graphics",
-      technology: ["HTML Canvas", "CreateJS", "Adobe Animate CC"],
+      technology: ["Canvas", "CreateJS", "Adobe Animate CC"],
     },
   ],
   [
@@ -316,7 +443,7 @@ export const data = [
       img: "https://clockmaker.jp/labs/130623_createjs_kirakira/thumb.jpg",
       title: "Rainbow Snow",
       type: "Real Time Motion Graphics",
-      technology: ["HTML Canvas", "CreateJS"],
+      technology: ["Canvas", "CreateJS"],
     },
   ],
   [
@@ -329,7 +456,7 @@ export const data = [
       img: "https://clockmaker.jp/blog/wp-content/uploads/2013/03/130319_pollenmap.gif",
       title: "Pollen Map in Japan",
       type: "Web Application",
-      technology: ["HTML Canvas", "CreateJS", "Adobe Animate CC"],
+      technology: ["Canvas", "CreateJS", "Adobe Animate CC"],
     },
   ],
   [
@@ -343,7 +470,7 @@ export const data = [
       img: "https://clockmaker.jp/labs/130215_createjs_box2d_forlab/thumb.jpg",
       title: "Box2D Drop",
       type: "Interactive",
-      technology: ["HTML Canvas", "CreateJS", "Box2D"],
+      technology: ["Canvas", "CreateJS", "Box2D"],
     },
   ],
   [
@@ -382,7 +509,7 @@ export const data = [
       img: "https://clockmaker.jp/blog/wp-content/uploads/2013/01/130124_arrows.png",
       title: "Arrows with Force Map",
       type: "Real Time Motion Graphics",
-      technology: ["Flash", "Stage3D", "Starling", "Worker"],
+      technology: ["Flash", "Stage3D", "Starling", "Web Worker"],
     },
   ],
   [
@@ -482,7 +609,7 @@ export const data = [
       img: "https://clockmaker.jp/blog/wp-content/uploads/2011/10/111019_coverflow_refrection.jpg",
       title: "Cover Flow",
       type: "Interactive",
-      technology: ["WebGL", "Three"],
+      technology: ["WebGL", "Three.js"],
     },
     {
       id: "140805_awayjs_coverflow",
@@ -559,30 +686,7 @@ export const data = [
       technology: ["Flash", "Papervision3D"],
     },
   ],
-  [
-    {
-      id: "250724_three_xmas_message",
-      blog_en: "https://clockmaker.jp/blog-en/2009/10/pv3d-xmas/",
-      blog_ja: "https://clockmaker.jp/blog/2009/10/papervision3d-particle/",
-      date: "2025/07/24",
-      demo: "https://ics-ikeda.github.io/250724_three_xmas_message/index.html",
-      img: "https://clockmaker.jp/blog/wp-content/uploads/2009/10/091021_xmas.jpg",
-      title: "Xmas Message from X",
-      type: "Real Time Motion Graphics",
-      technology: ["WebGPU", "Three.js", "GSAP"],
-    },
-    {
-      id: "091022_pv3d_xmas",
-      blog_en: "https://clockmaker.jp/blog-en/2009/10/pv3d-xmas/",
-      blog_ja: "https://clockmaker.jp/blog/2009/10/papervision3d-particle/",
-      date: "2009/10/20",
-      demo: "https://clockmaker.jp/labs/091022_pv3d_xmas/index.html",
-      img: "https://clockmaker.jp/blog/wp-content/uploads/2009/10/091021_xmas.jpg",
-      title: "Xmas Message from Tweets",
-      type: "Real Time Motion Graphics",
-      technology: ["Flash", "Papervision3D"],
-    },
-  ],
+
   [
     {
       id: "091023_nodes",
@@ -608,7 +712,7 @@ export const data = [
       img: "https://ics-ikeda.github.io/230518_cube_transition/eyecatch.jpg",
       title: "Cube Transition",
       type: "Real Time Motion Graphics",
-      technology: ["WebGPU", "Three", "GSAP"],
+      technology: ["WebGPU", "Three.js", "GSAP"],
     },
     {
       id: "091229_cube_transition",
@@ -632,7 +736,7 @@ export const data = [
       img: "https://clockmaker.jp/blog/wp-content/uploads/2009/08/090820_tenorion.png",
       title: "3D Tenorion (Online Collaboration)",
       type: "Interactive",
-      technology: ["Flash", "Papervision3D", "SION"],
+      technology: ["Flash", "Papervision3D", "SiON"],
     },
   ],
   [
@@ -661,41 +765,6 @@ export const data = [
   ],
   [
     {
-      id: "250821_three_time_remap_css",
-      blog_en: "https://clockmaker.jp/blog-en/2009/07/pv3d-betweenas3/",
-      blog_ja: "https://clockmaker.jp/blog/2009/07/betweenas3/",
-      date: "2025/08/21",
-      demo: "https://ics-ikeda.github.io/250821_three_time_remap_css/",
-      img: "https://ics-ikeda.github.io/250821_three_time_remap_css/eyecatch.jpg",
-      title: "Time Remap Motion by CSS",
-      type: "Interactive",
-      technology: ["CSS", "Three.js", "GSAP"],
-    },
-    {
-      id: "250805_three_time_remap",
-      blog_en: "https://clockmaker.jp/blog-en/2009/07/pv3d-betweenas3/",
-      blog_ja: "https://clockmaker.jp/blog/2009/07/betweenas3/",
-      date: "2025/08/05",
-      demo: "https://ics-ikeda.github.io/250805_three_time_remap/",
-      img: "https://ics-ikeda.github.io/250805_three_time_remap/eyecatch.jpg",
-      title: "Time Remap Motion by WebGPU",
-      type: "Interactive",
-      technology: ["WebGPU", "Three.js", "GSAP"],
-    },
-    {
-      id: "090716_betweenas3",
-      blog_en: "https://clockmaker.jp/blog-en/2009/07/pv3d-betweenas3/",
-      blog_ja: "https://clockmaker.jp/blog/2009/07/betweenas3/",
-      date: "2009/07/16",
-      demo: "https://clockmaker.jp/labs/090716_betweenas3/",
-      img: "https://clockmaker.jp/blog/wp-content/uploads/2009/07/090716_bet.jpg",
-      title: "Time Remap Motion by Flash",
-      type: "Interactive",
-      technology: ["Flash", "Papervision3D"],
-    },
-  ],
-  [
-    {
       id: "090518_re_arrows",
       blog_en: "https://clockmaker.jp/blog-en/2009/05/arrows-flow-simulation/",
       blog_ja: "https://clockmaker.jp/blog/2009/05/arrows/",
@@ -705,42 +774,6 @@ export const data = [
       title: "Arrows Flow Simulation",
       type: "Interactive",
       technology: ["Flash"],
-    },
-  ],
-  [
-    {
-      id: "230509_three_motion",
-      blog_en: "https://clockmaker.jp/blog-en/2009/05/pv3d-photoprint-2/",
-      blog_ja: "https://clockmaker.jp/blog/2009/05/papervision3d_photoprint/",
-      date: "2023/05/09",
-      demo: "https://clockmaker.jp/labs/230509_three_motion/index.html",
-      img: "https://clockmaker.jp/labs/230509_three_motion/eyecatch.jpg",
-      title: "Photo Print Effect 2023",
-      type: "Real Time Motion Graphics",
-      technology: ["WebGPU", "Three.js", "GSAP"],
-    },
-    {
-      id: "090507_pv3d_motion",
-      blog_en: "https://clockmaker.jp/blog-en/2009/05/pv3d-photoprint-2/",
-      blog_ja: "https://clockmaker.jp/blog/2009/05/papervision3d_photoprint/",
-      date: "2009/05/07",
-      demo: "https://clockmaker.jp/labs/090507_pv3d_motion/index.html",
-      img: "https://clockmaker.jp/blog/wp-content/uploads/2009/05/090507_photoprint.jpg",
-      title: "Photo Print Effect (Remake)",
-      type: "Real Time Motion Graphics",
-      technology: ["Flash", "Papervision3D"],
-    },
-    {
-      id: "080915_pv3d_motion",
-      blog_en: null,
-      blog_ja:
-        "https://clockmaker.jp/blog/2008/09/papervision3d_photo_particle/",
-      date: "2008/09/15",
-      demo: "https://clockmaker.jp/labs/080915_pv3d_motion/bin/index.html",
-      img: "https://clockmaker.jp/blog/wp-content/uploads/2008/09/080915_pv3d_01.jpg",
-      title: "Photo Print Effect",
-      type: "Real Time Motion Graphics",
-      technology: ["Flash", "Papervision3D"],
     },
   ],
   [
@@ -792,7 +825,7 @@ export const data = [
       demo: "https://clockmaker.jp/labs/090125_pv3d_spring/index.html",
       img: "https://clockmaker.jp/blog/wp-content/uploads/2009/01/090125_spring.png",
       title: "Air Ship Game",
-      type: "Interactive (Keyboard)",
+      type: "Interactive",
       technology: ["Flash", "Papervision3D"],
     },
   ],
@@ -946,32 +979,6 @@ export const data = [
       title: "Simple tiled motion of photo display",
       type: "Real Time Motion Graphics",
       technology: ["Flash", "Papervision3D"],
-    },
-  ],
-  [
-    {
-      id: "as3_pv3d_gw_fireworks",
-      blog_en: "https://clockmaker.jp/blog-en/2008/09/pv3d-fireworks/",
-      blog_ja:
-        "https://clockmaker.jp/blog/2008/08/papervision3d_bitmapeffectlayer_fireworks/",
-      date: "2008/08/24",
-      demo: "http://clockmaker.jp/labs/as3_pv3d_gw_fireworks/main.swf",
-      img: "https://clockmaker.jp/blog/wp-content/uploads/2008/08/pv3d_fireworks1.jpg",
-      title: "Fireworks",
-      type: "Real Time Motion Graphics",
-      technology: ["Flash", "Papervision3D"],
-    },
-    {
-      id: "250820_three_fireworks",
-      blog_en: "https://clockmaker.jp/blog-en/2008/09/pv3d-fireworks/",
-      blog_ja:
-        "https://clockmaker.jp/blog/2008/08/papervision3d_bitmapeffectlayer_fireworks/",
-      date: "2026/08/26",
-      demo: "https://ics-ikeda.github.io/250820_three_fireworks/",
-      img: "https://ics-ikeda.github.io/250820_three_fireworks/eyecatch.jpg",
-      title: "Fireworks",
-      type: "Real Time Motion Graphics",
-      technology: ["WebGPU", "Three.js", "GSAP"],
     },
   ],
   [

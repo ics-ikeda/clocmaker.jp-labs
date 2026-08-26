@@ -4,7 +4,10 @@ import * as React from "react";
 import { Fragment } from "react";
 import type { ComponentType, ReactNode } from "react";
 
-type ViewTransitionLike = ComponentType<{ name?: string; children: ReactNode }>;
+type ViewTransitionLike = ComponentType<{
+  name?: string | undefined;
+  children: ReactNode;
+}>;
 
 const ViewTransitionComponent: ViewTransitionLike | undefined =
   // React v19+ (予定)
@@ -18,7 +21,7 @@ export function ViewTransition({
   name,
   children,
 }: {
-  name?: string;
+  name?: string | undefined;
   children: ReactNode;
 }) {
   if (ViewTransitionComponent) {
