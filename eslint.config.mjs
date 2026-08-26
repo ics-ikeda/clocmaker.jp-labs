@@ -1,28 +1,20 @@
-import js from "@eslint/js";
-import nextPlugin from "@next/eslint-plugin-next";
-import tseslint from "typescript-eslint";
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTypeScript from "eslint-config-next/typescript";
 
-const nextCoreWebVitals = nextPlugin.configs["core-web-vitals"];
-
-export default [
+export default defineConfig([
+  ...nextVitals,
+  ...nextTypeScript,
   {
-    ignores: [
-      "node_modules/**",
-      ".next/**",
-      "out/**",
-      "build/**",
-      "next-env.d.ts",
-    ],
-  },
-  js.configs.recommended,
-  ...tseslint.configs.recommended,
-  {
-    plugins: {
-      "@next/next": nextPlugin,
-    },
     rules: {
-      ...nextCoreWebVitals.rules,
       "@next/next/no-page-custom-font": "off",
     },
   },
-];
+  globalIgnores([
+    "node_modules/**",
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+  ]),
+]);

@@ -951,9 +951,9 @@ export const data = [
   [
     {
       id: "as3_pv3d_gw_fireworks",
-      blog_en:
-        "https://clockmaker.jp/blog-en/2008/09/pv3d-fireworks/",
-      blog_ja: "https://clockmaker.jp/blog/2008/08/papervision3d_bitmapeffectlayer_fireworks/",
+      blog_en: "https://clockmaker.jp/blog-en/2008/09/pv3d-fireworks/",
+      blog_ja:
+        "https://clockmaker.jp/blog/2008/08/papervision3d_bitmapeffectlayer_fireworks/",
       date: "2008/08/24",
       demo: "http://clockmaker.jp/labs/as3_pv3d_gw_fireworks/main.swf",
       img: "https://clockmaker.jp/blog/wp-content/uploads/2008/08/pv3d_fireworks1.jpg",
@@ -963,9 +963,9 @@ export const data = [
     },
     {
       id: "250820_three_fireworks",
-      blog_en:
-        "https://clockmaker.jp/blog-en/2008/09/pv3d-fireworks/",
-      blog_ja: "https://clockmaker.jp/blog/2008/08/papervision3d_bitmapeffectlayer_fireworks/",
+      blog_en: "https://clockmaker.jp/blog-en/2008/09/pv3d-fireworks/",
+      blog_ja:
+        "https://clockmaker.jp/blog/2008/08/papervision3d_bitmapeffectlayer_fireworks/",
       date: "2026/08/26",
       demo: "https://ics-ikeda.github.io/250820_three_fireworks/",
       img: "https://ics-ikeda.github.io/250820_three_fireworks/eyecatch.jpg",
