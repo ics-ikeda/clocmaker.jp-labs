@@ -74,10 +74,15 @@
   height: 100%;
 }
 
+.filterDock::details-content {
+  overflow: visible;
+  transition: content-visibility 0.3s allow-discrete;
+}
+
+.aboutToggle,
 .filterToggle {
   display: flex;
   height: 100%;
-  min-width: 6.5rem;
   padding-inline: 1rem;
   align-items: center;
   justify-content: center;
@@ -99,6 +104,7 @@
   display: none;
 }
 
+.aboutToggle:hover,
 .filterToggle:hover,
 .filterDock[open] .filterToggle {
   color: var(--color-hover-text);
@@ -116,23 +122,26 @@
   gap: 0.875rem;
   color: var(--color-text-primary);
   background: rgb(18 18 18 / 96%);
-  border: 1px solid var(--color-border-primary);
-  border-top: 0;
   box-shadow: 0 1rem 2rem rgb(0 0 0 / 45%);
   backdrop-filter: blur(12px);
+  opacity: 0;
+  transform: translateY(-0.75rem) scale(0.98);
+  transform-origin: top right;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.filterMenuHeader {
-  display: flex;
-  align-items: baseline;
-  padding-block-end: 0.75rem;
-  border-bottom: 1px solid var(--color-border-primary);
+.filterDock[open] .filterMenu {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
-.filterMenuHeader p {
-  font-size: 0.75rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+@starting-style {
+  .filterDock[open] .filterMenu {
+    opacity: 0;
+    transform: translateY(-0.75rem) scale(0.98);
+  }
 }
 
 .filterField {
@@ -186,6 +195,7 @@
 }
 
 .filterSelect:focus-visible,
+.aboutToggle:focus-visible,
 .filterToggle:focus-visible,
 .filterReset:focus-visible,
 .filterEmpty button:focus-visible {
@@ -236,8 +246,8 @@
 }
 
 @media (width < 768px) {
+  .aboutToggle,
   .filterToggle {
-    min-width: 3.25rem;
     padding-inline: 0.75rem;
   }
 
@@ -259,6 +269,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .aboutToggle,
+  .filterDock::details-content,
+  .filterMenu,
   .filterReset,
   .filterEmpty button,
   .filterSelect,

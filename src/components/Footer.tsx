@@ -30,7 +30,11 @@ export default function Footer({ meta }: FooterProps) {
       </div>
       <div className={styles.footerLink}>
         &copy; {year}{" "}
-        <a href="http://clockmaker.jp/blog" target="_blank">
+        <a
+          href="https://clockmaker.jp/blog"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           clockmaker.jp
         </a>
       </div>

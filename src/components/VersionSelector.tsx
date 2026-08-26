@@ -2,7 +2,10 @@
 
 import { useRouter } from "next/navigation";
 import { getRelatedWorks, hasRelatedWorks } from "../lib/data-service";
-import { playClickSound } from "../lib/sound-service";
+import {
+  playClickSound,
+  playNavigationMouseOverSound,
+} from "../lib/sound-service";
 import type { ItemData } from "../types/item-data";
 import styles from "./VersionSelector.module.css";
 
@@ -58,6 +61,7 @@ export default function VersionSelector({
       <select
         value={itemData.id}
         onChange={handleVersionChange}
+        onMouseEnter={playNavigationMouseOverSound}
         className={
           compact
             ? `${styles.versionSelect} ${styles.versionSelectCompact}`

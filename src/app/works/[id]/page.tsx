@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import { ViewTransition } from "@/components/ViewTransition";
+import { data, getDetail } from "@/lib/data-service";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
-import { getDetail, data } from "@/lib/data-service";
-import { ViewTransition } from "@/components/ViewTransition";
 import styles from "./page.module.css";
 
 // 静的パラメータを生成

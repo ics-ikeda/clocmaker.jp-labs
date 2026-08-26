@@ -4,12 +4,17 @@ import type { Route } from "next";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { MouseEvent as ReactMouseEvent, ReactNode } from "react";
+import { runViewTransition } from "@/lib/view-transition";
 import { getIndex, getItemAt } from "../lib/data-service";
-import { playClickSound, playTransitionDownSound } from "../lib/sound-service";
+import {
+  playClickSound,
+  playNavigationMouseOverSound,
+  playTransitionDownSound,
+} from "../lib/sound-service";
 import type { ItemData } from "../types/item-data";
 import styles from "./Header.module.css";
+import TextShuffle from "./TextShuffle";
 import VersionSelector from "./VersionSelector";
-import { runViewTransition } from "@/lib/view-transition";
 
 interface HeaderProps {
   title?: string;
@@ -18,6 +23,7 @@ interface HeaderProps {
   itemData?: ItemData;
   compact?: boolean;
   actions?: ReactNode;
+  animateTitle?: boolean;
 }
 
 const getWorkRoute = (id: string): Route => `/works/${id}` as Route;
@@ -29,6 +35,7 @@ export default function Header({
   itemData,
   compact = false,
   actions,
+  animateTitle = false,
 }: HeaderProps) {
   const router = useRouter();
   const currentIndex = itemData ? getIndex(itemData.id) : -1;
@@ -64,6 +71,7 @@ export default function Header({
             <Link
               className={styles.btnBack}
               href="/"
+              onMouseEnter={playNavigationMouseOverSound}
               onClick={(event) =>
                 handleNavigate(event, "/", playTransitionDownSound)
               }
@@ -77,6 +85,7 @@ export default function Header({
               <Link
                 className={styles.btnBack}
                 href={getWorkRoute(prevItem.id)}
+                onMouseEnter={playNavigationMouseOverSound}
                 onClick={(event) =>
                   handleNavigate(event, getWorkRoute(prevItem.id))
                 }
@@ -91,6 +100,7 @@ export default function Header({
               <Link
                 className={styles.btnBack}
                 href={getWorkRoute(nextItem.id)}
+                onMouseEnter={playNavigationMouseOverSound}
                 onClick={(event) =>
                   handleNavigate(event, getWorkRoute(nextItem.id))
                 }
@@ -109,8 +119,22 @@ export default function Header({
         </div>
       )}
 
-      <div className={styles.headerDetailH1}>
-        {itemData ? <h1>{title}</h1> : <h1>{title}</h1>}
+      <div
+        className={
+          itemData
+            ? styles.headerDetailH1
+            : `${styles.headerDetailH1} ${styles.headerH1Top}`
+        }
+      >
+        <h1>
+          {animateTitle ? (
+            <TextShuffle delay={80} duration={820}>
+              {title}
+            </TextShuffle>
+          ) : (
+            title
+          )}
+        </h1>
       </div>
 
       {actions && <div className={styles.headerActions}>{actions}</div>}

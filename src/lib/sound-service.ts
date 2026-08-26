@@ -5,6 +5,11 @@ const sharedHowlOver = new Howl({
   src: ["/sounds/tap_03.wav"],
   volume: 0.33,
 });
+const sharedHowlNavigationOver = new Howl({
+  src: ["/sounds/tap_03.wav"],
+  volume: 0.66,
+  rate: 0.5,
+});
 const sharedHowlClick = new Howl({
   src: ["/sounds/toggle_on.wav"],
   volume: 0.5,
@@ -25,6 +30,9 @@ export function playClickSound() {
 }
 export function playMouseOverSound() {
   sharedHowlOver.play();
+}
+export function playNavigationMouseOverSound() {
+  sharedHowlNavigationOver.play();
 }
 export function playTransitionUpSound() {
   sharedHowlTransitionUp.play();

@@ -2,12 +2,20 @@
 
 import type { Route } from "next";
 import { useRouter } from "next/navigation";
-import { use } from "react";
+import { use, useEffect, useRef, useState } from "react";
+import { data, formatStartDateForGroup } from "@/lib/data-service";
+import {
+  playClickSound,
+  playNavigationMouseOverSound,
+} from "@/lib/sound-service";
+import type { ItemData } from "@/types/item-data";
+import AboutDialog, {
+  ABOUT_DIALOG_TRIGGER_COMMAND,
+} from "../components/AboutDialog";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import TextShuffle from "../components/TextShuffle";
 import WorkItem from "../components/WorkItem";
-import { data, formatStartDateForGroup } from "@/lib/data-service";
-import type { ItemData } from "@/types/item-data";
 import styles from "./page.module.css";
 
 interface TechnologyGroup {
@@ -55,6 +63,8 @@ const technologyValues = new Set(
   technologyGroups.flatMap((group) => group.options),
 );
 const typeValues = new Set(typeOptions);
+const HOME_INTRO_DURATION = 1800;
+let hasPlayedHomeIntro = false;
 
 interface WorkFilters {
   technology: string;
@@ -99,6 +109,10 @@ const getStringParam = (
 
 export default function Home({ searchParams }: HomeProps) {
   const router = useRouter();
+  const filterDockRef = useRef<HTMLDetailsElement>(null);
+  const [shouldPlayIntro, setShouldPlayIntro] = useState(
+    () => !hasPlayedHomeIntro,
+  );
   const params = use(searchParams);
   const technologyParam = getStringParam(params.tech);
   const typeParam = getStringParam(params.type);
@@ -113,7 +127,24 @@ export default function Home({ searchParams }: HomeProps) {
   });
   const hasActiveFilters = technology.length > 0 || type.length > 0;
 
+  useEffect(() => {
+    hasPlayedHomeIntro = true;
+
+    if (!shouldPlayIntro) {
+      return undefined;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      setShouldPlayIntro(false);
+    }, HOME_INTRO_DURATION);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, [shouldPlayIntro]);
+
   const updateFilters = (nextFilters: WorkFilters) => {
+    setShouldPlayIntro(false);
     const nextParams = new URLSearchParams();
     if (nextFilters.technology) {
       nextParams.set("tech", nextFilters.technology);
@@ -127,103 +158,143 @@ export default function Home({ searchParams }: HomeProps) {
     router.replace(href, { scroll: false });
   };
 
-  const resetFilters = () => updateFilters({ technology: "", type: "" });
+  const resetFilters = () => {
+    if (filterDockRef.current) {
+      filterDockRef.current.open = false;
+    }
+    updateFilters({ technology: "", type: "" });
+  };
 
   return (
     <div className={styles.pageGrid}>
       <header className={styles.header}>
         <Header
+          animateTitle={shouldPlayIntro}
           actions={
-            <details className={styles.filterDock}>
-              <summary className={styles.filterToggle}>
-                <i className="fa fa-filter" aria-hidden="true" />
-                <span className={styles.filterToggleLabel}>Filter</span>
-              </summary>
+            <>
+              <button
+                type="button"
+                className={styles.aboutToggle}
+                onMouseEnter={playNavigationMouseOverSound}
+                onClick={playClickSound}
+                {...ABOUT_DIALOG_TRIGGER_COMMAND}
+              >
+                <span>About</span>
+              </button>
 
-              <div className={styles.filterMenu}>
-                <div className={styles.filterMenuHeader}>
-                  <p>Filter by</p>
-                </div>
-
-                <label className={styles.filterField}>
-                  <span className={styles.filterLabel}>Technology</span>
-                  <span className={styles.filterSelectWrap}>
-                    <select
-                      className={styles.filterSelect}
-                      value={technology}
-                      onChange={(event) =>
-                        updateFilters({
-                          technology: event.target.value,
-                          type,
-                        })
-                      }
-                    >
-                      <option value="">All</option>
-                      {technologyGroups.map((group) => (
-                        <optgroup key={group.label} label={group.label}>
-                          {group.options.map((option) => (
-                            <option key={option} value={option}>
-                              {option}
-                            </option>
-                          ))}
-                        </optgroup>
-                      ))}
-                    </select>
-                    <i className="fa fa-chevron-down" aria-hidden="true" />
-                  </span>
-                </label>
-
-                <label className={styles.filterField}>
-                  <span className={styles.filterLabel}>Type</span>
-                  <span className={styles.filterSelectWrap}>
-                    <select
-                      className={styles.filterSelect}
-                      value={type}
-                      onChange={(event) =>
-                        updateFilters({
-                          technology,
-                          type: event.target.value,
-                        })
-                      }
-                    >
-                      <option value="">All</option>
-                      {typeOptions.map((option) => (
-                        <option key={option} value={option}>
-                          {option}
-                        </option>
-                      ))}
-                    </select>
-                    <i className="fa fa-chevron-down" aria-hidden="true" />
-                  </span>
-                </label>
-
-                <button
-                  type="button"
-                  className={styles.filterReset}
-                  onClick={resetFilters}
-                  disabled={!hasActiveFilters}
+              <details ref={filterDockRef} className={styles.filterDock}>
+                <summary
+                  className={styles.filterToggle}
+                  onMouseEnter={playNavigationMouseOverSound}
+                  onClick={playClickSound}
                 >
-                  Reset filters
-                </button>
-              </div>
-            </details>
+                  <i className="fa fa-filter" />
+                  <span className={styles.filterToggleLabel}>Filter</span>
+                </summary>
+
+                <div className={styles.filterMenu}>
+                  <label className={styles.filterField}>
+                    <span className={styles.filterLabel}>Technology</span>
+                    <span className={styles.filterSelectWrap}>
+                      <select
+                        className={styles.filterSelect}
+                        value={technology}
+                        onChange={(event) =>
+                          updateFilters({
+                            technology: event.target.value,
+                            type,
+                          })
+                        }
+                      >
+                        <option value="">All</option>
+                        {technologyGroups.map((group) => (
+                          <optgroup key={group.label} label={group.label}>
+                            {group.options.map((option) => (
+                              <option key={option} value={option}>
+                                {option}
+                              </option>
+                            ))}
+                          </optgroup>
+                        ))}
+                      </select>
+                      <i className="fa fa-chevron-down" />
+                    </span>
+                  </label>
+
+                  <label className={styles.filterField}>
+                    <span className={styles.filterLabel}>Type</span>
+                    <span className={styles.filterSelectWrap}>
+                      <select
+                        className={styles.filterSelect}
+                        value={type}
+                        onChange={(event) =>
+                          updateFilters({
+                            technology,
+                            type: event.target.value,
+                          })
+                        }
+                      >
+                        <option value="">All</option>
+                        {typeOptions.map((option) => (
+                          <option key={option} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                      <i className="fa fa-chevron-down" />
+                    </span>
+                  </label>
+
+                  <button
+                    type="button"
+                    className={styles.filterReset}
+                    onClick={resetFilters}
+                    disabled={!hasActiveFilters}
+                  >
+                    Reset filters
+                  </button>
+                </div>
+              </details>
+            </>
           }
         />
       </header>
 
+      <AboutDialog />
+
       <main className={styles.main}>
         <div className={styles.pageTopHero}>
           <h2 className={styles.subTitle}>
-            <strong>Interaction Design × Web Technology</strong>
+            <strong>
+              {shouldPlayIntro ? (
+                <TextShuffle delay={240} duration={960}>
+                  Interaction Design × Web Technology
+                </TextShuffle>
+              ) : (
+                "Interaction Design × Web Technology"
+              )}
+            </strong>
             <br />
-            <small>https://labs.clockmaker.jp/</small>
+            <small>
+              {shouldPlayIntro ? (
+                <TextShuffle delay={480} duration={780}>
+                  https://labs.clockmaker.jp/
+                </TextShuffle>
+              ) : (
+                "https://labs.clockmaker.jp/"
+              )}
+            </small>
           </h2>
         </div>
         <div className={styles.pageTopHeroArea}>
           {filteredWorks.length > 0 ? (
             <div className={styles.pageTopHeroAreaRow}>
               {filteredWorks.map((work) => (
-                <WorkItem key={work.id} data={work} />
+                <WorkItem
+                  key={work.id}
+                  data={work}
+                  playIntro={shouldPlayIntro}
+                />
               ))}
             </div>
           ) : (

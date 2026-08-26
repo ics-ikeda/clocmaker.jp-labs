@@ -31,9 +31,9 @@
 
 .versionSelectCompact {
   box-sizing: border-box;
-  height: 32px;
+  height: 30px;
   min-width: 164px;
   padding: 0 26px 0 10px;
   font-size: 0.8125rem;
-  line-height: 32px;
+  line-height: 30px;
 }
