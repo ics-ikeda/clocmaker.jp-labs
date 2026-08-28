@@ -21,8 +21,10 @@ const MOBILE_BREAKPOINT = 768;
 const SHUFFLE_CHARACTERS = "01";
 const INTRO_START_OFFSET = 200;
 const INTRO_DELAY_MIN = 80;
-const INTRO_DELAY_RANGE = 920;
-const INTRO_REVEAL_OFFSET = 25;
+const INTRO_RANDOM_DELAY_RANGE = 360;
+const INTRO_ORDER_DELAY_STEP = 6;
+const INTRO_ORDER_DELAY_MAX = 240;
+const INTRO_REVEAL_OFFSET = 14;
 type RollOverState = "idle" | "show" | "hide";
 
 const createShuffleText = (element: HTMLElement): ShuffleText => {
@@ -31,14 +33,20 @@ const createShuffleText = (element: HTMLElement): ShuffleText => {
   return shuffleText;
 };
 
-const getIntroDelay = (id: string): number => {
+const getIntroDelay = (id: string, introOrder: number): number => {
   let hash = 0;
 
   for (const character of id) {
     hash = (hash * 31 + character.charCodeAt(0)) >>> 0;
   }
 
-  return INTRO_START_OFFSET + INTRO_DELAY_MIN + (hash % INTRO_DELAY_RANGE);
+  const randomDelay = hash % INTRO_RANDOM_DELAY_RANGE;
+  const orderDelay = Math.min(
+    introOrder * INTRO_ORDER_DELAY_STEP,
+    INTRO_ORDER_DELAY_MAX,
+  );
+
+  return INTRO_START_OFFSET + INTRO_DELAY_MIN + orderDelay + randomDelay;
 };
 
 // Keep track of loaded thumbnails so they stay visible after returning via back navigation.
@@ -47,10 +55,15 @@ const animatedWorkItems = new Set<string>();
 
 interface WorkItemProps {
   data: ItemData;
+  introOrder?: number;
   playIntro?: boolean;
 }
 
-export default function WorkItem({ data, playIntro = false }: WorkItemProps) {
+export default function WorkItem({
+  data,
+  introOrder = 0,
+  playIntro = false,
+}: WorkItemProps) {
   const router = useRouter();
   const textTitleRef = useRef<HTMLDivElement>(null);
   const textDateRef = useRef<HTMLDivElement>(null);
@@ -63,7 +76,7 @@ export default function WorkItem({ data, playIntro = false }: WorkItemProps) {
   const [shouldPlayIntro] = useState(
     () => playIntro && !animatedWorkItems.has(data.id),
   );
-  const introDelay = getIntroDelay(data.id);
+  const introDelay = getIntroDelay(data.id, introOrder);
 
   useEffect(() => {
     if (textTitleRef.current && textDateRef.current) {

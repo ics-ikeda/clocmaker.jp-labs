@@ -10,7 +10,7 @@ export const data: DataStructure = [
       date: "2026/08/26",
       demo: "https://ics-ikeda.github.io/250820_three_fireworks/",
       img: "https://ics-ikeda.github.io/250820_three_fireworks/eyecatch.jpg",
-      title: "Fireworks",
+      title: "Fireworks HDR",
       type: "Real Time Motion Graphics",
       technology: ["WebGPU", "Three.js", "GSAP"],
     },
@@ -255,7 +255,6 @@ export const data: DataStructure = [
     },
   ],
 
-
   [
     {
       id: "150810_threejs_mosaic_icons",
@@ -291,6 +290,31 @@ export const data: DataStructure = [
       title: "Particle Emitter 3D",
       type: "Interactive",
       technology: ["WebGL", "Three.js"],
+    },
+  ],
+
+  [
+    {
+      id: "140104_away3d_ts_fires",
+      blog_en: null,
+      blog_ja: "https://ics.media/entry/2328/",
+      date: "2026/08/28",
+      demo: "https://ics-creative.github.io/140104_three_fires/",
+      img: "https://ics-creative.github.io/140104_three_fires/three-fires-eyecatch.jpg",
+      title: "Fire Particles HDR",
+      type: "Interactive",
+      technology: ["WebGPU", "Three"],
+    },
+    {
+      id: "140104_away3d_ts_fires",
+      blog_en: null,
+      blog_ja: "https://clockmaker.jp/blog/2013/02/away3d-fire-particles/",
+      date: "2014/01/07",
+      demo: "https://clockmaker.jp/labs/140104_away3d_ts_fires/",
+      img: "https://clockmaker.jp/blog/wp-content/uploads/2014/01/140107_away3d_title.jpg",
+      title: "Fire Particles 3D",
+      type: "Interactive",
+      technology: ["WebGL", "Away3D"],
     },
   ],
   [
@@ -393,19 +417,6 @@ export const data: DataStructure = [
       demo: "https://clockmaker.jp/labs/140102_away3d_ts_particle_flare/",
       img: "https://clockmaker.jp/blog/wp-content/uploads/2013/09/130919_lensfrare.jpg",
       title: "Blue Light 3D",
-      type: "Interactive",
-      technology: ["WebGL", "Away3D"],
-    },
-  ],
-  [
-    {
-      id: "140104_away3d_ts_fires",
-      blog_en: null,
-      blog_ja: "https://clockmaker.jp/blog/2013/02/away3d-fire-particles/",
-      date: "2014/01/07",
-      demo: "https://clockmaker.jp/labs/140104_away3d_ts_fires/",
-      img: "https://clockmaker.jp/blog/wp-content/uploads/2014/01/140107_away3d_title.jpg",
-      title: "Fire Particles 3D",
       type: "Interactive",
       technology: ["WebGL", "Away3D"],
     },

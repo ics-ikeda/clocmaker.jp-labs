@@ -289,10 +289,11 @@ export default function Home({ searchParams }: HomeProps) {
         <div className={styles.pageTopHeroArea}>
           {filteredWorks.length > 0 ? (
             <div className={styles.pageTopHeroAreaRow}>
-              {filteredWorks.map((work) => (
+              {filteredWorks.map((work, index) => (
                 <WorkItem
                   key={work.id}
                   data={work}
+                  introOrder={index}
                   playIntro={shouldPlayIntro}
                 />
               ))}
