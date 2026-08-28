@@ -295,7 +295,7 @@ export const data: DataStructure = [
 
   [
     {
-      id: "140104_away3d_ts_fires",
+      id: "140104_three_fires",
       blog_en: null,
       blog_ja: "https://ics.media/entry/2328/",
       date: "2026/08/28",
