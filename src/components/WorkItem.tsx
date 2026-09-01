@@ -65,6 +65,7 @@ export default function WorkItem({
   playIntro = false,
 }: WorkItemProps) {
   const router = useRouter();
+  const previewVideoRef = useRef<HTMLVideoElement>(null);
   const textTitleRef = useRef<HTMLDivElement>(null);
   const textDateRef = useRef<HTMLDivElement>(null);
   const shuffleTextTitleRef = useRef<ShuffleText | null>(null);
@@ -121,16 +122,24 @@ export default function WorkItem({
     };
   }, [introDelay, isLoadComplete, shouldPlayIntro]);
 
-  const handleMouseOver = () => {
+  const handleMouseEnter = () => {
     setRollOverState("show");
     shuffleTextTitleRef.current?.start();
     shuffleTextDateRef.current?.start();
+    playMouseOverSound();
+    previewVideoRef.current?.play();
   };
 
-  const handleMouseOut = () => {
+  const handleMouseLeave = () => {
     shuffleTextTitleRef.current?.start();
     shuffleTextDateRef.current?.start();
     setRollOverState("hide");
+
+    const video = previewVideoRef.current;
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+    }
   };
 
   const handleClick = async (event: ReactMouseEvent<HTMLAnchorElement>) => {
@@ -154,10 +163,6 @@ export default function WorkItem({
   const handleLoadComplete = () => {
     loadedWorkItems.add(data.id);
     setIsLoadComplete(true);
-  };
-
-  const handlePlaySoundRollOver = () => {
-    playMouseOverSound();
   };
 
   const handlePlaySoundClick = () => {
@@ -188,10 +193,9 @@ export default function WorkItem({
       <Link
         href={`/works/${data.id}`}
         className={styles.workItemButton}
-        onMouseEnter={handlePlaySoundRollOver}
+        onMouseEnter={handleMouseEnter}
         onClick={handleClick}
-        onMouseOver={handleMouseOver}
-        onMouseLeave={handleMouseOut}
+        onMouseLeave={handleMouseLeave}
         data-prefetch
         data-demo-url={data.demo}
       >
@@ -220,6 +224,17 @@ export default function WorkItem({
               }}
               unoptimized={true}
             />
+            {data.previewVideo ? (
+              <video
+                ref={previewVideoRef}
+                src={`/videos/${data.previewVideo}`}
+                className={styles.previewVideo}
+                muted
+                loop
+                playsInline
+                preload="none"
+              />
+            ) : null}
             <div className={styles.imgRollover}></div>
           </div>
         </ViewTransition>
@@ -242,7 +257,7 @@ export default function WorkItem({
         {data.blog_ja && (
           <a
             className={styles.customLink}
-            onMouseEnter={handlePlaySoundRollOver}
+            onMouseEnter={playMouseOverSound}
             onClick={handlePlaySoundClick}
             href={data.blog_ja}
             target="_blank"
@@ -254,7 +269,7 @@ export default function WorkItem({
         {data.blog_en && (
           <a
             className={styles.customLink}
-            onMouseEnter={handlePlaySoundRollOver}
+            onMouseEnter={playMouseOverSound}
             onClick={handlePlaySoundClick}
             href={data.blog_en}
             target="_blank"
