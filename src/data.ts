@@ -46,21 +46,6 @@ export const data: DataStructure = [
   ],
   [
     {
-      id: "250717_pixijs_glitch",
-      previewVideo: "250717_pixijs_glitch.mp4",
-      blog_en: null,
-      blog_ja: null,
-      date: "2025/07/17",
-      demo: "https://ics-ikeda.github.io/250717_pixijs_glitch/index.html",
-      img: "https://ics-ikeda.github.io/250717_pixijs_glitch/eyecatch.jpg",
-      title: "Glitch Monitor",
-      type: "Real Time Motion Graphics",
-      technology: ["WebGPU"],
-    },
-  ],
-
-  [
-    {
       id: "230509_three_motion",
       previewVideo: "230509_three_motion.mp4",
       blog_en: "https://clockmaker.jp/blog-en/2009/05/pv3d-photoprint-2/",
@@ -340,6 +325,20 @@ export const data: DataStructure = [
       title: "Fire Particles 3D",
       type: "Interactive",
       technology: ["WebGL", "Away3D"],
+    },
+  ],
+  [
+    {
+      id: "250717_pixijs_glitch",
+      previewVideo: "250717_pixijs_glitch.mp4",
+      blog_en: null,
+      blog_ja: null,
+      date: "2025/07/17",
+      demo: "https://ics-ikeda.github.io/250717_pixijs_glitch/index.html",
+      img: "https://ics-ikeda.github.io/250717_pixijs_glitch/eyecatch.jpg",
+      title: "Glitch Monitor",
+      type: "Real Time Motion Graphics",
+      technology: ["WebGPU"],
     },
   ],
   [
