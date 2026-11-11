@@ -22,19 +22,16 @@ const closeDialogCommand = {
 export default function AboutDialog() {
   return (
     <dialog id={ABOUT_DIALOG_ID} className={styles.dialog} closedby="any">
-      <div className={styles.header}>
-        <h2>ClockMaker Labs</h2>
-        <button
-          type="button"
-          className={styles.close}
-          aria-label="Close"
-          onMouseEnter={playNavigationMouseOverSound}
-          onClick={playClickSound}
-          {...closeDialogCommand}
-        >
-          <i className="fa fa-times" aria-hidden="true" />
-        </button>
-      </div>
+      <button
+        type="button"
+        className={styles.close}
+        aria-label="Close"
+        onMouseEnter={playNavigationMouseOverSound}
+        onClick={playClickSound}
+        {...closeDialogCommand}
+      >
+        <i className="fa fa-times" aria-hidden="true" />
+      </button>
 
       <div className={styles.profile}>
         <Image
@@ -47,7 +44,7 @@ export default function AboutDialog() {
         />
         <div className={styles.profileDetails}>
           <div className={styles.identity}>
-            <h3 lang="ja">池田 泰延</h3>
+            <h2 lang="ja">池田 泰延</h2>
             <p lang="en">IKEDA Yasunobu</p>
           </div>
           <div className={styles.socialLinks}>
