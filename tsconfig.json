@@ -48,6 +48,8 @@
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    // 開発用生成型の不具合を回避。ルート検証はnext buildで行う（vercel/next.js#99919）。
+    ".next/dev/types/validator.ts"
   ]
 }
