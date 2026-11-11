@@ -18,11 +18,7 @@ export default function Footer({ meta }: FooterProps) {
       </div>
       <div className={styles.footerAuthor}>
         All works are created by
-        <a
-          href="https://x.com/clockmaker"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://x.com/clockmaker" target="_blank">
           {" "}
           IKEDA Yasunobu
         </a>
@@ -30,11 +26,7 @@ export default function Footer({ meta }: FooterProps) {
       </div>
       <div className={styles.footerLink}>
         &copy; {year}{" "}
-        <a
-          href="https://clockmaker.jp/blog"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://clockmaker.jp/blog" target="_blank">
           clockmaker.jp
         </a>
       </div>

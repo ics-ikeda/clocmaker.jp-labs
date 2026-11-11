@@ -14,6 +14,7 @@ import AboutDialog, {
 } from "../components/AboutDialog";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import selectStyles from "../components/NativeSelect.module.css";
 import TextShuffle from "../components/TextShuffle";
 import WorkItem from "../components/WorkItem";
 import styles from "./page.module.css";
@@ -195,54 +196,50 @@ export default function Home({ searchParams }: HomeProps) {
                 <div className={styles.filterMenu}>
                   <label className={styles.filterField}>
                     <span className={styles.filterLabel}>Technology</span>
-                    <span className={styles.filterSelectWrap}>
-                      <select
-                        className={styles.filterSelect}
-                        value={technology}
-                        onChange={(event) =>
-                          updateFilters({
-                            technology: event.target.value,
-                            type,
-                          })
-                        }
-                      >
-                        <option value="">All</option>
-                        {technologyGroups.map((group) => (
-                          <optgroup key={group.label} label={group.label}>
-                            {group.options.map((option) => (
-                              <option key={option} value={option}>
-                                {option}
-                              </option>
-                            ))}
-                          </optgroup>
-                        ))}
-                      </select>
-                      <i className="fa fa-chevron-down" />
-                    </span>
+                    <select
+                      name="technology"
+                      className={`${selectStyles.select} ${styles.filterSelect}`}
+                      value={technology}
+                      onChange={(event) =>
+                        updateFilters({
+                          technology: event.target.value,
+                          type,
+                        })
+                      }
+                    >
+                      <option value="">All</option>
+                      {technologyGroups.map((group) => (
+                        <optgroup key={group.label} label={group.label}>
+                          {group.options.map((option) => (
+                            <option key={option} value={option}>
+                              {option}
+                            </option>
+                          ))}
+                        </optgroup>
+                      ))}
+                    </select>
                   </label>
 
                   <label className={styles.filterField}>
                     <span className={styles.filterLabel}>Type</span>
-                    <span className={styles.filterSelectWrap}>
-                      <select
-                        className={styles.filterSelect}
-                        value={type}
-                        onChange={(event) =>
-                          updateFilters({
-                            technology,
-                            type: event.target.value,
-                          })
-                        }
-                      >
-                        <option value="">All</option>
-                        {typeOptions.map((option) => (
-                          <option key={option} value={option}>
-                            {option}
-                          </option>
-                        ))}
-                      </select>
-                      <i className="fa fa-chevron-down" />
-                    </span>
+                    <select
+                      name="type"
+                      className={`${selectStyles.select} ${styles.filterSelect}`}
+                      value={type}
+                      onChange={(event) =>
+                        updateFilters({
+                          technology,
+                          type: event.target.value,
+                        })
+                      }
+                    >
+                      <option value="">All</option>
+                      {typeOptions.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
                   </label>
 
                   <button

@@ -1,10 +1,11 @@
 .dialog {
+  container: about / inline-size;
   position: fixed;
   inset: 0;
   box-sizing: border-box;
-  width: min(52rem, calc(100vw - 2rem));
+  width: min(832px, calc(100vw - 32px));
   max-width: none;
-  max-height: min(44rem, calc(100dvh - 2rem));
+  max-height: min(800px, calc(100dvh - 32px));
   padding: 0;
   overflow: auto;
   overscroll-behavior: contain;
@@ -12,41 +13,43 @@
   background: rgb(18 18 18 / 98%);
   border: 0;
   border-radius: 0;
-  box-shadow: 0 2rem 6rem rgb(0 0 0 / 70%);
+  box-shadow: 0 32px 96px rgb(0 0 0 / 70%);
   opacity: 0;
-  transform: translateY(1.25rem) scale(0.98);
+  transform: translateY(24px) scale(0.98);
+  /* 入退場には減速系イージングを使う。 */
   transition:
     opacity 0.3s ease,
     transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
     overlay 0.3s allow-discrete,
     display 0.3s allow-discrete;
-}
 
-.dialog[open] {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
+  &[open] {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 
-.dialog::backdrop {
-  background-color: rgb(0 0 0 / 0%);
-  transition:
-    background-color 0.3s ease,
-    overlay 0.3s allow-discrete,
-    display 0.3s allow-discrete;
-}
+  &::backdrop {
+    background-color: transparent;
+    transition:
+      background-color 0.3s ease,
+      overlay 0.3s allow-discrete,
+      display 0.3s allow-discrete;
+  }
 
-.dialog[open]::backdrop {
-  background-color: rgb(0 0 0 / 72%);
+  &[open]::backdrop {
+    background-color: rgb(0 0 0 / 72%);
+  }
+
 }
 
 @starting-style {
   .dialog[open] {
     opacity: 0;
-    transform: translateY(1.25rem) scale(0.98);
+    transform: translateY(24px) scale(0.98);
   }
 
   .dialog[open]::backdrop {
-    background-color: rgb(0 0 0 / 0%);
+    background-color: transparent;
   }
 }
 
@@ -55,24 +58,28 @@
   top: 0;
   z-index: 1;
   display: flex;
-  padding: 1.5rem;
-  align-items: flex-start;
+  padding: 24px;
+  align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  background: rgb(18 18 18);
-}
+  gap: 16px;
+  background: var(--color-panel);
 
-.header h2 {
-  font-family: "Lato", sans-serif;
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  font-weight: 300;
-  letter-spacing: 0.02em;
+  h2 {
+    font-family: "Lato", sans-serif;
+    font-size: clamp(1.5rem, 4cqi, 2rem);
+    font-weight: var(--font-weight-light);
+    letter-spacing: 0.02em;
+  }
+
+  @container about (width < 720px) {
+    padding: 16px;
+  }
 }
 
 .close {
   display: grid;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 40px;
+  height: 40px;
   flex: none;
   place-items: center;
   color: var(--color-text-tertiary);
@@ -82,73 +89,187 @@
     color 0.16s ease,
     background-color 0.16s ease,
     border-color 0.16s ease;
+
+  &:hover {
+    color: var(--color-hover-text);
+    background: var(--color-hover-background);
+    border-color: var(--color-hover-background);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-text-primary);
+    outline-offset: 4px;
+  }
 }
 
-.close:hover {
-  color: var(--color-hover-text);
-  background: var(--color-hover-background);
-  border-color: var(--color-hover-background);
+.profile {
+  --profile-photo-size: 112px;
+
+  display: flex;
+  padding: 0 24px 24px;
+  align-items: center;
+  gap: 24px;
+
+  @container about (width < 720px) {
+    --profile-photo-size: 96px;
+
+    padding-inline: 16px;
+    gap: 16px;
+  }
+
+  @container about (width < 336px) {
+    /* リンクの内側余白を保ったまま1行に収める。 */
+    gap: 8px;
+  }
 }
 
-.close:focus-visible {
-  outline: 2px solid var(--color-text-primary);
-  outline-offset: 2px;
+.portrait {
+  width: var(--profile-photo-size);
+  height: var(--profile-photo-size);
+  flex: none;
+  object-fit: cover;
+}
+
+.profileDetails {
+  display: flex;
+  min-width: 0;
+  min-height: var(--profile-photo-size);
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.identity {
+  display: grid;
+  gap: 4px;
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    line-height: 1.2;
+  }
+
+  p {
+    color: var(--color-text-tertiary);
+    font-size: 0.875rem;
+    line-height: 1.2;
+  }
+}
+
+.socialLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  a {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    color: var(--color-link);
+    font-size: 0.875rem;
+    line-height: 1.4;
+    transition:
+      color 0.16s ease,
+      background-color 0.16s ease;
+
+    &:hover {
+      color: var(--color-hover-text);
+      background: var(--color-hover-background);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-text-primary);
+      outline-offset: 4px;
+    }
+  }
+
+  a.mediaLink {
+    width: auto;
+    padding-inline: 10px;
+    gap: 8px;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    flex: none;
+
+  }
+
+  svg:not([fill]) {
+    fill: currentColor;
+  }
+
+  @container about (width < 720px) {
+    a {
+      width: 36px;
+      height: 36px;
+    }
+
+    a.mediaLink {
+      padding-inline: 8px;
+    }
+  }
+
+  @container about (width < 320px) {
+    gap: 4px;
+
+    .mediaLink svg {
+      display: none;
+    }
+  }
 }
 
 .body {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
+  border-top: 1px solid var(--color-border-primary);
 
-.language {
-  display: grid;
-  padding: 1.5rem;
-  align-content: start;
-  gap: 1rem;
-}
-
-.language:lang(ja) {
-  word-break: auto-phrase;
-}
-
-.language p {
-  color: var(--color-text-quaternary);
-  font-size: 0.875rem;
-  line-height: 1.8;
-}
-
-.language a,
-.language a:visited {
-  color: var(--color-link);
-}
-
-.language a:hover {
-  color: var(--color-link-hover);
-}
-
-.language a:active {
-  color: var(--color-link-active);
-}
-
-@media (width < 768px) {
-  .dialog {
-    width: calc(100vw - 3rem);
-  }
-
-  .header,
-  .language {
-    padding: 1.25rem;
-  }
-
-  .body {
+  @container about (width < 720px) {
     grid-template-columns: 1fr;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .dialog,
-  .dialog::backdrop,
-  .close {
-    transition: none;
+.language {
+  display: grid;
+  padding: 24px;
+  align-content: start;
+  gap: 16px;
+
+  &:lang(ja) {
+    word-break: auto-phrase;
+  }
+
+  p {
+    color: var(--color-text-quaternary);
+    font-size: 0.875rem;
+    line-height: 1.8;
+  }
+
+  a,
+  a:visited {
+    color: var(--color-link);
+  }
+
+  a:hover {
+    color: var(--color-link-hover);
+  }
+
+  a:active {
+    color: var(--color-link-active);
+  }
+
+  @container about (width < 720px) {
+    padding: 16px;
   }
 }

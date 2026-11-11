@@ -261,7 +261,6 @@ export default function WorkItem({
             onClick={handlePlaySoundClick}
             href={data.blog_ja}
             target="_blank"
-            rel="noopener noreferrer"
           >
             MORE - JP
           </a>
@@ -273,7 +272,6 @@ export default function WorkItem({
             onClick={handlePlaySoundClick}
             href={data.blog_en}
             target="_blank"
-            rel="noopener noreferrer"
           >
             MORE - EN
           </a>

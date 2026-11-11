@@ -157,44 +157,11 @@
   text-transform: uppercase;
 }
 
-.filterSelectWrap {
-  position: relative;
-  display: block;
-}
-
-.filterSelectWrap i {
-  position: absolute;
-  top: 50%;
-  inset-inline-end: 0.875rem;
-  color: var(--color-text-secondary);
-  font-size: 0.625rem;
-  pointer-events: none;
-  transform: translateY(-50%);
-}
-
 .filterSelect {
-  appearance: none;
-  box-sizing: border-box;
   width: 100%;
-  min-height: 2.5rem;
-  padding-inline: 0.75rem 2.5rem;
-  color: var(--color-text-primary);
-  font: inherit;
-  font-size: 0.8125rem;
-  background: var(--color-background);
-  border: 1px solid var(--color-border-primary);
-  border-radius: 0;
-  transition:
-    background-color 0.16s ease,
-    border-color 0.16s ease;
+  min-height: 40px;
 }
 
-.filterSelect:hover {
-  background: var(--color-background-secondary);
-  border-color: var(--color-text-secondary);
-}
-
-.filterSelect:focus-visible,
 .aboutToggle:focus-visible,
 .filterToggle:focus-visible,
 .filterReset:focus-visible,

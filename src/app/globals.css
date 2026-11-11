@@ -2,6 +2,7 @@
   /* 背景色 */
   --color-background: #000000;
   --color-background-secondary: #333;
+  --color-panel: rgb(18 18 18);
 
   /* テキスト色 */
   --color-text-primary: #fff;
@@ -14,15 +15,17 @@
   --color-border-secondary: #333;
 
   /* ホバー・アクティブ状態 */
-  --color-hover-background: #fff;
-  --color-hover-text: #000;
-  --color-active-background: #ccc;
-  --color-active-text: #000;
+  --color-hover-background: #444;
+  --color-hover-text: #fff;
+  --color-active-background: #333;
+  --color-active-text: #fff;
 
   /* リンク色 */
   --color-link: #ccc;
   --color-link-hover: #fff;
   --color-link-active: #ddd;
+
+  --font-weight-light: 300;
 
   --view-transition-name-filter: site-filter;
 }

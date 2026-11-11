@@ -1,0 +1,121 @@
+.select {
+  appearance: base-select;
+  box-sizing: border-box;
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
+  padding-inline: 16px;
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  background: var(--color-background);
+  border: 1px solid var(--color-border-primary);
+  border-radius: 0;
+  cursor: pointer;
+  transition:
+    color 0.16s ease,
+    background-color 0.16s ease,
+    border-color 0.16s ease;
+
+  &:hover,
+  &:open {
+    color: var(--color-hover-text);
+    background-color: var(--color-hover-background);
+    border-color: var(--color-text-secondary);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-text-primary);
+    outline-offset: 4px;
+  }
+
+  &::picker-icon {
+    color: var(--color-text-secondary);
+    transition: rotate 0.16s ease;
+  }
+
+  &:open::picker-icon {
+    rotate: 180deg;
+  }
+
+  &::picker(select) {
+    appearance: base-select;
+    box-sizing: border-box;
+    inline-size: max-content;
+    min-inline-size: anchor-size(width);
+    max-inline-size: calc(100dvw - 32px);
+    max-block-size: min(480px, calc(100dvh - 32px));
+    margin-block: 4px;
+    padding: 4px;
+    overflow: auto;
+    overscroll-behavior: contain;
+    color: var(--color-text-primary);
+    background: var(--color-panel);
+    border: 1px solid var(--color-border-primary);
+    border-radius: 0;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 45%);
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+    transform-origin: top right;
+    /* 減速系イージングで、アンカー側から拡大して入退場する。 */
+    transition:
+      opacity 0.24s ease,
+      transform 0.24s cubic-bezier(0.2, 0.8, 0.2, 1),
+      display 0.24s allow-discrete,
+      overlay 0.24s allow-discrete;
+  }
+
+  &:open::picker(select) {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  optgroup {
+    padding: 4px;
+    color: var(--color-text-secondary);
+    font-size: 0.75rem;
+    font-weight: normal;
+  }
+
+  option {
+    box-sizing: border-box;
+    min-block-size: 40px;
+    padding: 8px;
+    gap: 8px;
+    color: var(--color-text-primary);
+    font-size: 0.875rem;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+    transition:
+      color 0.16s ease,
+      background-color 0.16s ease;
+
+    &:checked {
+      background-color: var(--color-background-secondary);
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: var(--color-hover-text);
+      background-color: var(--color-hover-background);
+      outline: none;
+    }
+
+    &::checkmark {
+      content: "";
+      width: 16px;
+      height: 16px;
+      flex: none;
+      background-color: currentColor;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m3 8 3 3 7-7' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
+  }
+}
+
+@starting-style {
+  .select:open::picker(select) {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+  }
+}

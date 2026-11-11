@@ -1,39 +1,134 @@
 .versionSelector {
+  min-width: 0;
+  max-width: 40%;
   margin-left: auto;
   padding-right: 32px;
+
+  @container (width < 768px) {
+    max-width: 50%;
+    padding-right: 0;
+  }
 }
 
 .versionSelect {
-  box-sizing: border-box;
-  min-width: 196px;
-  padding: 0 8px;
-  font-family: inherit;
-  font-size: 0.875rem;
-  color: var(--color-text-primary);
+  position: relative;
+  width: auto;
+  max-width: 100%;
+  min-height: 36px;
+  padding-inline: 8px 32px;
   background-color: var(--color-background-secondary);
-  border: 1px solid var(--color-border-primary);
-  border-radius: 0;
-  cursor: pointer;
-}
+  font-family: "Lato", sans-serif;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
 
-.versionSelect:hover {
-  border-color: var(--color-hover-background);
-}
+  &::after,
+  .versionYear {
+    padding: 2px 6px;
+    color: var(--color-text-tertiary);
+    font-size: 0.875rem;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    background-color: var(--color-panel);
+    border: 1px solid var(--color-border-primary);
+  }
 
-.versionSelect:focus-visible {
-  outline: 2px solid var(--color-text-primary);
-  outline-offset: 2px;
+  &::after {
+    content: attr(data-year);
+  }
+
+  .versionYear {
+    grid-column: 2;
+    grid-row: 1;
+    padding-inline: 8px;
+
+    &::before {
+      content: attr(data-year);
+    }
+  }
+
+  &::picker-icon {
+    position: absolute;
+    inset: 0 0 0 auto;
+    display: grid;
+    width: 24px;
+    place-items: center;
+    background: inherit;
+    transition: none;
+  }
+
+  &:open::picker-icon {
+    rotate: none;
+  }
+
+  &::picker(select) {
+    position: fixed;
+    inset: auto;
+    /* selectの暗黙アンカーを使い、右端を揃えて下へ展開する。 */
+    position-area: block-end span-inline-start;
+    position-try-fallbacks: none;
+    align-self: start;
+    justify-self: end;
+    inline-size: max-content;
+    max-inline-size: calc(100% - 16px);
+    max-block-size: min(480px, calc(100% - 16px));
+    margin: 8px 0 0;
+  }
+
+  option {
+    display: grid;
+    position: relative;
+    grid-template-columns: minmax(0, 1fr) max-content;
+    align-content: center;
+    align-items: center;
+    column-gap: 12px;
+    row-gap: 8px;
+    min-block-size: 84px;
+    padding: 12px 32px 12px 84px;
+    font-size: 1rem;
+    white-space: normal;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      inset-inline-start: 12px;
+      width: 60px;
+      height: 60px;
+      translate: 0 -50%;
+      /* 行の背景描画を妨げないよう、作品画像は疑似要素だけに指定する。 */
+      background-image: var(--version-thumbnail);
+      background-position: center;
+      background-size: cover;
+    }
+
+    &::after {
+      content: attr(data-technology);
+      grid-column: 1 / -1;
+      grid-row: 2;
+      color: var(--color-text-tertiary);
+      font-size: 0.75rem;
+    }
+
+    &::checkmark {
+      position: absolute;
+      top: 50%;
+      inset-inline-end: 8px;
+      translate: 0 -50%;
+    }
+  }
 }
 
 .versionSelectorCompact {
   padding-right: 16px;
+
+  @container (width < 768px) {
+    padding-right: 0;
+  }
 }
 
 .versionSelectCompact {
-  box-sizing: border-box;
-  height: 30px;
-  min-width: 164px;
-  padding: 0 26px 0 10px;
-  font-size: 0.8125rem;
-  line-height: 30px;
+  min-height: 32px;
+  height: 32px;
 }
