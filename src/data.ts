@@ -943,7 +943,7 @@ export const data: DataStructure = [
       previewVideo: "250724_three_sound_visualizer.mp4",
       blog_en: null,
       blog_ja: "https://clockmaker.jp/blog/2008/10/pv3d_visualizer/",
-      date: "2026/07/24",
+      date: "2026/11/11",
       demo: "https://ics-ikeda.github.io/250724_three_sound_visualizer/",
       img: "https://ics-ikeda.github.io/250724_three_sound_visualizer/eyecatch.avif",
       title: "Music Visualizer",
