@@ -30,7 +30,7 @@ export default function AboutDialog() {
         onClick={playClickSound}
         {...closeDialogCommand}
       >
-        <i className="fa fa-times" aria-hidden="true" />
+        <i className="fa fa-times" />
       </button>
 
       <div className={styles.profile}>
@@ -55,7 +55,7 @@ export default function AboutDialog() {
               onMouseEnter={playNavigationMouseOverSound}
               onClick={playClickSound}
             >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
                 <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.64 7.584H.47l8.6-9.835L0 1.154h7.594l5.243 6.932 6.064-6.933Zm-1.29 19.49h2.039L6.487 3.24H4.3l13.31 17.403Z" />
               </svg>
             </a>
@@ -66,7 +66,7 @@ export default function AboutDialog() {
               onMouseEnter={playNavigationMouseOverSound}
               onClick={playClickSound}
             >
-              <svg viewBox="2 2 20 20" fill="none" aria-hidden="true">
+              <svg viewBox="2 2 20 20" fill="none">
                 <rect
                   x="3"
                   y="3"
@@ -93,7 +93,7 @@ export default function AboutDialog() {
               onMouseEnter={playNavigationMouseOverSound}
               onClick={playClickSound}
             >
-              <svg viewBox="2 2 20 20" fill="none" aria-hidden="true">
+              <svg viewBox="2 2 20 20" fill="none">
                 <path
                   d="M14 3h7v7M21 3 10 14M10 3H3v18h18v-7"
                   stroke="currentColor"
