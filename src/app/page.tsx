@@ -1,5 +1,6 @@
 "use client";
 
+import { sendGAEvent } from "@next/third-parties/google";
 import type { Route } from "next";
 import { useRouter } from "next/navigation";
 import { use, useEffect, useRef, useState } from "react";
@@ -144,6 +145,12 @@ export default function Home({ searchParams }: HomeProps) {
     };
   }, [shouldPlayIntro]);
 
+  const handleAboutClick = () => {
+    playClickSound();
+    // 再描画や閉じる操作を含めず、ボタンを押した回数だけ記録する。
+    sendGAEvent("event", "about_click");
+  };
+
   const updateFilters = (nextFilters: WorkFilters) => {
     setShouldPlayIntro(false);
     const nextParams = new URLSearchParams();
@@ -177,7 +184,7 @@ export default function Home({ searchParams }: HomeProps) {
                 type="button"
                 className={styles.aboutToggle}
                 onMouseEnter={playNavigationMouseOverSound}
-                onClick={playClickSound}
+                onClick={handleAboutClick}
                 {...ABOUT_DIALOG_TRIGGER_COMMAND}
               >
                 <span>About</span>
