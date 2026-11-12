@@ -948,7 +948,7 @@ export const data: DataStructure = [
       img: "https://ics-ikeda.github.io/250724_three_sound_visualizer/eyecatch.avif",
       title: "Music Visualizer",
       type: "Real Time Motion Graphics",
-      technology: ["WebGL", "Three.js"],
+      technology: ["WebGPU", "Three.js"],
     },
     {
       id: "081031_pv3d_visualizer",
