@@ -23,6 +23,7 @@
   white-space: nowrap;
   overflow: hidden;
 
+  /* 年のラベルを、ボタンと選択肢の両方に表示する。 */
   &::after,
   .versionYear {
     padding: 2px 6px;
@@ -50,7 +51,9 @@
 
   &::picker-icon {
     position: absolute;
-    inset: 0 0 0 auto;
+    /* 矢印をボタンの縦中央に置く。 */
+    inset: 50% 0 auto auto;
+    translate: 0 -50%;
     display: grid;
     width: 24px;
     place-items: center;
@@ -65,7 +68,7 @@
   &::picker(select) {
     position: fixed;
     inset: auto;
-    /* selectの暗黙アンカーを使い、右端を揃えて下へ展開する。 */
+    /* 選択肢はボタンの右端にそろえ、下へ開く。 */
     position-area: block-end span-inline-start;
     position-try-fallbacks: none;
     align-self: start;
@@ -76,6 +79,7 @@
     margin: 8px 0 0;
   }
 
+  /* 左に画像、上段にバージョンと年、下段に使用技術を並べる。 */
   option {
     display: grid;
     position: relative;
@@ -97,7 +101,7 @@
       width: 60px;
       height: 60px;
       translate: 0 -50%;
-      /* 行の背景描画を妨げないよう、作品画像は疑似要素だけに指定する。 */
+      /* サムネイルはこの疑似要素に描く。行の背景色はホバー表示に使う。 */
       background-image: var(--version-thumbnail);
       background-position: center;
       background-size: cover;
